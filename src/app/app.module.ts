@@ -9,6 +9,7 @@ import {ResumeComponent} from './resume/resume.component';
 import {ContactComponent} from './contact/contact.component';
 import { InfoComponent } from './home/info/info.component';
 import { InfoCardComponent } from './home/info-card/info-card.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
     ContactComponent,
     InfoComponent,
     InfoCardComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
