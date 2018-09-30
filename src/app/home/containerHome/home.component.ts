@@ -8,7 +8,6 @@ import { Title } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
   constructor(public titleService: Title) {
     titleService.setTitle('iPortpolio(Home)');
-    console.log(this.cardOne);
   }
   cardOne = {
     title: 'University',
