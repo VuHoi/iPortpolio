@@ -8,3 +8,8 @@
 .backgroundInfoCard:hover{
   background: url("../../../assets/images/borderContainer1.png") no-repeat left center;
 }
+.rotateCard{
+  -ms-transform: rotate(-3deg); /* IE 9 */
+  -webkit-transform: rotate(-3deg); /* Safari */
+  transform: rotate(-3deg);
+}
