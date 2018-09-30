@@ -1,0 +1,10 @@
+.backgroundInfoCard{
+  background-size: cover;
+  height: 450px;
+  width: 480px;
+  background: url("../../../assets/images/container1.png") no-repeat left center;
+}
+
+.backgroundInfoCard:hover{
+  background: url("../../../assets/images/borderContainer1.png") no-repeat left center;
+}

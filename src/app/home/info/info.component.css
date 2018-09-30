@@ -1,0 +1,53 @@
+.backgroundInfo {
+  background-size: cover;
+  /*background: url("../../../assets/images/mainContainer.png") repeat center center;*/
+  background-color: #fdfdfd;
+  padding-bottom: 30px;
+}
+
+
+.thickLine{
+  font: normal normal normal 90px/1.2em Impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
+  color: #000000;
+  white-space:nowrap;
+}
+
+.lineHeight{
+  line-height: 1.8rem;
+}
+
+.goldColor{
+  color: gold;
+}
+
+
+.borderBottom{
+  border-bottom: black 3px dashed;
+}
+
+.btn-dark{
+  background-color: black;
+  color: #fdfdfd;
+  min-height: 50px;
+  min-width: 24%;
+  font-size:1.75rem;
+  font-weight: bold;
+}
+
+.btn-dark:hover{
+  background-color: gold;
+}
+.containerHome{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.fontTitle{
+  font: normal normal normal 30px/1.2em Impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
+  line-height: 1.2rem;
+  font-family: Impact, impact-w01-2010, impact-w02-2010, impact-w10-2010, sans-serif;
+}
+
+p{
+  color:black !important;
+}

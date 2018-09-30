@@ -1,0 +1,18 @@
+.backgroundHeader{
+  background-size: cover;
+  height: 130px;
+  margin-bottom: -10px;
+  margin-right: 15%;
+  z-index: 10;
+  background: url("../../assets/images/home1.png") no-repeat right center;
+}
+
+
+.ml-10{
+  margin-left: 10rem;
+}
+
+.backgroundHeader a:hover{
+  color: gold;
+  text-decoration: none;
+}
