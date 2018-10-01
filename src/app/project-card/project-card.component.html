@@ -1,0 +1,14 @@
+<div class="backgroundProjectCard p-5">
+  <div class="rotateProjectCard h-100 p-4 d-flex align-items-center flex-column">
+    <div class="mb-auto">
+      <div class="text-center">
+        <h5 class="fontTitle">{{title}}</h5>
+      </div>
+      <p>{{first_paragraph}}</p>
+      <p>{{second_paragraph}}</p>
+    </div>
+    <div class="d-flex w-100 flex-row align-items-center justify-content-between fontSizeIcon">
+      <i  *ngFor="let icon of icons" class={{icon}}></i>
+    </div>
+  </div>
+</div>

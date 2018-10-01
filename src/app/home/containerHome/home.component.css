@@ -70,9 +70,20 @@
   right: 7%;
   width: 100px;
   z-index: 3  !important;
-  -ms-transform: rotate(-15deg); /* IE 9 */
-  -webkit-transform: rotate(-15deg); /* Safari */
+  -ms-transform: rotate(30deg); /* IE 9 */
+  -webkit-transform: rotate(30deg); /* Safari */
   transform: rotate(30deg);
+}
+
+.positionPin4{
+  position: absolute;
+  top: 180px;
+  left: 5%;
+  width: 100px;
+  z-index: 3  !important;
+  -ms-transform: rotate(-85deg); /* IE 9 */
+  -webkit-transform: rotate(-85deg); /* Safari */
+  transform: rotate(10deg);
 }
 .position{
   position: relative;

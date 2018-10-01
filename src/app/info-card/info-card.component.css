@@ -2,11 +2,11 @@
   background-size: cover;
   height: 450px;
   width: 480px;
-  background: url("../../../assets/images/container1.png") no-repeat left center;
+  background: url("../../assets/images/container1.png") no-repeat left center;
 }
 
 .backgroundInfoCard:hover{
-  background: url("../../../assets/images/borderContainer1.png") no-repeat left center;
+  background: url("../../assets/images/borderContainer1.png") no-repeat left center;
 }
 .rotateCard{
   -ms-transform: rotate(-3deg); /* IE 9 */

@@ -15,6 +15,9 @@
 .positionCard3:hover{
   z-index: 50!important;
 }
+.positionCard4:hover{
+  z-index: 50!important;
+}
 .positionCard2{
   position: absolute;
   top: 150px;
@@ -29,11 +32,20 @@
 .positionCard3{
   position: absolute;
   top: 300px;
-  right: 8%;
+  right: 5%;
   z-index: 2  !important;
   -ms-transform: rotate(-5deg); /* IE 9 */
   -webkit-transform: rotate(-5deg); /* Safari */
   transform: rotate(-5deg);
+}
+.positionCard4{
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  z-index: 2  !important;
+  -ms-transform: rotate(-5deg); /* IE 9 */
+  -webkit-transform: rotate(-5deg); /* Safari */
+  transform: rotate(5deg);
 }
 .positionInfo{
   position: absolute;
@@ -66,17 +78,19 @@
 
 .positionPin3{
   position: absolute;
-  top: 390px;
+  top: 100px;
   right: 7%;
   width: 100px;
   z-index: 3  !important;
-  -ms-transform: rotate(-15deg); /* IE 9 */
-  -webkit-transform: rotate(-15deg); /* Safari */
+  -ms-transform: rotate(30deg); /* IE 9 */
+  -webkit-transform: rotate(30deg); /* Safari */
   transform: rotate(30deg);
 }
+
+
 .position{
   position: relative;
-  top: 0;
+  top: 10px;
   right: 0;
   height: 1700px;
 }

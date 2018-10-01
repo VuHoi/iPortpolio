@@ -8,10 +8,10 @@ import {HomeComponent} from './home/containerHome/home.component';
 import {ResumeComponent} from './resume/resume/resume.component';
 import {ContactComponent} from './contact/contact.component';
 import { InfoComponent } from './home/info/info.component';
-import { InfoCardComponent } from './home/info-card/info-card.component';
+import { InfoCardComponent } from './info-card/info-card.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContainerResumeComponent } from './resume/container-resume/container-resume.component';
-import { ProjectCardComponent } from './resume/project-card/project-card.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProgressbarModule } from 'ngx-bootstrap';
 
 const routes: Routes = [
