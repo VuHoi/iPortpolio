@@ -1,8 +1,8 @@
 .backgroundInfo {
   background-size: cover;
-  /*background: url("../../../assets/images/mainContainer.png") repeat center center;*/
   background-color: #fdfdfd;
   padding-bottom: 30px;
+  border-radius: 5px;
 }
 
 

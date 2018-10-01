@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'navigation',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
+
+  active = 'home';
 
   ngOnInit() {
   }
 
+  ActivedRoute = (state) => {
+    this.active = state ;
+  }
 }

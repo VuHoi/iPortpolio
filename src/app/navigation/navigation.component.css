@@ -13,6 +13,11 @@
 }
 
 .backgroundHeader a:hover{
-  color: gold;
-  text-decoration: none;
+  color: gold !important;
+  text-decoration: none!important;
+}
+
+.activeRoute{
+  color: gold !important;
+  text-decoration: none!important;
 }
