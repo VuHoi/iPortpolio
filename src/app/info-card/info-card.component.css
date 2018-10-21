@@ -11,5 +11,5 @@
 .rotateCard{
   -ms-transform: rotate(-3deg); /* IE 9 */
   -webkit-transform: rotate(-3deg); /* Safari */
-  transform: rotate(-3deg);
+  transform: rotate(-1deg);
 }

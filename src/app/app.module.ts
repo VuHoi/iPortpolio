@@ -1,4 +1,5 @@
 import {BrowserModule, Title} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AlertModule} from 'ngx-bootstrap';
@@ -14,11 +15,12 @@ import { ContainerResumeComponent } from './resume/container-resume/container-re
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProgressbarModule } from 'ngx-bootstrap';
 import { ContactFormComponent } from './contact/contact-form/contact-form.component';
+import {DelayResolve} from './DelayResolve';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent, data: {title: 'home'}},
-  {path: 'resume', component: ContainerResumeComponent},
+  {path: 'resume', component: ContainerResumeComponent, resolve : [DelayResolve]},
   {path: 'contact', component: ContactComponent},
   {path: '**', redirectTo: 'home'},
 ];
@@ -39,12 +41,14 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     AlertModule.forRoot(),
     ProgressbarModule.forRoot()
   ],
   providers: [
-    Title
+    Title,
+    DelayResolve
   ],
   bootstrap: [AppComponent]
 })

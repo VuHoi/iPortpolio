@@ -1,4 +1,6 @@
-<div class="backgroundProjectCard p-5">
+<div class="backgroundProjectCard p-5" @Card  [@CardHover]="stateHover"
+     (mouseenter)="togleStateAnimation('enter')"
+     (mouseleave)="togleStateAnimation('leave')">
   <div class="rotateProjectCard h-100 p-4 d-flex align-items-center flex-column">
     <div class="mb-auto">
       <div class="text-center">

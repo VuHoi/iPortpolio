@@ -9,18 +9,18 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
   cardOne = {
-    title: 'University',
+    title: '',
     first_paragraph: '',
     second_paragraph: ''
   };
   cardTwo = {
-    title: 'Hometown',
+    title: '',
     first_paragraph: '',
     second_paragraph: ''
   }
 
   cardThree = {
-    title: 'Hobbies',
+    title: '',
     first_paragraph: '',
     second_paragraph: ''
   }

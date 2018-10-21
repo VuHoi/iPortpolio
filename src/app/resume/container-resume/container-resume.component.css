@@ -40,7 +40,7 @@
 }
 .positionCard4{
   position: absolute;
-  top: 10px;
+  top: 50px;
   right: 5%;
   z-index: 2  !important;
   -ms-transform: rotate(-5deg); /* IE 9 */

@@ -1,7 +1,11 @@
-<div class="backgroundInfoCard p-5">
+<div class="backgroundInfoCard p-5 " @Card  [@CardHover]="stateHover"
+     (mouseenter)="togleStateAnimation('enter')"
+     (mouseleave)="togleStateAnimation('leave')"
+>
   <div class="rotateCard">
-    <h5 class="fontTitle">{{title}}</h5>
+    <h5 class="fontTitle text-danger">{{title}}</h5>
     <p>{{first_paragraph}}</p>
     <p>{{second_paragraph}}</p>
+
   </div>
 </div>
