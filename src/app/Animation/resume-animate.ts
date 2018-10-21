@@ -2,7 +2,7 @@ import {  animate, animation, style, keyframes } from '@angular/animations';
 
 
 export let ResumeEnter = animation(
-  animate('2500ms cubic-bezier(.34,.89,.74,.78)', keyframes([
+  animate('2500ms cubic-bezier(.01,.69,.44,.96)', keyframes([
     style({ transform: 'translateY(-500px)', offset: 0 }),
     style({  transform: 'translateY(0px)', offset: 0.5 }),
   ])));
