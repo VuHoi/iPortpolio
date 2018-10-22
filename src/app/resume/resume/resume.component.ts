@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProgressbarConfig } from 'ngx-bootstrap';
 import {transition, trigger, useAnimation} from '@angular/animations';
-import {ResumeEnter, ResumeLeave} from '../../Animation/resume-animate';
+import {ResumeEnter, ResumeLeave, ShakeImageEnter , ShakeImageLeave} from '../../Animation/resume-animate';
 export function getProgressbarConfig(): ProgressbarConfig {
   return Object.assign(new ProgressbarConfig(), { animate: true, striped: true,  max: 100 });
 }
@@ -17,15 +17,24 @@ export function getProgressbarConfig(): ProgressbarConfig {
       ]), transition(':leave', [
         useAnimation(ResumeLeave)
       ])
+    ]),
+    trigger('Shake', [
+      transition('leave=>enter', [
+        useAnimation(ShakeImageEnter)
+      ]), transition('enter=>leave', [
+        useAnimation(ShakeImageLeave)
+      ])
     ])
   ]
 })
 
 export class ResumeComponent implements OnInit {
-
+  stateHover = 'leave';
   constructor() { }
 
   ngOnInit() {
   }
-
+  togleStateAnimation(state) {
+    this.stateHover = state;
+  }
 }

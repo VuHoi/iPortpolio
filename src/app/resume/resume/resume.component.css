@@ -94,3 +94,10 @@
   letter-spacing: 0.2em;
   line-height: 2.2rem;
 }
+.font{
+  font: normal normal normal 35px/1.2em Roboto;
+}
+
+.fontSmall{
+  font: normal normal normal 20px/1.2em Roboto;
+}

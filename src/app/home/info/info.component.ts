@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {transition, trigger, useAnimation} from '@angular/animations';
-import { HomeEnter,HomeLeave} from '../../Animation/home-animate';
+import {ButtonEnter, ButtonLeave, HomeEnter, HomeLeave} from '../../Animation/home-animate';
 
 @Component({
   selector: 'info',
@@ -10,7 +10,8 @@ import { HomeEnter,HomeLeave} from '../../Animation/home-animate';
     trigger('Home', [
       transition(':enter', [
         useAnimation(HomeEnter)
-      ]), transition(':leave', [
+      ]),
+      transition(':leave', [
         useAnimation(HomeLeave)
       ])
     ])

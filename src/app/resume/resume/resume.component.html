@@ -3,8 +3,8 @@
     <div class="boxTitle">
       <div class="borderBox">
         <div class="d-flex align-items-center justify-content-center flex-column">
-          <h3>Vũ Khắc Hợi</h3>
-          <h3>K.T.P.M - 2015</h3>
+          <h3 class="font">Vũ Khắc Hợi</h3>
+          <h3 class="fontSmall">K.T.P.M - 2015</h3>
         </div>
       </div>
     </div>
@@ -28,7 +28,10 @@
       </div>
     </div>
     <div class="w-33 d-flex align-items-center justify-content-center">
-      <img class="rounded-circle" src="../../../assets/images/me.png" alt="me">
+      <img class="rounded-circle" src="../../../assets/images/me.png" alt="me"
+           [@Shake]="stateHover"
+           (mouseenter)="togleStateAnimation('enter')"
+           (mouseleave)="togleStateAnimation('leave')">
     </div>
     <div class="w-33">
       <div class="d-flex p-1 border-bottom mr-3">

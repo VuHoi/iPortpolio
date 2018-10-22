@@ -32,14 +32,17 @@
   min-width: 24%;
   font-size:1.75rem;
   font-weight: bold;
+  transition: all .2s ease-in-out;
 }
 
 .btn-dark:hover{
   background-color: gold;
+  transform: scale(1.1);
 }
 .containerHome{
   margin-left: 10%;
   margin-right: 10%;
+
 }
 
 
