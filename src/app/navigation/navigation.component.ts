@@ -10,7 +10,7 @@ export class NavigationComponent implements OnInit {
   constructor() {
   }
 
-  active = 'home';
+  active = '';
 
   ngOnInit() {
   }
