@@ -21,8 +21,6 @@
 
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
-
-/* Large Devices, Desktops  (viewport is 1200px or SMALLER) */
 @media only screen and (max-width : 1200px) {
   .backgroundProjectCard{
     background-size: cover;
@@ -30,7 +28,6 @@
     width: 512px;
     background: url("../../assets/images/container3-mobi.png") no-repeat left center;
   }
-  
   .backgroundProjectCard:hover{
     background-size: cover;
     height: 428px;
@@ -46,17 +43,14 @@
   }
 }
 
-/* Medium Devices, Tablet (viewport is 992px or SMALLER) */
 @media only screen and (max-width : 992px) {
-
+ 
 }
 
-/* Small Devices, Tablets (viewport is 768px or SMALLER) */
 @media only screen and (max-width : 768px) {
  
 }
 
-/* Extra Small Devices, Phones (viewport is 480px or SMALLER) */ 
 @media only screen and (max-width : 480px) {
 
 }

@@ -10,8 +10,7 @@
 
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 
-/* Large Devices, Desktops  (viewport is 1200px or SMALLER) */
-@media only screen and (max-width : 1200px) {
+/* @media only screen and (max-width : 1200px) {
   #slider_content {
       width: auto;
       margin-right: 50px;
@@ -30,7 +29,6 @@
   }
 }
 
-/* Medium Devices, Tablet (viewport is 992px or SMALLER) */
 @media only screen and (max-width : 992px) {
   header h1 {
       margin-left: 10px;
@@ -102,7 +100,6 @@
   }    
 }
 
-/* Small Devices, Tablets (viewport is 768px or SMALLER) */
 @media only screen and (max-width : 768px) {
  .container {
       height: 1px;
@@ -173,7 +170,6 @@
   }
 }
 
-/* Extra Small Devices, Phones (viewport is 480px or SMALLER) */ 
 @media only screen and (max-width : 480px) {
   header {
       margin-top: 80px;
@@ -327,4 +323,4 @@
       float: none;
   }    
 
-}
+} */

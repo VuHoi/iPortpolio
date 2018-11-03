@@ -9,8 +9,6 @@
 
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
-
-/* Large Devices, Desktops  (viewport is 1200px or SMALLER) */
 @media only screen and (max-width : 1200px) {
     .linedown{
         display: block;
@@ -19,17 +17,26 @@
     }
 }
   
-/* Medium Devices, Tablet (viewport is 992px or SMALLER) */
 @media only screen and (max-width : 992px) {
-
+    .linedown{
+        display: inline;
+        text-align: center;
+        padding-left: 12px;
+    }
 }
 
-/* Small Devices, Tablets (viewport is 768px or SMALLER) */
+@media only screen and (max-width : 789px) {
+    .linedown{
+        display: block;
+        text-align: center;
+        padding-left: 12px;
+    }
+}
+
 @media only screen and (max-width : 768px) {
 
 }
 
-/* Extra Small Devices, Phones (viewport is 480px or SMALLER) */ 
 @media only screen and (max-width : 480px) {
 
 }
