@@ -5,36 +5,75 @@
 .icon-width{
     width: 30px;
 }
-
+.displaymobile{
+    display: none;
+}
+.displayphonemobile{
+    display: none;
+}
 
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 @media only screen and (max-width : 1200px) {
-    .linedown{
-        display: block;
-        text-align: center;
-        padding-left: 12px;
-    }
+    
 }
   
-@media only screen and (max-width : 992px) {
-    .linedown{
+@media only screen and (max-width : 1109px) {
+    .hiddenmobile{
+        display: none;
+    }
+    .displaymobile{
         display: inline;
-        text-align: center;
-        padding-left: 12px;
+    }
+}
+@media only screen and (max-width : 992px) {
+    .hiddenmobile{
+        display: inline;
+    }
+    .displaymobile{
+        display: none;
     }
 }
 
-@media only screen and (max-width : 789px) {
-    .linedown{
-        display: block;
-        text-align: center;
-        padding-left: 12px;
+@media only screen and (max-width : 792px) {
+    .hiddenmobile{
+        display: none;
+    }
+    .displaymobile{
+        display: inline;
     }
 }
 
 @media only screen and (max-width : 768px) {
+    .hiddenmobile{
+        display: none;
+    }
+    .displaymobile{
+        display: inline;
+    }
+}
 
+@media only screen and (max-width : 687px) {
+    .hiddenmobile{
+        display: none;
+    }
+    .displaymobile{
+        display: none;
+    }
+    .displayphonemobile{
+        display: inline;
+    }
+}
+@media only screen and (max-width : 596px) {
+    .hiddenmobile{
+        display: none;
+    }
+    .displaymobile{
+        display: none;
+    }
+    .displayphonemobile{
+        display: none;
+    }
 }
 
 @media only screen and (max-width : 480px) {

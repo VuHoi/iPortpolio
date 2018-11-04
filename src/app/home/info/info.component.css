@@ -50,6 +50,15 @@ p{
   display: none;
 }
 
+.pt-5{
+  padding-top: 3rem!important;
+}
+
+a.text-white:hover, a.text-white:focus{
+  color: #b3b3b3 !important;
+}
+
+
 
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
@@ -64,7 +73,9 @@ p{
 }
 
 @media only screen and (max-width : 768px) {
-
+  .pt-5{
+    padding-top: 2rem!important;
+  }
 }
 
 @media only screen and (max-width : 480px) {

@@ -56,3 +56,8 @@ textarea {
 .sizeImage{
   width: 50%;
 }
+
+.containerHome{
+  margin-left: 10%;
+  margin-right: 10%;
+}

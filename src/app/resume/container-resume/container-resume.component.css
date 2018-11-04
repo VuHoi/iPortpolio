@@ -87,7 +87,6 @@
   transform: rotate(30deg);
 }
 
-
 .position{
   position: relative;
   top: 10px;
@@ -129,6 +128,30 @@
 }
 
 @media only screen and (max-width : 768px) {
+  .positionPin{
+    display: none;
+  }
+  
+  .positionPin2{
+    display: none;
+  }
+  
+  .positionPin3{
+    display: none;
+  }
+  
+  .positionInfo{
+    position: absolute;
+    top: 0;
+    right: 0%;
+    left: 0%;
+    z-index: 40  !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .hiddencard{
+    display: none;
+  }
 
 }
 
