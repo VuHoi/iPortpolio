@@ -57,7 +57,9 @@ p{
 a.text-white:hover, a.text-white:focus{
   color: #b3b3b3 !important;
 }
-
+.navbar-mobile{
+  display: block;
+}
 
 
 /* ---------------------------------------------- */
@@ -75,6 +77,9 @@ a.text-white:hover, a.text-white:focus{
 @media only screen and (max-width : 768px) {
   .pt-5{
     padding-top: 2rem!important;
+  }
+  .navbar-mobile{
+    display: block;
   }
 }
 

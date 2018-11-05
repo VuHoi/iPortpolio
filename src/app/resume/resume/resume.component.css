@@ -125,6 +125,15 @@
 .hiddenrow{
   display: none !important;
 }
+.hiddentestmobile2{
+  display: none;
+}
+.iconhidden{
+  display: inline;
+}
+.iconhidden2{
+  display: none;
+}
 
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
@@ -199,6 +208,36 @@
   .items-center{
     display: flex !important;
   }
+
+  .h4, h4 {
+    font-size: 1.2rem;
+  }
+  .hiddentestmobile{
+    display: none;
+  }
+  .hiddentestmobile2{
+    display: inline;
+  }
+  .posibleFix{
+    font-size: 1.2rem;
+    margin-right: 0rem !important;
+  }
+  .iconhidden{
+    display: none;
+  }
+  .iconhidden2{
+    display: inline;
+  }
+  .center{
+    margin-right: 0.4rem !important;
+  }
+  .center2{
+    margin-right: -0.1rem !important;
+  }
+}
+
+@media only screen and (max-width : 619px) {
+
 }
 
 @media only screen and (max-width : 480px) {
