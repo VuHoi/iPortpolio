@@ -1,4 +1,44 @@
 <div class="backgroundInfo" @Resume>
+  <!-- Start navigation mobile -->
+  <div class="containerHome navbar-mobile">
+    <br>
+    <div class="pos-f-t">
+      <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" 
+                data-toggle="collapse" 
+                data-target="#navbarToggleExternalContent" 
+                aria-controls="navbarToggleExternalContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" title="Menu"></span>
+        </button>
+      </nav>
+        
+      <div class="collapse show" id="navbarToggleExternalContent">
+        <!-- <div class="collapse" id="navbarToggleExternalContent"> -->
+        <div class="bg-dark p-1 pl-5">
+          <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+            <li class="nav-item active" style="font-size: 18px">
+              <a class="nav-link link text-white" routerLink="/home">
+                <i class="fa fa-home" style="font-size: 19px"></i> Home
+              </a>
+            </li>
+            <li class="nav-item" style="font-size: 18px">
+              <a class="nav-link link text-white" routerLink="/resume">
+                  <i class="fa fa-play" style="font-size: 18px"></i> Resume
+              </a>
+            </li>
+            <li class="nav-item" style="font-size: 18px">
+              <a class="nav-link link text-white" routerLink="/contact">
+                <i class="fa fa-address-card" style="font-size: 14px"></i> Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End navigation mobile -->
+
   <div class="d-flex align-items-center justify-content-center headerResume">
     <div class="boxTitle">
       <div class="borderBox">
@@ -13,11 +53,11 @@
     <div class="line lineHeight"></div>
   </div>
   <div class="d-flex justify-content-between avatar">
-    <div class="w-33 ">
-      <div class=" text-center mr-5 ml-5 border-bottom">
+    <div class="w-33">
+      <div class="text-center mr-5 ml-5 border-bottom hiddenProfile">
         <h4 class="colorTitle ">PROFILE</h4>
       </div>
-      <div class="pl-3 pr-3 pt-1 text-center">
+      <div class="pl-3 pr-3 pt-1 text-center hiddenProfile">
         I'm a fourth of year student at
         University Of Infomation Technology,
         with good knowledge of Object
@@ -30,29 +70,102 @@
     <div class="w-33 d-flex align-items-center justify-content-center">
       <img class="rounded-circle" src="../../../assets/images/me.png" alt="me">
     </div>
+
     <div class="w-33">
-      <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
+      <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
         <div class="mt-2">56 Tan Lap, Di An </div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-home" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-home" aria-hidden="true"></i></div>
       </div>
-      <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
+      <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
         <div class="mt-2">toilahoi007@gmail.com</div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
       </div>
-      <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
+      <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
         <div class="mt-2">github.com/hoideptrai</div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-television" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto center2 iconhidden2"><i class="fa fa-television" aria-hidden="true"></i></div>
       </div>
-      <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
+      <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
         <div class="mt-2">0365 240 627</div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-mobile" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto center iconhidden2"><i class="fa fa-mobile" aria-hidden="true"></i></div>
       </div>
     </div>
   </div>
+
+  <div class="hiddenProfile2">
+    <div class="row mt-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="text-center mr-5 ml-5 border-bottom">
+          <h4 class="colorTitle ">PROFILE</h4>
+        </div>
+        <div class="pl-3 pr-3 pt-1 text-center">
+          I'm a fourth of year student at
+          University Of Infomation Technology,
+          with good knowledge of Object
+          Oriented Analysis and Design,
+          Database Design. Learning new l
+          anguages and technologies is what
+          I am passionate about.
+        </div>  
+      </div>
+    </div>
+  </div>
+
+  <div class="hiddenProfile2 mt-3">
+    <div class="row mt-1">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
+          <div class="mt-2">56 Tan Lap, Di An </div>
+          <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-home" aria-hidden="true"></i></div>
+          <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-home" aria-hidden="true"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
+          <div class="mt-2">toilahoi007@gmail.com</div>
+          <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+          <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
+          <div class="mt-2">github.com/hoideptrai</div>
+          <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-television" aria-hidden="true"></i></div>
+          <div class="posibleFix ml-auto center2 iconhidden2"><i class="fa fa-television" aria-hidden="true"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
+          <div class="mt-2">0365 240 627</div>
+          <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-mobile" aria-hidden="true"></i></div>
+          <div class="posibleFix ml-auto center iconhidden2"><i class="fa fa-mobile" aria-hidden="true"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
   <div class="d-flex justify-content-between mt-5">
     <div class="w-33 mt-5 border-bottom border-right ">
       <div class="box d-flex align-items-center justify-content-center">
@@ -72,13 +185,15 @@
         <div>TMA Solutions</div>
         <div>2018-now</div>
       </div>
-      <div class="text-center mt-3">
-        <div class="font-weight-bold">INTERNSHIP ANDROID</div>
+      <div class="text-center mt-3 mgtmb">
+        <div class="font-weight-bold fontminmobile hiddenAndroid">ANDROID INTERNSHIP</div>
+        <div class="font-weight-bold fontminmobile hiddenAndroid2">ANDROID</div>
+        <div class="font-weight-bold fontminmobile hiddenAndroid2">INTERNSHIP</div>
         <div>NKS company</div>
         <div>2017-2018</div>
       </div>
-      <div class="text-center mt-3 mb-3">
-        <div class="font-weight-bold">STUDENT HERE</div>
+      <div class="text-center mt-3 mb-3 mgtmb">
+        <div class="font-weight-bold fontminmobile">STUDENT HERE</div>
         <div>UIT University</div>
         <div>2015-2020</div>
       </div>
@@ -153,23 +268,42 @@
       <div class="d-flex">
         <div class="lineVehical mr-auto "></div>
       </div>
-      <div class="d-flex align-items-center justify-content-center flex-column mt-3">
-        <div class="expertise">WEB DESIGN</div>
-        <div class="expertise">PROJECT DESIGN</div>
-        <div class="expertise">DESIGN DATABASE</div>
-        <div class="expertise hiddentestmobile">OBJECT ORIENTED ANALYSIS</div>
-        <div class="expertise hiddentestmobile2">ORIENTED ANALYSIS</div>
-        <div class="expertise">REPORT WRITING</div>
-        <div class="expertise">HTML5 & CSS3</div>
-        <div class="expertise">QUALITY CONTROL</div>
-
+      <div class="hiddenExpertise">
+        <div class="d-flex align-items-center justify-content-center flex-column mt-3 fontminmobile">
+          <div class="expertise">WEB DESIGN</div>
+          <div class="expertise">PROJECT DESIGN</div>
+          <div class="expertise">DATABASE DESIGN</div>
+          <div class="expertise hiddentestmobile">OBJECT ORIENTED ANALYSIS</div>
+          <div class="expertise hiddentestmobile2">ORIENTED ANALYSIS</div>
+          <div class="expertise">REPORT WRITING</div>
+          <div class="expertise">HTML5 & CSS3</div>
+          <div class="expertise">QUALITY CONTROL</div>
+        </div>
       </div>
+      <div class="hiddenExpertise2">
+        <div class="d-flex align-items-center justify-content-center flex-column mt-3 fontminmobile">
+          <div class="expertise lineHeightmb mgt">WEB DESIGN</div>
+          <div class="expertise">PROJECT</div>
+          <div class="expertise lineHeightmb">DESIGN</div>
+          <div class="expertise">DATABASE</div>
+          <div class="expertise lineHeightmb">DESIGN</div>
+          <div class="expertise">ORIENTED</div>
+          <div class="expertise lineHeightmb">ANALYSIS</div>
+          <div class="expertise">REPORT</div>
+          <div class="expertise lineHeightmb">WRITING</div>
+          <div class="expertise">HTML5</div>
+          <div class="expertise lineHeightmb">CSS3</div>
+          <div class="expertise">QUALITY</div>
+          <div class="expertise lineHeightmb">CONTROL</div>
+        </div>
+      </div>
+
     </div>
 
   </div>
   <div class="row ml-4 mr-4 mt-5">
     <div class="col-md-9 ">
-      <h4 class="colorTitle ">Front-End Developer</h4>
+      <h4 class="colorTitle">Front-End Developer</h4>
       <p>
         TMA Solutions is a privately owned software outsourcing company
         of Vietnam, with headquarters in Ho Chi Minh city Vietnam and other
@@ -197,7 +331,7 @@
   </div>
   <div class="row ml-4 mr-4 mt-5">
     <div class="col-md-9 ">
-      <h4 class="colorTitle ">Android Internship</h4>
+      <h4 class="colorTitle">Android Internship</h4>
       <p>
         TMA Solutions is a privately owned software outsourcing company
         of Vietnam, with headquarters in Ho Chi Minh city Vietnam and other
@@ -226,7 +360,7 @@
 
   <div class="row ml-4 mr-4 mt-5">
     <div class="col-md-9 hiddenrow">
-      <h4 class="colorTitle ">IShop</h4>
+      <h4 class="colorTitle">IShop</h4>
       <p>
         It is a  E-commerce  website that I make a year ago. It was my first website when I decided 
         to switch from major to programming software through website programming. I started with the 

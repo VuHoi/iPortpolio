@@ -58,9 +58,12 @@ a.text-white:hover, a.text-white:focus{
   color: #b3b3b3 !important;
 }
 .navbar-mobile{
-  display: block;
+  display: none;
 }
 
+.downlinehobby{
+  display: none; 
+}
 
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
@@ -80,6 +83,13 @@ a.text-white:hover, a.text-white:focus{
   }
   .navbar-mobile{
     display: block;
+  }
+}
+
+@media only screen and (max-width : 767px) { 
+  .downlinehobby{
+    display: block;
+    margin-top: 1.5rem;
   }
 }
 

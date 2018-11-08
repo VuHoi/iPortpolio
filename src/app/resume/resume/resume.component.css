@@ -134,6 +134,22 @@
 .iconhidden2{
   display: none;
 }
+.navbar-mobile{
+  display: none;
+}
+.hiddenProfile2{
+  display: none;
+}
+.hiddenExpertise{
+  display: block;
+}
+.hiddenExpertise2{
+  display: none;
+}
+
+.hiddenAndroid2{
+  display: none;
+}
 
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
@@ -234,12 +250,71 @@
   .center2{
     margin-right: -0.1rem !important;
   }
+  .headerResume {
+    background-color: #d5dade;
+    min-height: 300px;
+    margin-top: 17px;
+  }
+  .navbar-mobile{
+    display: block;
+  }
 }
 
-@media only screen and (max-width : 619px) {
+@media only screen and (max-width : 616px) {
+  .hiddenProfile{
+    display: none !important;
+  }
 
+  .hiddenProfile2{
+    display: block;
+  }
+
+  .h4, h4 {
+    font-size: 1.2rem;
+  }
+  .fontminmobile{
+    font-size: 0.96rem !important;
+  }
+  
+}
+
+@media only screen and (max-width : 589px) {
+  .fontminmobile{
+    font-size: 0.90rem !important;
+  }
+}
+
+@media only screen and (max-width : 560px) {
+  .h4, h4 {
+    font-size: 1.03rem;
+  }
+}
+
+@media only screen and (max-width : 553px) {
+  .hiddenExpertise{
+    display: none;
+  }
+  .hiddenExpertise2{
+    display: block;
+  }
+  .lineHeightmb{
+    line-height: 0.4rem !important;
+    margin-bottom: 1.0rem;
+  }
+  .mgt{
+    margin-top: 0.6rem;
+  }
+  .mgtmb{
+    margin-top: 3.5rem !important;
+  }
+  .hiddenAndroid{
+    display: none;
+  }
+  .hiddenAndroid2{
+    display: block;
+  }
 }
 
 @media only screen and (max-width : 480px) {
-
+/* ĐẾN VỊ TRÍ NÀY */
 }
