@@ -89,7 +89,7 @@
   position: relative;
   top: 0;
   right: 0;
-  height: 1000px;
+  height: 800px;
 }
 
 
@@ -141,7 +141,12 @@
     z-index: 40  !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-
+  .position{
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 600px;
+  }
 }
 
 @media only screen and (max-width : 480px) {

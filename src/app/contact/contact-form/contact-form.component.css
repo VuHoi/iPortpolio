@@ -78,6 +78,13 @@ textarea {
   .navbar-mobile{
     display: block;
   }
+  .backgroundContact2 {
+    background-size: cover;
+    background-color: #fdfdfd;
+    margin-top: -6px !important;
+    height: 219px;
+    /* border-radius: 5px; */
+  }
 }
 
 @media only screen and (max-width : 480px) {
