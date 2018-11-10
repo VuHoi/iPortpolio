@@ -94,5 +94,23 @@ a.text-white:hover, a.text-white:focus{
 }
 
 @media only screen and (max-width : 480px) {
-
+  .fontsizemb{
+    font-size: 1.5rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}
+@media only screen and (max-width : 412px) {
+  .fontsizemb{
+    font-size: 1.45rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+}
+@media only screen and (max-width : 363px) {
+  .fontsizemb{
+    font-size: 1.25rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
 }

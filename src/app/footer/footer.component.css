@@ -79,4 +79,16 @@
 @media only screen and (max-width : 480px) {
 
 }
-  
+
+@media only screen and (max-width : 450px) {
+    .displayicon{
+        display: none;
+    }
+
+}
+@media only screen and (max-width : 374px) {
+    .displayallicon{
+        display: none !important;
+    }
+
+}
