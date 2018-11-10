@@ -150,6 +150,9 @@
 .hiddenAndroid2{
   display: none;
 }
+.lineHeightmb3{
+  display: none;
+}
 
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
@@ -316,5 +319,42 @@
 }
 
 @media only screen and (max-width : 480px) {
-/* ĐẾN VỊ TRÍ NÀY */
+  .colorTitle {
+    color: #4d4d4d;
+    letter-spacing: 0.1em !important;
+  }
+}
+
+@media only screen and (max-width : 429px) {
+  .colorTitle {
+    color: #4d4d4d;
+    letter-spacing: 0.05em !important;
+  }
+}
+@media only screen and (max-width : 399px) {
+  .colorTitle {
+    color: #4d4d4d;
+    letter-spacing: 0.0em !important;
+  }
+}
+@media only screen and (max-width : 371px) {
+  .colorTitle {
+    color: #4d4d4d;
+    font-size: 0.9rem;
+    letter-spacing: 0.0em !important;
+  }
+}
+@media only screen and (max-width : 340px) {
+  .lineHeightmb2{
+    display: none !important;
+  }
+  .lineHeightmb3{
+    display: inline;
+  }
+  .mgt{
+    margin-top: 0.55rem;
+  }
+  .mgtmb{
+    margin-top: 4.12rem !important;
+  }
 }
