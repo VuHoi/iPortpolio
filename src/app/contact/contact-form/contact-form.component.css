@@ -82,7 +82,7 @@ textarea {
     background-size: cover;
     background-color: #fdfdfd;
     margin-top: -6px !important;
-    height: 219px;
+    max-height: 219px;
     /* border-radius: 5px; */
   }
 }
