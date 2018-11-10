@@ -223,6 +223,15 @@
   }
 }
 
+@media only screen and (max-width : 874px) {
+  .hiddentestmobile{
+    display: none;
+  }
+  .hiddentestmobile2{
+    display: inline;
+  }
+}
+
 @media only screen and (max-width : 768px) {
   .linedown{
     display: block;
@@ -238,12 +247,7 @@
   .h4, h4 {
     font-size: 1.2rem;
   }
-  .hiddentestmobile{
-    display: none;
-  }
-  .hiddentestmobile2{
-    display: inline;
-  }
+
   .posibleFix{
     font-size: 1.2rem;
     margin-right: 0rem !important;
