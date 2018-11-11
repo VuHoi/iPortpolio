@@ -89,7 +89,66 @@
   position: relative;
   top: 0;
   right: 0;
-  height: 1000px;
+  height: 800px;
 }
 
 
+
+/* ---------------------------------------------- */
+/* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
+@media only screen and (max-width : 1200px) {
+}
+
+@media only screen and (max-width : 992px) {
+  .positionPin{
+    display: none;
+  }
+  .positionPin2{
+    display: none;
+  }
+  .positionPin3{
+    display: none;
+  }
+  .positionPin4{
+    display: none;
+  }
+
+  .positionInfo{
+    position: absolute;
+    top: 0;
+    right: 1%;
+    left: 1%;
+    z-index: 40  !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .positionCard1{
+    display: none;
+  }
+  .positionCard2{
+    display: none;
+  }  .positionCard3{
+    display: none;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .positionInfo{
+    position: absolute;
+    top: 0;
+    right: 0%;
+    left: 0%;
+    z-index: 40  !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .position{
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+
+}

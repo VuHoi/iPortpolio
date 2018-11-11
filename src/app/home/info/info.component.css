@@ -45,8 +45,75 @@
 
 }
 
-
-
 p{
   color:black !important;
+}
+
+.hide-display{
+  display: none;
+}
+
+.pt-5{
+  padding-top: 3rem!important;
+}
+
+a.text-white:hover, a.text-white:focus{
+  color: #b3b3b3 !important;
+}
+.navbar-mobile{
+  display: none;
+}
+
+.downlinehobby{
+  display: none; 
+}
+
+/* ---------------------------------------------- */
+/* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
+
+@media only screen and (max-width : 1200px) {
+
+}
+@media only screen and (max-width : 992px) {
+  .hide-display{
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .pt-5{
+    padding-top: 2rem!important;
+  }
+  .navbar-mobile{
+    display: block;
+  }
+}
+
+@media only screen and (max-width : 767px) { 
+  .downlinehobby{
+    display: block;
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .fontsizemb{
+    font-size: 1.5rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}
+@media only screen and (max-width : 412px) {
+  .fontsizemb{
+    font-size: 1.45rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+}
+@media only screen and (max-width : 363px) {
+  .fontsizemb{
+    font-size: 1.25rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
 }

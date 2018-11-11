@@ -13,3 +13,19 @@
   -webkit-transform: rotate(-3deg); /* Safari */
   transform: rotate(-1deg);
 }
+
+
+/* ---------------------------------------------- */
+/* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
+
+@media only screen and (max-width : 1200px) {}
+@media only screen and (max-width : 992px) {}
+
+
+@media only screen and (max-width : 768px) {
+ 
+}
+
+@media only screen and (max-width : 480px) {
+
+}

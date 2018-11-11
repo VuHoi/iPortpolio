@@ -3,7 +3,7 @@
   background-color: #fdfdfd;
   padding-bottom: 30px;
   min-height: 600px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .containerForm {
@@ -56,3 +56,38 @@ textarea {
 .sizeImage{
   width: 50%;
 }
+
+.containerHome{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.navbar-mobile{
+  display: none;
+}
+
+/* ---------------------------------------------- */
+/* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
+@media only screen and (max-width : 1200px) {
+}
+  
+@media only screen and (max-width : 992px) {
+}
+
+@media only screen and (max-width : 768px) {
+  .navbar-mobile{
+    display: block;
+  }
+  .backgroundContact2 {
+    background-size: cover;
+    background-color: #fdfdfd;
+    margin-top: -6px !important;
+    max-height: 219px;
+    /* border-radius: 5px; */
+  }
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+  

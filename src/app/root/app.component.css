@@ -13,3 +13,31 @@
   width: 100%;
   height: 100%;
 }
+
+/* ---------------------------------------------- */
+/* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
+
+@media only screen and (max-width : 1200px) {}
+@media only screen and (max-width : 992px) {
+  .backgroundMain {
+    width: 100%;
+    background-size: auto;
+    background-position: center top;
+    background-repeat: repeat;
+    height: 100%;
+    background-image: url(https://static.wixstatic.com/media/214ec6_5ad58bcff90ac51cd673594a611ffad0.png/v1/fill/w_150,h_150,al_c,q_85/214ec6_5ad58bcff90ac51cd673594a611ffad0.webp);
+  }
+  .backgroundContainer{
+    /* background-color: rgb(221, 221, 221); */
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}

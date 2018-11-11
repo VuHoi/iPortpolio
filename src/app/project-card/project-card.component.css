@@ -19,3 +19,38 @@
   color: #d5dade;
 }
 
+/* ---------------------------------------------- */
+/* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
+@media only screen and (max-width : 1200px) {
+  .backgroundProjectCard{
+    background-size: cover;
+    height: 428px;
+    width: 512px;
+    background: url("../../assets/images/container3-mobi.png") no-repeat left center;
+  }
+  .backgroundProjectCard:hover{
+    background-size: cover;
+    height: 428px;
+    width: 512px;
+    background: url("../../assets/images/borderContainer3-mobi.png") no-repeat left center;
+  }
+  .fontSizeIcon{
+    font-size: 30px;
+    color: #d5dade;
+  }
+  .fontSizeText{
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+ 
+}
+
+@media only screen and (max-width : 768px) {
+ 
+}
+
+@media only screen and (max-width : 480px) {
+
+}

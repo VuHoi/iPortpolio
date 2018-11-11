@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     second_paragraph: 'The large flower industry here produces Hydrangeas and ' +
     'Strawflowers also known as Golden Everlasting. Strawberries and Mulberries' +
     'are also grown and the local preserve of these and Sweet Potato'
-  }
+  };
 
   cardThree = {
     title: 'Hobbies',
