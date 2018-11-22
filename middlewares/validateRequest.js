@@ -5,11 +5,12 @@ module.exports = function(req, res, next) {
  
     var token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
     var key = (req.body && req.body.x_key) || (req.query && req.query.x_key) || req.headers['x-key'];
-    
+    console.log(token)
     if (token || key) {
       try {
         jwt.verify(token,db.secret, function(err, user){
-        if(user){
+    
+          if(user){
                 if(req.url.indexOf('/api/') >= 0){
                   next();
                 }else {
