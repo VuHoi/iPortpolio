@@ -101,7 +101,6 @@ app.post('/login',(req,res)=>{
             });
             res.json({
                 success: true,
-                
                 token: token
             });
  //https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens

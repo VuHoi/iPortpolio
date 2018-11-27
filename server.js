@@ -7,6 +7,7 @@ var MongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
 var portfolio = require('./apis/PortfolioController');
 var user = require('./apis/UserController');
+var contact = require('./apis/ContactController')
 var dbConfig=require('./middlewares/db');
 const app = express();
 
@@ -26,6 +27,7 @@ app.all('/*', configRoute);
 app.all('/api/*', [require('./middlewares/validateRequest')]);
 portfolio(app);
 user(app);
+contact(app);
 app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname,'/dist/iPortfolio/index.html'));
 });
