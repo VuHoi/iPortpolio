@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProgressbarConfig } from 'ngx-bootstrap';
 import {transition, trigger, useAnimation} from '@angular/animations';
-import {ResumeEnter, ResumeLeave, ShakeImageEnter , ShakeImageLeave} from '../../Animation/resume-animate';
+import {ResumeEnter, ResumeLeave, ShakeImageEnter , ShakeImageLeave , RotateIn} from '../../Animation/resume-animate';
 export function getProgressbarConfig(): ProgressbarConfig {
   return Object.assign(new ProgressbarConfig(), { animate: true, striped: true,  max: 100 });
 }
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'resume',
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.css'],
@@ -23,6 +24,13 @@ export function getProgressbarConfig(): ProgressbarConfig {
         useAnimation(ShakeImageEnter)
       ]), transition('enter=>leave', [
         useAnimation(ShakeImageLeave)
+      ])
+    ]),
+    trigger('Rotate', [
+      transition(':enter', [
+        useAnimation(RotateIn)
+      ]), transition(':leave', [
+        useAnimation(RotateIn)
       ])
     ])
   ]
