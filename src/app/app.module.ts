@@ -16,6 +16,7 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProgressbarModule } from 'ngx-bootstrap';
 import { ContactFormComponent } from './contact/contact-form/contact-form.component';
 import {DelayResolve} from './DelayResolve';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -38,6 +39,7 @@ const routes: Routes = [
     ContainerResumeComponent,
     ProjectCardComponent,
     ContactFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

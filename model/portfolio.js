@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 module.exports= mongoose.model('portfolio',{
+    userId:String,
     name:String,
     university : {
         param1:String,
@@ -50,6 +51,4 @@ module.exports= mongoose.model('portfolio',{
             duration:String
         }
     ],
-
-
    });

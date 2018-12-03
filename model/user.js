@@ -10,6 +10,7 @@ const schema = mongoose.Schema;
 var userSchema = new schema({
     username: String,
     password: String,
+    avatar:String,
     role:{type: String, required: true, default:'user'},
 });
 
