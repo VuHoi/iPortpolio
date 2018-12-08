@@ -4,6 +4,7 @@ var bcrypt = require('bcrypt');
 const saltRounds = 10;
 var db = require('../middlewares/db');
 var user = require('../model/user');
+
 module.exports = function (app) {
     // http get
     app.get('/api/user', (req, res) => {
@@ -33,12 +34,10 @@ module.exports = function (app) {
         });
         setTimeout(() => {
             user.create(User).then(() => {
-                res.json(User);
+                res.json(User.username);
                 if (error) {
                     return json(error);
                 } else {
-
-                    //    req.cookies.userId = user._id;
                     res.json("Ok");
                 }
 
@@ -47,13 +46,21 @@ module.exports = function (app) {
                     res.json(err)
                 })
         }, 500)
-        //nn
-
-
-
     })
 
-    //http put
+    // get  information for user 
+    app.post('/user/token', (req, res) => {
+        var token = req.body.token;
+        jwt.verify(token, db.secret, function (err, user) {
+            res.json({
+                username: user.username,
+                id: user.id,
+                role: user.role
+            });
+        })
+    })
+
+    //get  info of user by id 
     app.put('/api/user/:id', (req, res) => {
         var id = mongoose.Types.ObjectId(req.params.id);
         user.findOneAndUpdate({ _id: id }, req.body, { new: true }, function (err, product) {
@@ -67,7 +74,7 @@ module.exports = function (app) {
         });
 
     })
-    // http delete
+    // delete user by id 
     app.delete('/api/user/:id', (req, res) => {
         var id = mongoose.Types.ObjectId(req.params.id);
         user.remove({ _id: id }, (err, result) => {

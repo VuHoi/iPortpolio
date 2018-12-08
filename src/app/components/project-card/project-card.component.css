@@ -2,11 +2,11 @@
   background-size: cover;
   height: 528px;
   width: 632px;
-  background: url("../../assets/images/container3.png") no-repeat left center;
+  background: url("../../../assets/images/container3.png") no-repeat left center;
 }
 
 .backgroundProjectCard:hover{
-  background: url("../../assets/images/borderContainer3.png") no-repeat left center;
+  background: url("../../../assets/images/borderContainer3.png") no-repeat left center;
 }
 .rotateProjectCard{
   -ms-transform: rotate(2deg); /* IE 9 */
@@ -26,13 +26,13 @@
     background-size: cover;
     height: 428px;
     width: 512px;
-    background: url("../../assets/images/container3-mobi.png") no-repeat left center;
+    background: url("../../../assets/images/container3-mobi.png") no-repeat left center;
   }
   .backgroundProjectCard:hover{
     background-size: cover;
     height: 428px;
     width: 512px;
-    background: url("../../assets/images/borderContainer3-mobi.png") no-repeat left center;
+    background: url("../../../assets/images/borderContainer3-mobi.png") no-repeat left center;
   }
   .fontSizeIcon{
     font-size: 30px;

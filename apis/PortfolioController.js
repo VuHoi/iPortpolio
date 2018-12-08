@@ -17,7 +17,6 @@ module.exports = function (app) {
         portfolio.findOne({_id: id}).then(item=>{
             res.json(item);
         })
-
     });
 
     // http  post 
