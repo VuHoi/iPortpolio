@@ -1,6 +1,35 @@
 <div class="backgroundLogin ">
-  <div class="d-flex justify-content-center align-items-center h-100">
-    <div class="containerLogin">
+  <div class="d-flex justify-content-center align-items-center flex-column h-100">
+    <div class="backgroundHeader">
+      <div class="justify-content-center d-flex align-items-center thickLine  h-100">Welcome to Portfolio</div>
+    </div>
+    <div class="backgroundProjectCard">
+      <br /><br />
+      <div class="justify-content-center d-flex mt-5 thickLineLogin">Login</div>
+      <br />
+      <br />
+      <form class="mt-2">
+        <input placeholder="Username" />
+        <div class="min-height-50">
+          <small class="text-danger float-right">User invalid</small>
+        </div>
+        <input class="mt-2" placeholder="Password" />
+        <div class="min-height-50">
+          <small class="text-danger float-right">Password invalid</small>
+        </div>
+        <br />
+        <div class="d-flex align-items-center  w-100 ">
+          <div class="p-2">
+            <div class="d-flex align-items-start align-items-center " style="margin-left:-20px">
+              <input id="remember" type="checkbox"  name="remember" value="checked">
+              <label for="remember">
+                <small >Remember password</small>
+              </label>
+            </div>
+          </div>
+          <div class="p-2 ml-auto"><button class="btn btn-success" style="min-width:100px">Login</button></div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

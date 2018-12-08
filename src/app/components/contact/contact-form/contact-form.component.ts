@@ -3,6 +3,7 @@ import {transition, trigger, useAnimation} from '@angular/animations';
 import {ContactEnter, ContactLeave} from '../../Animation/contact-animate';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css'],

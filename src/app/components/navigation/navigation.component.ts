@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
   url: String;
   constructor(private router: Router) {
-    this.router.events.subscribe((route: any) => this.url = route.url?route.url:this.url);
+    this.router.events.subscribe((route: any) => this.url = route.url ? route.url : this.url);
   }
 
   active = '';

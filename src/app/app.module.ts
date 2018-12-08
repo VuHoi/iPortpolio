@@ -1,7 +1,9 @@
 import {BrowserModule, Title} from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import {AlertModule} from 'ngx-bootstrap';
 import {AppComponent} from './components/root/app.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
@@ -47,7 +49,10 @@ const routes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     AlertModule.forRoot(),
-    ProgressbarModule.forRoot()
+    ProgressbarModule.forRoot(),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     Title,

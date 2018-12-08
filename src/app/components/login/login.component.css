@@ -5,5 +5,48 @@
 
 .containerLogin{
     min-width:500px; min-height:500px;
-     background-color:red;
+    
 }
+.thickLine{
+    font: normal normal normal 2.5rem/1.2em Impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
+    color: gold;
+    white-space:nowrap;
+  }
+
+  .thickLineLogin{
+    font: normal normal normal 2rem/1.2em Impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
+    color: gold;
+    white-space:nowrap;
+  }
+  .backgroundHeader{
+    background-size: cover;
+    height: 130px;
+    width: 700px;
+    z-index: 10;
+    background: url("../../../assets/images/home1.png") no-repeat right center;
+  }
+
+  .backgroundProjectCard{
+    background-size: cover;
+    height: 528px;
+    width: 600px;
+    background: url("../../../assets/images/container2.png") no-repeat left center;
+  }
+
+  input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+  form{
+    width: 350px;
+    margin-left: 100px;
+  }
+  
+  .min-height-50{
+    min-height: 30px;
+  }
+
+ 

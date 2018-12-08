@@ -1,4 +1,4 @@
-import {  animate, animation, style, keyframes } from '@angular/animations';
+import { animate, animation, style, keyframes } from '@angular/animations';
 
 export let CardLeave = animation(
   animate('2000ms ease-out', keyframes([
@@ -14,14 +14,14 @@ export let CardEnter = animation(
 
 export let CardHoverEnter = animation(
   animate('1000ms ease-in', keyframes([
-    style({ opacity: 0,  transform: 'scale(0.7)' , offset: 0} ),
-    style({ opacity: 1,  transform: 'scale(1)' , offset: 0.5} )
+    style({ opacity: 0, transform: 'scale(0.7)', offset: 0 }),
+    style({ opacity: 1, transform: 'scale(1)', offset: 0.5 })
   ])));
 
 export let CardHoverLeave = animation(
   animate('1000ms ease-out', keyframes([
     style({ opacity: 1, transform: 'scale(1)', offset: 0 }),
-    style({ opacity: 0,  transform: 'scale(0.7)' , offset: 0.5} )
+    style({ opacity: 0, transform: 'scale(0.7)', offset: 0.5 })
   ])));
 
 export let CardProjectEnter = animation(

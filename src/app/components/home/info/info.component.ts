@@ -3,6 +3,7 @@ import {transition, trigger, useAnimation} from '@angular/animations';
 import {ButtonEnter, ButtonLeave, HomeEnter, HomeLeave} from '../../Animation/home-animate';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.css'],

@@ -3,6 +3,7 @@ import {CardEnter, CardLeave, CardHoverEnter , CardHoverLeave } from '../Animati
 import {transition, trigger, useAnimation} from '@angular/animations';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'info-card',
   templateUrl: './info-card.component.html',
   styleUrls: ['./info-card.component.css'],

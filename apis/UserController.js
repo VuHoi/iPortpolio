@@ -48,17 +48,7 @@ module.exports = function (app) {
         }, 500)
     })
 
-    // get  information for user 
-    app.post('/user/token', (req, res) => {
-        var token = req.body.token;
-        jwt.verify(token, db.secret, function (err, user) {
-            res.json({
-                username: user.username,
-                id: user.id,
-                role: user.role
-            });
-        })
-    })
+
 
     //get  info of user by id 
     app.put('/api/user/:id', (req, res) => {
@@ -114,7 +104,7 @@ module.exports = function (app) {
         });
     })
     //get user by token
-    app.get('/api/userid/', (req, res) => {
+    app.get('/user/token', (req, res) => {
         var token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
 
         var id = jwt.verify(token, db.secret, function (err, user) {
@@ -123,7 +113,11 @@ module.exports = function (app) {
         })
 
         user.findOne({ _id: id }).then(item => {
-            res.json(item);
+            res.json({
+                username: item.username,
+                id: item._id,
+                role: item.role
+            });
         })
     })
 

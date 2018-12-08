@@ -3,6 +3,7 @@ import {transition, trigger, useAnimation} from '@angular/animations';
 import {CardProjectEnter, CardHoverEnter, CardHoverLeave, CardLeave} from '../Animation/card-animate';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'project-card',
   templateUrl: './project-card.component.html',
   styleUrls: ['./project-card.component.css'],

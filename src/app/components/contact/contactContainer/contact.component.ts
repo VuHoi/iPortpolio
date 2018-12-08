@@ -17,13 +17,13 @@ export class ContactComponent implements OnInit {
     title: '',
     first_paragraph: '',
     second_paragraph: ''
-  }
+  };
 
   cardThree = {
     title: '',
     first_paragraph: '',
     second_paragraph: ''
-  }
+  };
   ngOnInit() {
   }
 
