@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +24,10 @@ export class LoginComponent implements OnInit {
     ])
   });
   username: String = '';
-  constructor() { }
+  password: String = '';
+  message: String = '';
+  remember = false;
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -34,6 +39,18 @@ export class LoginComponent implements OnInit {
   }
 
   login = () => {
-    console.log(this.getUsername);
+    const user: User = {
+      username: this.username,
+      password: this.password,
+      avatar: ''
+    };
+    this.userService.login(user).subscribe((res: any) => {
+      if (res.success) {
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('remember', this.remember.toString());
+      } else {
+        this.message = res.message;
+      }
+    });
   }
 }

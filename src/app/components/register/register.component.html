@@ -1,3 +1,63 @@
-<p>
-  register works!
-</p>
+<div class="backgroundLogin ">
+    <div class="d-flex justify-content-center align-items-center flex-column h-100">
+      <div class="backgroundHeader">
+        <div class="justify-content-center d-flex align-items-center thickLine  h-100">Welcome to Portfolio</div>
+      </div>
+      <div class="backgroundProjectCard">
+        <br /><br />
+        <div class="justify-content-center d-flex mt-5 thickLineLogin">Register</div>
+        <br />
+       
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div class="form-group">
+            <input placeholder="Username" formControlName="username" [(ngModel)]="username" name="username" type="text"
+               id="username" />
+            <div class="min-height-50">
+              <small class="text-danger float-right">
+                <div *ngIf="getUsername.pending">Checking for unique</div>
+                <div *ngIf="getUsername.touched && getUsername.invalid">
+                  <div *ngIf="getUsername.errors.required">Username is required</div>
+                  <div *ngIf="getUsername.errors.minlength">Username should minimum
+                    {{getUsername.errors.minlength.requiredLength}} characters</div>
+                  <div *ngIf="getUsername.errors.maxlength">Username should maximum
+                    {{getUsername.errors.maxlength.requiredLength}} characters</div>
+                </div>
+              </small>
+            </div>
+          </div>
+          <div class="form-group">
+            <input  formControlName="password" placeholder="Password" [(ngModel)]="password" type="password" name="password" id="password" >
+            <div class="min-height-50">
+                <small class="text-danger float-right">
+                    <div *ngIf="getPassword.pending">Checking for unique</div>
+                    <div *ngIf="getPassword.touched && getPassword.invalid">
+                      <div *ngIf="getPassword.errors.required">Password is required</div>
+                      <div *ngIf="getPassword.errors.minlength">Password should minimum
+                        {{getPassword.errors.minlength.requiredLength}} characters</div>
+                      <div *ngIf="getPassword.errors.maxlength">Password should maximum
+                        {{getPassword.errors.maxlength.requiredLength}} characters</div>
+                    </div>
+                  </small>
+            </div>
+          </div>
+          <div class="form-group">
+              <input  formControlName="confirmPassword"  compare="password"  placeholder="Confirm password" [(ngModel)]="confirmPassword" type="password" name="confirmPassword" id="confirmPassword">
+              <div class="min-height-50">
+                  <small class="text-danger float-right">
+                      <div *ngIf="getConfirmPassword.touched && getConfirmPassword.invalid" >
+                          <div *ngIf="getConfirmPassword.errors.required">Confirm password is required</div>
+                          <div *ngIf="getConfirmPassword.errors.compare">Confirm password not match</div>
+                          <div *ngIf="getConfirmPassword.errors.minlength">Confirm password should minimum 
+                            {{getConfirmPassword.errors.minlength.requiredLength}} characters</div>
+                      </div>
+                    </small>
+              </div>
+            </div>
+          <br />
+          <div class="text-center">
+            <input class="btn btn-success" style="min-width:100px" type="submit" value="Register"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

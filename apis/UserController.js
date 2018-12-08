@@ -83,9 +83,12 @@ module.exports = function (app) {
         var User = req.body;
         user.authenticate(User.username, User.password, function (error, user) {
             if (error || !user) {
-                var err = new Error('Wrong username or password.');
-                err.status = 401;
-                res.json(user);
+                var err = {
+                    message:'Wrong username or password.',
+                    success:false
+                };
+                
+                res.json(err);
             } else {
                 const payload = {
                     id: user._id,
@@ -96,7 +99,7 @@ module.exports = function (app) {
                     expiresIn: "2 days"
                 });
                 res.json({
-                    success: true,
+                    success:true,
                     token: token
                 });
                 //https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens

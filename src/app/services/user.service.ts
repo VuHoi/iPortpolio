@@ -18,7 +18,6 @@ export class UserService {
       map(res => res));
   }
   getCurrentUser = () => {
-
     return this.httpClient.get<User>('/api/user/token').pipe(
       map(res => res));
   }
