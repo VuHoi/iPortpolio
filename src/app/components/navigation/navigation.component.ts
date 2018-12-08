@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  url: String;
+  isShow: boolean;
   constructor(private router: Router) {
-    this.router.events.subscribe((route: any) => this.url = route.url ? route.url : this.url);
+    // tslint:disable-next-line:max-line-length
+    this.router.events.subscribe((route: any) => this.isShow = route.url ? route.url === '/login' || route.url === '/register' : this.isShow);
   }
 
   active = '';

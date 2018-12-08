@@ -9,26 +9,31 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     username: new FormControl('', [
-     Validators.required,
-     Validators.minLength(3),
-     Validators.maxLength(30),
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(30),
 
     ]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(5),
+      Validators.minLength(8),
       Validators.maxLength(30)
 
-     ])
+    ])
   });
+  username: String = '';
   constructor() { }
 
   ngOnInit() {
   }
   get getUsername() {
-    return  this.loginForm.get('username');
-   }
-   get getPassword() {
-    return  this.loginForm.get('password');
-   }
+    return this.loginForm.get('username');
+  }
+  get getPassword() {
+    return this.loginForm.get('password');
+  }
+
+  login = () => {
+    console.log(this.getUsername);
+  }
 }
