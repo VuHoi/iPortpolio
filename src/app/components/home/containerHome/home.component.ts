@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'home',
@@ -7,8 +8,10 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(public titleService: Title) {
-    titleService.setTitle('iPortpolio(Home)');
+  constructor(public titleService: Title, private route: ActivatedRoute) {
+    this.username = this.route.snapshot.paramMap.get('name');
+    localStorage.setItem('baseurl', this.username);
+    titleService.setTitle(`${this.username} - Home`);
   }
   cardOne = {
     title: 'University',
@@ -47,6 +50,7 @@ export class HomeComponent implements OnInit {
     second_paragraph: 'I can become a composer. I have compose 10 song and published on my SoundClound ' +
       'If you want to following me , feel free to contact me . I  very happy to meet you.'
   };
+  username  = '';
   ngOnInit() {
   }
 }

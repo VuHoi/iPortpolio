@@ -23,9 +23,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { CompareValidatorDirective } from './shares/compare-validator.directive';
 const routes: Routes = [
   { path: '', redirectTo: 'uitgroup/home', pathMatch: 'full' },
-  { path: ':name/home', component: HomeComponent, data: { title: 'home' } },
+  { path: ':name/home', component: HomeComponent, data: { title: 'home' } , resolve: [DelayResolve]  },
   { path: ':name/resume', component: ContainerResumeComponent, resolve: [DelayResolve] },
-  { path: ':name/contact', component: ContactComponent },
+  { path: ':name/contact', component: ContactComponent , resolve: [DelayResolve]  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: 'uitgroup/home' },

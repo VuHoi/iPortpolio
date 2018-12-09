@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(public titleService: Title, private route: ActivatedRoute) {
+    this.username = this.route.snapshot.paramMap.get('name');
+    localStorage.setItem('baseurl', this.username);
+    titleService.setTitle(`${this.username} - Contact`);
+  }
   cardOne = {
     title: '',
     first_paragraph: '',
@@ -24,6 +30,7 @@ export class ContactComponent implements OnInit {
     first_paragraph: '',
     second_paragraph: ''
   };
+  username  = '';
   ngOnInit() {
   }
 

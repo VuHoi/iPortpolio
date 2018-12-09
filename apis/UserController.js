@@ -23,7 +23,6 @@ module.exports = function (app) {
         user.findOne({ _id: id }).then(item => {
             res.json(item);
         })
-
     });
 
     //http post

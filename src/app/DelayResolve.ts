@@ -9,6 +9,6 @@ export class DelayResolve implements Resolve<Observable<any>> {
   }
 
   resolve(): any {
-    return  of(null).pipe(delay(0));
+    return  of(null).pipe(delay(100));
   }
 }

@@ -9,16 +9,19 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
   isShow: boolean;
   constructor(private router: Router) {
-    // tslint:disable-next-line:max-line-length
-    this.router.events.subscribe((route: any) => this.isShow = route.url ? route.url === '/login' || route.url === '/register' : this.isShow);
+    this.name = localStorage.getItem('baseurl') ? localStorage.getItem('baseurl') : this.name;
+    this.router.events.subscribe((param: any) =>
+      this.isShow = param.url ? param.url === '/login' || param.url === '/register' : this.isShow);
   }
 
   active = '';
-
+  name = '';
   ngOnInit() {
   }
 
   ActivedRoute = (state) => {
     this.active = state;
+    this.name = localStorage.getItem('baseurl') ? localStorage.getItem('baseurl') : this.name;
+    this.router.navigate([this.name, state]);
   }
 }
