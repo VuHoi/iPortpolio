@@ -3,33 +3,33 @@ var mongoose = require('mongoose');
 module.exports= mongoose.model('portfolio',{
     userId:String,
     name:String,
-    university : {
-        param1:String,
-        param2:String
-    },
-    hometown : {
-        param1:String,
-        param2:String
-    },
-    Hobbies : {
-        param1:String,
-        param2:String
-    },
+    // university : {
+    //     param1:String,
+    //     param2:String
+    // },
+    // hometown : {
+    //     param1:String,
+    //     param2:String
+    // },
+    // hobbies : {
+    //     param1:String,
+    //     param2:String
+    // },
     profile : String,
     address : String,
     email : String,
     otherLink : String,
     phone : String,
-    whoIam : {
-        param1:String,
-        param2:String,
-        param3:String
-    },
-    skill_summary : {
-        param1:String,
-        param2:String,
-        param3:String
-    },
+    // whoIam : {
+    //     param1:String,
+    //     param2:String,
+    //     param3:String
+    // },
+    // skill_summary : {
+    //     param1:String,
+    //     param2:String,
+    //     param3:String
+    // },
     education : [
         {
             position:String,
@@ -37,10 +37,10 @@ module.exports= mongoose.model('portfolio',{
             duration:String
         }
     ],
-    skills : {
+    skills : [{
         title:String,
         process:Number
-    },
+    }],
     expertise : [String],
     experiences : [
         {
@@ -48,7 +48,7 @@ module.exports= mongoose.model('portfolio',{
             position :[String],
             address:String,
             name:String,
-            duration:String
+            duration:String,
         }
     ],
    });

@@ -13,7 +13,6 @@ module.exports = function (app) {
      // http get by id
      app.get('/api/information/:id', (req, res) => {
         var id = mongoose.Types.ObjectId(req.params.id);
-      
         portfolio.findOne({_id: id}).then(item=>{
             res.json(item);
         })
@@ -23,7 +22,6 @@ module.exports = function (app) {
     app.post('/api/information', (req, res) => {
         var Portfolio = req.body;
         portfolio.create(Portfolio).then(() => {
-            console.log(Portfolio)
             res.json(Portfolio)
         })
         .catch((err) => {

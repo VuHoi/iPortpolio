@@ -7,7 +7,8 @@ var MongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
 var portfolio = require('./apis/PortfolioController');
 var user = require('./apis/UserController');
-var contact = require('./apis/ContactController')
+var contact = require('./apis/ContactController');
+var home = require('./apis/HomeController')
 var dbConfig=require('./middlewares/db');
 const app = express();
 
@@ -24,10 +25,11 @@ app.use(cookieParser());
 
 //confiure router api
 app.all('/*', configRoute);
-app.all('/api/*', [require('./middlewares/validateRequest')]);
+// app.all('/api/*', [require('./middlewares/validateRequest')]);
 portfolio(app);
 user(app);
 contact(app);
+home(app);
 app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname,'/dist/iPortfolio/index.html'));
 });
