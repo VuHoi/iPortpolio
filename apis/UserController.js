@@ -99,7 +99,8 @@ module.exports = function (app) {
                 });
                 res.json({
                     success:true,
-                    token: token
+                    token: token,
+                    username: user.username
                 });
                 //https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens
             }

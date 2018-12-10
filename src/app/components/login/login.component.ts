@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
   password: String = '';
   message: String = '';
   remember = false;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -48,6 +49,7 @@ export class LoginComponent implements OnInit {
       if (res.success) {
         localStorage.setItem('token', res.token);
         localStorage.setItem('remember', this.remember.toString());
+        this.router.navigate([res.username, 'home']);
       } else {
         this.message = res.message;
       }

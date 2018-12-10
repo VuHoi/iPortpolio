@@ -10,7 +10,7 @@ export interface Home {
         param1: String,
         param2: String
     };
-    Hobbies: {
+    hobbies: {
         param1: String,
         param2: String
     };
