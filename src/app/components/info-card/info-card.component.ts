@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CardEnter, CardLeave, CardHoverEnter, CardHoverLeave } from '../Animation/card-animate';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { SharedService } from 'src/app/shares/SharedService';
@@ -29,6 +29,7 @@ import { Info } from 'src/app/models/info';
 export class InfoCardComponent implements OnInit {
   @Input() title: string;
   @Input() info: Info;
+  @Output() infoChange = new EventEmitter();
   isModify = false;
   stateHover = 'leave';
   constructor(private shareService: SharedService) {
@@ -37,7 +38,9 @@ export class InfoCardComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  changeValueInput() {
+    this.infoChange.emit(this.info);
+  }
   togleStateAnimation(state) {
     this.stateHover = state;
   }

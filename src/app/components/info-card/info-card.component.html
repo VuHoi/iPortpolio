@@ -11,8 +11,8 @@
         <p>{{info?.param2}}</p>
       </div>
       <div *ngIf="isModify">
-        <textarea class="form-control minHeight200"  name="param1" placeholder="Title" [(ngModel)]="info.param1"></textarea>
-        <textarea class="form-control minHeight100" name="param2" placeholder="Title" [(ngModel)]="info.param2"></textarea>
+        <textarea class="form-control minHeight200"  name="param1" (ngModelChange)="changeValueInput()" placeholder="Title" [(ngModel)]="info.param1"></textarea>
+        <textarea class="form-control minHeight100" name="param2" (ngModelChange)="changeValueInput()" placeholder="Title" [(ngModel)]="info.param2"></textarea>
       </div>
     </div>
   </form>

@@ -17,6 +17,16 @@ export class HomeComponent implements OnInit {
     private portfolio: PortfolioService) {
     this.username = this.route.snapshot.paramMap.get('name');
     localStorage.setItem('baseurl', this.username);
+    this.home = {
+      university: { param1: '', param2: '' },
+      hobbies: { param1: '', param2: '' },
+      hometown: { param1: '', param2: '' },
+      name: '',
+      skill_summary: { param1: '', param2: '', param3: '' },
+      slug: '',
+      userId: '',
+      whoIam: { param1: '', param2: '', param3: '' }
+    };
     this.portfolio.getHomeDataByName(this.username).subscribe((data: Home) => {
       this.home = data;
       titleService.setTitle(`${data.name} - Home`);
@@ -24,5 +34,8 @@ export class HomeComponent implements OnInit {
   }
   username = '';
   ngOnInit() {
+  }
+  test() {
+    console.log(this.home.university);
   }
 }
