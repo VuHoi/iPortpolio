@@ -17,8 +17,10 @@ export class HomeComponent implements OnInit {
     private portfolio: PortfolioService) {
     this.username = this.route.snapshot.paramMap.get('name');
     localStorage.setItem('baseurl', this.username);
-    titleService.setTitle(`${this.username} - Home`);
-    this.portfolio.getHomeDataByName(this.username).subscribe((data: Home) => this.home = data);
+    this.portfolio.getHomeDataByName(this.username).subscribe((data: Home) => {
+      this.home = data;
+      titleService.setTitle(`${data.name} - Home`);
+    });
   }
   username = '';
   ngOnInit() {

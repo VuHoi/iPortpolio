@@ -1,6 +1,7 @@
 export interface Home {
     userId: String;
     name: String;
+    slug: String;
     university: {
         param1: String,
         param2: String

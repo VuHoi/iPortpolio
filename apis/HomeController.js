@@ -18,9 +18,9 @@ module.exports = function (app) {
         })
     });
     // get home by name 
-    app.get('/home/name/:name', (req, res) => {
-        var name = req.params.name;
-        home.findOne({ name: name }).then(item => {
+    app.get('/home/name/:slug', (req, res) => {
+        var slug = req.params.slug;
+        home.findOne({ slug: slug }).then(item => {
             res.json(item);
         })
     });

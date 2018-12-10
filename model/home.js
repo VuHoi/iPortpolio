@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 module.exports= mongoose.model('home',{
     userId:String,
     name:String,
+    slug: String,
     university : {
         param1:String,
         param2:String

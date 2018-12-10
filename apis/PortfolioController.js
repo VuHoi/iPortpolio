@@ -18,9 +18,9 @@ module.exports = function (app) {
         })
     });
     // http get by name
-    app.get('/information/name/:name', (req, res) => {
-        var name = req.params.name;
-        portfolio.findOne({ name: name }).then(item => {
+    app.get('/information/name/:slug', (req, res) => {
+        var slug = req.params.slug;
+        portfolio.findOne({ slug: slug }).then(item => {
             res.json(item);
         })
     });

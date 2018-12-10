@@ -1,17 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Portfolio } from 'src/app/models/portfolio';
 @Component({
   selector: 'app-container-resume',
   templateUrl: './container-resume.component.html',
   styleUrls: ['./container-resume.component.css']
 })
 export class ContainerResumeComponent implements OnInit {
-
-  constructor(public titleService: Title, private route: ActivatedRoute) {
+  info: Portfolio;
+  constructor(
+    public titleService: Title,
+    private route: ActivatedRoute,
+    private portfolio: PortfolioService) {
     this.username = this.route.snapshot.paramMap.get('name');
     localStorage.setItem('baseurl', this.username);
-    titleService.setTitle(`${this.username} - Resume`);
+    this.portfolio.getResumeDataByName(this.username).subscribe((data: Portfolio) => {
+      console.log(data);
+      titleService.setTitle(`${data.name} - Resume`);
+    });
   }
 
   projectOne = {
@@ -37,7 +45,7 @@ export class ContainerResumeComponent implements OnInit {
       'devicon-git-plain '
     ]
   };
-  username  = '';
+  username = '';
   ngOnInit() {
   }
 

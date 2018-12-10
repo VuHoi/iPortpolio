@@ -1,6 +1,7 @@
 export interface Portfolio {
     userId: String;
     name: String;
+    slug: String;
     profile: String;
     address: String;
     email: String;
