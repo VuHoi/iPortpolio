@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {CardEnter, CardLeave, CardHoverEnter , CardHoverLeave } from '../Animation/card-animate';
-import {transition, trigger, useAnimation} from '@angular/animations';
+import { Component, Input, OnInit } from '@angular/core';
+import { CardEnter, CardLeave, CardHoverEnter, CardHoverLeave } from '../Animation/card-animate';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { SharedService } from 'src/app/shares/SharedService';
+import { Info } from 'src/app/models/info';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -26,10 +28,11 @@ import {transition, trigger, useAnimation} from '@angular/animations';
 })
 export class InfoCardComponent implements OnInit {
   @Input() title: string;
-  @Input() first_paragraph: string;
-  @Input() second_paragraph: string;
+  @Input() info: Info;
+  isModify = false;
   stateHover = 'leave';
-  constructor() {
+  constructor(private shareService: SharedService) {
+    this.shareService.getMessage().subscribe(data => this.isModify = data);
   }
 
   ngOnInit() {

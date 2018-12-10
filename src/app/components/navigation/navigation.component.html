@@ -1,16 +1,18 @@
-<div *ngIf="!isShow" class="backgroundHeader">
-  <div class="d-inline-block w-100 ">
-    <a [ngClass]="{'activeRoute' :active==='contact'}" (click)="ActivedRoute('contact')" class="float-right mt-5 ml-10 mr-5 h3 font-weight-bold"
-      >
-      Contact
-    </a>
-    <a [ngClass]="{'activeRoute' :active==='resume'}" (click)="ActivedRoute('resume')" class="float-right mt-5  ml-10  h3 font-weight-bold"
-      >
-      Resume
-    </a>
-    <a [ngClass]="{'activeRoute' :active==='home'}" (click)="ActivedRoute('home')" class="float-right mt-5  ml-10  h3 font-weight-bold"
-      >
-      Home
-    </a>
+<div *ngIf="!isShow">
+  <div>
+    <button class="btn btn-outline-success float-right" (click)="modifyPortfolio()">Edit</button>
+  </div>
+  <div class="backgroundHeader">
+    <div class="d-inline-block w-100 ">
+      <a [ngClass]="{'activeRoute' :active==='contact'}" (click)="ActivedRoute('contact')" class="float-right mt-5 ml-10 mr-5 h3 font-weight-bold">
+        Contact
+      </a>
+      <a [ngClass]="{'activeRoute' :active==='resume'}" (click)="ActivedRoute('resume')" class="float-right mt-5  ml-10  h3 font-weight-bold">
+        Resume
+      </a>
+      <a [ngClass]="{'activeRoute' :active==='home'}" (click)="ActivedRoute('home')" class="float-right mt-5  ml-10  h3 font-weight-bold">
+        Home
+      </a>
+    </div>
   </div>
 </div>

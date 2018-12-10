@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/shares/SharedService';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'navigation',
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
   isShow: boolean;
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private shareService: SharedService) {
     this.name = localStorage.getItem('baseurl') ? localStorage.getItem('baseurl') : this.name;
     this.router.events.subscribe((param: any) =>
       this.isShow = param.url ? param.url === '/login' || param.url === '/register' : this.isShow);
@@ -16,6 +19,7 @@ export class NavigationComponent implements OnInit {
 
   active = '';
   name = '';
+  isModify = false;
   ngOnInit() {
   }
 
@@ -23,5 +27,9 @@ export class NavigationComponent implements OnInit {
     this.active = state;
     this.name = localStorage.getItem('baseurl') ? localStorage.getItem('baseurl') : this.name;
     this.router.navigate([this.name, state]);
+  }
+  modifyPortfolio() {
+    this.isModify = !this.isModify;
+    this.shareService.sendMessage(this.isModify);
   }
 }
