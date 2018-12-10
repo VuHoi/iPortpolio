@@ -11,6 +11,7 @@ import { Home } from 'src/app/models/home';
 })
 export class HomeComponent implements OnInit {
   home: Home;
+  username = '';
   constructor(
     public titleService: Title,
     private route: ActivatedRoute,
@@ -32,10 +33,8 @@ export class HomeComponent implements OnInit {
       titleService.setTitle(`${data.name} - Home`);
     });
   }
-  username = '';
   ngOnInit() {
   }
   test() {
-    console.log(this.home.university);
   }
 }
