@@ -6,6 +6,7 @@ export interface Portfolio {
     email: String;
     otherLink: String;
     phone: String;
+    department: String;
     education: [
         {
             position: String,

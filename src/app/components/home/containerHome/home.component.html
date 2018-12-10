@@ -1,20 +1,13 @@
-<div class="position" >
-  <info class="positionInfo"></info>
-  <info-card class="positionCard1" title={{cardOne.title}}
-             first_paragraph={{cardOne.first_paragraph}}
-             second_paragraph={{cardOne.second_paragraph}}>
+<div class="position">
+  <info class="positionInfo" [home]="home"></info>
+  <info-card class="positionCard1" title="University" [first_paragraph]="home?.university?.param1" [second_paragraph]="home?.university?.param2">
   </info-card>
-  <info-card class="positionCard2"  title={{cardTwo.title}}
-             first_paragraph={{cardTwo.first_paragraph}}
-             second_paragraph={{cardTwo.second_paragraph}}>
+  <info-card class="positionCard2" title="Hometown" [first_paragraph]="home?.hometown?.param1" [second_paragraph]="home?.hometown?.param2">
   </info-card>
-  <info-card class="positionCard3" title={{cardThree.title}}
-             first_paragraph={{cardThree.first_paragraph}}
-             second_paragraph={{cardThree.second_paragraph}}>
+  <info-card class="positionCard3" title="Hobbies" [first_paragraph]="home?.hobbies?.param1" [second_paragraph]="home?.hobbies?.param2">
   </info-card>
-  <img class="positionPin" alt="pin" src="../../../assets/images/pin2.png"/>
-  <img class="positionPin2" alt="pin2" src="../../../assets/images/pin2.png"/>
-  <img class="positionPin3" alt="pin3" src="../../../assets/images/pin2.png"/>
-  <img class="positionPin4" alt="pin4" src="../../../assets/images/pin1.png"/>
+  <img class="positionPin" alt="pin" src="../../../assets/images/pin2.png" />
+  <img class="positionPin2" alt="pin2" src="../../../assets/images/pin2.png" />
+  <img class="positionPin3" alt="pin3" src="../../../assets/images/pin2.png" />
+  <img class="positionPin4" alt="pin4" src="../../../assets/images/pin1.png" />
 </div>
-

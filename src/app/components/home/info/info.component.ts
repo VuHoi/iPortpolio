@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {transition, trigger, useAnimation} from '@angular/animations';
-import {ButtonEnter, ButtonLeave, HomeEnter, HomeLeave} from '../../Animation/home-animate';
+import { Component, OnInit, Input } from '@angular/core';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { HomeEnter, HomeLeave } from '../../Animation/home-animate';
+import { Home } from 'src/app/models/home';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -21,7 +22,7 @@ import {ButtonEnter, ButtonLeave, HomeEnter, HomeLeave} from '../../Animation/ho
 export class InfoComponent implements OnInit {
 
   constructor() { }
-
+  @Input() home: Home;
   ngOnInit() {
   }
 
