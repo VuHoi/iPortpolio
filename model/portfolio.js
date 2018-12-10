@@ -9,6 +9,7 @@ module.exports = mongoose.model('portfolio', {
     email: String,
     otherLink: String,
     phone: String,
+    department: String,
     education: [
         {
             position: String,

@@ -17,8 +17,8 @@ export class ContainerResumeComponent implements OnInit {
     this.username = this.route.snapshot.paramMap.get('name');
     localStorage.setItem('baseurl', this.username);
     this.portfolio.getResumeDataByName(this.username).subscribe((data: Portfolio) => {
-      console.log(data);
       titleService.setTitle(`${data.name} - Resume`);
+      this.info = data;
     });
   }
 

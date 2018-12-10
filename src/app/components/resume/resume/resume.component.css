@@ -116,6 +116,7 @@
 .expertise{
   letter-spacing: 0.2em;
   line-height: 2.2rem;
+  text-align: center;
 }
 .font{
   font: normal normal normal 35px/1.2em Roboto;

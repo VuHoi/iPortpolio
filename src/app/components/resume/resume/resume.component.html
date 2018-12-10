@@ -4,15 +4,12 @@
     <br>
     <div class="pos-f-t">
       <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" 
-                data-toggle="collapse" 
-                data-target="#navbarToggleExternalContent" 
-                aria-controls="navbarToggleExternalContent" 
-                aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" title="Menu"></span>
         </button>
       </nav>
-        
+
       <!-- <div class="collapse show" id="navbarToggleExternalContent"> -->
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-1 pl-5">
@@ -24,7 +21,7 @@
             </li>
             <li class="nav-item" style="font-size: 20px">
               <a class="nav-link link text-white" routerLink="/resume">
-                  <i class="fa fa-play" style="font-size: 18px"></i> Resume
+                <i class="fa fa-play" style="font-size: 18px"></i> Resume
               </a>
             </li>
             <li class="nav-item" style="font-size: 20px">
@@ -43,8 +40,8 @@
     <div class="boxTitle">
       <div class="borderBox">
         <div class="d-flex align-items-center justify-content-center flex-column">
-          <h3 class="font">Vũ Khắc Hợi</h3>
-          <h3 class="fontSmall">K.T.P.M - 2015</h3>
+          <h3 class="font">{{info?.name}}</h3>
+          <h3 class="fontSmall">{{info?.department}}</h3>
         </div>
       </div>
     </div>
@@ -57,41 +54,31 @@
       <div class="text-center mr-5 ml-5 border-bottom hiddenProfile">
         <h4 class="colorTitle ">PROFILE</h4>
       </div>
-      <div class="pl-3 pr-3 pt-1 text-center hiddenProfile">
-        I'm a fourth of year student at
-        University Of Infomation Technology,
-        with good knowledge of Object
-        Oriented Analysis and Design,
-        Database Design. Learning new l
-        anguages and technologies is what
-        I am passionate about.
-      </div>
+      <div class="pl-3 pr-3 pt-1 text-center hiddenProfile">{{info?.profile}} </div>
     </div>
     <div class="w-33 d-flex align-items-center justify-content-center">
-      <img class="rounded-circle" src="../../../assets/images/me.png" alt="me"
-           [@Shake]="stateHover"
-           (mouseenter)="togleStateAnimation('enter')"
-           (mouseleave)="togleStateAnimation('leave')">
+      <img class="rounded-circle" src="../../../assets/images/me.png" alt="me" [@Shake]="stateHover" (mouseenter)="togleStateAnimation('enter')"
+        (mouseleave)="togleStateAnimation('leave')">
     </div>
 
     <div class="w-33">
       <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
-        <div class="mt-2">56 Tan Lap, Di An </div>
+        <div class="mt-2">{{info?.address}} </div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-home" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-home" aria-hidden="true"></i></div>
       </div>
       <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
-        <div class="mt-2">toilahoi007@gmail.com</div>
+        <div class="mt-2">{{info?.email}}</div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
       </div>
       <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
-        <div class="mt-2">github.com/hoideptrai</div>
+        <div class="mt-2">{{info?.otherLink}}</div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-television" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto center2 iconhidden2"><i class="fa fa-television" aria-hidden="true"></i></div>
       </div>
       <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
-        <div class="mt-2">0365 240 627</div>
+        <div class="mt-2">{{info?.phone}}</div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-mobile" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto center iconhidden2"><i class="fa fa-mobile" aria-hidden="true"></i></div>
       </div>
@@ -105,15 +92,7 @@
         <div class="text-center mr-5 ml-5 border-bottom">
           <h4 class="colorTitle ">PROFILE</h4>
         </div>
-        <div class="pl-3 pr-3 pt-1 text-center">
-          I'm a fourth of year student at
-          University Of Infomation Technology,
-          with good knowledge of Object
-          Oriented Analysis and Design,
-          Database Design. Learning new l
-          anguages and technologies is what
-          I am passionate about.
-        </div>  
+        <div class="pl-3 pr-3 pt-1 text-center">{{info?.profile}} </div>
       </div>
     </div>
   </div>
@@ -123,7 +102,7 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
-          <div class="mt-2">56 Tan Lap, Di An </div>
+          <div class="mt-2">{{info?.address}}</div>
           <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-home" aria-hidden="true"></i></div>
           <div class="posibleFix ml-auto iconhidden2" @Rotate><i class="fa fa-home" aria-hidden="true"></i></div>
         </div>
@@ -133,7 +112,7 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
-          <div class="mt-2">toilahoi007@gmail.com</div>
+          <div class="mt-2">{{info?.email}}</div>
           <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
           <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
         </div>
@@ -143,7 +122,7 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
-          <div class="mt-2">github.com/hoideptrai</div>
+          <div class="mt-2">{{info?.otherLink}}</div>
           <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-television" aria-hidden="true"></i></div>
           <div class="posibleFix ml-auto center2 iconhidden2"><i class="fa fa-television" aria-hidden="true"></i></div>
         </div>
@@ -153,14 +132,14 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
-          <div class="mt-2">0365 240 627</div>
+          <div class="mt-2">{{info?.phone}}</div>
           <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-mobile" aria-hidden="true"></i></div>
           <div class="posibleFix ml-auto center iconhidden2"><i class="fa fa-mobile" aria-hidden="true"></i></div>
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="d-flex justify-content-between mt-5">
     <div class="w-33 mt-5 border-bottom border-right ">
       <div class="box d-flex align-items-center justify-content-center">
@@ -175,76 +154,29 @@
       <div class="d-flex">
         <div class="lineVehical ml-auto "></div>
       </div>
-      <div class="text-center mt-3">
-        <div class="font-weight-bold">FRONT-END DEVELOPER</div>
-        <div>TMA Solutions</div>
-        <div>2018-now</div>
+      <div *ngFor="let education of info?.education; let i=index">
+        <div class="text-center mt-3" [class.mgtmb]="i!==0">
+          <div class="font-weight-bold">{{education.position}}</div>
+          <div>{{education.name}}</div>
+          <div>{{education.duration}}</div>
+        </div>
       </div>
-      <div class="text-center mt-3 mgtmb">
-        <div class="font-weight-bold fontminmobile hiddenAndroid">ANDROID INTERNSHIP</div>
-        <div class="font-weight-bold fontminmobile hiddenAndroid2">ANDROID</div>
-        <div class="font-weight-bold fontminmobile hiddenAndroid2">INTERNSHIP</div>
-        <div>NKS company</div>
-        <div>2017-2018</div>
-      </div>
-      <div class="text-center mt-3 mb-3 mgtmb">
-        <div class="font-weight-bold fontminmobile">STUDENT HERE</div>
-        <div>UIT University</div>
-        <div>2015-2020</div>
-      </div>
+
     </div>
     <div class="w-33 d-flex flex-column border-bottom">
       <div class="box d-flex align-items-center justify-content-center alert-info">
         <h4 class="colorTitle ">SKILLS</h4>
       </div>
-      <div class="row mt-3 pt-3 pb-2 pr-2 pl-2">
+      <br />
+      <div class="row  pt-3 pb-2 pr-2 pl-2" *ngFor="let skill of info?.skills">
         <div class="col-md-5">
-          <div>ASP.net core</div>
+          <div>{{skill.title}}</div>
         </div>
         <div class="col-md-7">
-          <progressbar class="progress-striped active" [value]="80" type="info"><i>80 / 100</i></progressbar>
+          <progressbar class="progress-striped active" [value]="skill.process" type="info"><i>{{skill.process}} / 100</i></progressbar>
         </div>
       </div>
-      <div class="row pt-3 pb-2 pr-2 pl-2">
-        <div class="col-md-5">
-          <div>ReactJS</div>
-        </div>
-        <div class="col-md-7">
-          <progressbar class="progress-striped active" [value]="80" type="info"><i>80 / 100</i></progressbar>
-        </div>
-      </div>
-      <div class="row pt-3 pb-2 pr-2 pl-2">
-        <div class="col-md-5">
-          <div>Angular6</div>
-        </div>
-        <div class="col-md-7">
-          <progressbar class="progress-striped active" [value]="80" type="info"><i>80 / 100</i></progressbar>
-        </div>
-      </div>
-      <div class="row pt-3 pb-2 pr-2 pl-2">
-        <div class="col-md-5">
-          <div>PhotoshopCC</div>
-        </div>
-        <div class="col-md-7">
-          <progressbar class="progress-striped active" [value]="80" type="info"><i>80 / 100</i></progressbar>
-        </div>
-      </div>
-      <div class="row pt-3 pb-2 pr-2 pl-2">
-        <div class="col-md-5">
-          <div>Algorithm</div>
-        </div>
-        <div class="col-md-7">
-          <progressbar class="progress-striped active" [value]="80" type="info"><i>80 / 100</i></progressbar>
-        </div>
-      </div>
-      <div class="row pt-3 pb-2 pr-2 pl-2">
-        <div class="col-md-5">
-          <div>OOP</div>
-        </div>
-        <div class="col-md-7">
-          <progressbar class="progress-striped active" [value]="80" type="info"><i>80 / 100</i></progressbar>
-        </div>
-      </div>
+
       <div class="box2 d-flex align-items-center justify-content-center alert-info mt-auto magrin-bottom-20px">
         <h4 class="colorTitle ">EXPERIENCE</h4>
       </div>
@@ -263,128 +195,31 @@
       <div class="d-flex">
         <div class="lineVehical mr-auto "></div>
       </div>
-      <div class="hiddenExpertise">
+      <div>
         <div class="d-flex align-items-center justify-content-center flex-column mt-3 fontminmobile">
-          <div class="expertise">WEB DESIGN</div>
-          <div class="expertise">PROJECT DESIGN</div>
-          <div class="expertise">DATABASE DESIGN</div>
-          <div class="expertise hiddentestmobile">OBJECT ORIENTED ANALYSIS</div>
-          <div class="expertise hiddentestmobile2">ORIENTED ANALYSIS</div>
-          <div class="expertise">REPORT WRITING</div>
-          <div class="expertise">HTML5 & CSS3</div>
-          <div class="expertise">QUALITY CONTROL</div>
-        </div>
-      </div>
-      <div class="hiddenExpertise2">
-        <div class="d-flex align-items-center justify-content-center flex-column mt-3 fontminmobile">
-          <div class="expertise lineHeightmb lineHeightmb2 mgt">WEB DESIGN</div>
-          <div class="expertise lineHeightmb lineHeightmb3 mgt">WEB</div>
-          <div class="expertise lineHeightmb lineHeightmb3">DESIGN</div>
-          <div class="expertise">PROJECT</div>
-          <div class="expertise lineHeightmb">DESIGN</div>
-          <div class="expertise">DATABASE</div>
-          <div class="expertise lineHeightmb">DESIGN</div>
-          <div class="expertise">ORIENTED</div>
-          <div class="expertise lineHeightmb">ANALYSIS</div>
-          <div class="expertise">REPORT</div>
-          <div class="expertise lineHeightmb">WRITING</div>
-          <div class="expertise">HTML5</div>
-          <div class="expertise lineHeightmb">CSS3</div>
-          <div class="expertise">QUALITY</div>
-          <div class="expertise lineHeightmb">CONTROL</div>
+          <div class="expertise" *ngFor="let expertise of info?.expertise">{{expertise}}</div>
         </div>
       </div>
 
+
     </div>
 
   </div>
-  <div class="row ml-4 mr-4 mt-5">
+  <div class="row ml-4 mr-4 mt-5" *ngFor="let experience of info?.experiences">
     <div class="col-md-9 ">
-      <h4 class="colorTitle">Front-End Developer</h4>
-      <p>
-        TMA Solutions is a privately owned software outsourcing company
-        of Vietnam, with headquarters in Ho Chi Minh city Vietnam and other
-        offices in Canada, United States, Ireland, Australia. TMA Solutions is
-        one of the largest offshore software providers in Vietnam. At here. I can
-      </p>
-      <div class="ml-5">
+      <h4 class="colorTitle">{{experience.name}}</h4>
+      <p>{{experience.discription}} </p>
+      <div class="ml-5" *ngFor="let position of experience.position">
         <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
+        {{position}}
       </div>
-      <div class="ml-5">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
-      </div>
-      <div class="ml-5">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
-      </div>
+
     </div>
     <div class="col-md-3 mt-5 pr-3 alert-info d-flex align-items-center justify-content-center flex-column">
-      <div>TMA Solutions</div>
-      <div>Quang Trung <span class="linedown">Software</span></div>
-      <div>2018-now</div>
+      <div>{{experience.name}}</div>
+      <div>{{experience.address}}</div>
+      <div>{{experience.duration}}</div>
     </div>
   </div>
-  <div class="row ml-4 mr-4 mt-5">
-    <div class="col-md-9 ">
-      <h4 class="colorTitle">Android Internship</h4>
-      <p>
-        TMA Solutions is a privately owned software outsourcing company
-        of Vietnam, with headquarters in Ho Chi Minh city Vietnam and other
-        offices in Canada, United States, Ireland, Australia. TMA Solutions is
-        one of the largest offshore software providers in Vietnam. At here. I can
-      </p>
-      <div class="ml-5">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
-      </div>
-      <div class="ml-5">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
-      </div>
-      <div class="ml-5">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
-      </div>
-    </div>
-    <div class="col-md-3 mt-5 pr-3 alert-info d-flex align-items-center justify-content-center flex-column">
-      <div>NKS company</div>
-      <div>District 3 HCM</div>
-      <div> 2017-2018</div>
-    </div>
-  </div>
-
-  <div class="row ml-4 mr-4 mt-5">
-    <div class="col-md-9 hiddenrow">
-      <h4 class="colorTitle">IShop</h4>
-      <p>
-        It is a  E-commerce  website that I make a year ago. It was my first website when I decided 
-        to switch from major to programming software through website programming. I started with the 
-        front end as angular 4. It requires me to learn a lot of background knowledge of a front end 
-        developer such as html css javascript. I have learned very seriously to overcome this difficulty. 
-        And in this website I just stop being a front end developer and get involved in design database 
-        work with the back end',On this site I use angular4, ASP.net core 2.0, Entity framework core, bootstrap 4.
-      </p>
-      <div class="ml-5">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
-      </div>
-      <div class="ml-5">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
-      </div>
-      <div class="ml-5">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        Design database with my  passion team.
-      </div>
-    </div>
-    <div class="col-md-3 hiddenrow items-center mt-5 pr-3 alert-info d-flex align-items-center justify-content-center flex-column">
-      <div>NKS company2</div>
-      <div>District 3 HCM</div>
-      <div>2017-2018</div>
-    </div>  
-  </div>
-
 </div>
 <footer class="footer mt-3"></footer>

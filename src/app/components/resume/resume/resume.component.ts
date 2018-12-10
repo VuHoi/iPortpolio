@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProgressbarConfig } from 'ngx-bootstrap';
-import {transition, trigger, useAnimation} from '@angular/animations';
-import {ResumeEnter, ResumeLeave, ShakeImageEnter , ShakeImageLeave , RotateIn} from '../../Animation/resume-animate';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { ResumeEnter, ResumeLeave, ShakeImageEnter, ShakeImageLeave, RotateIn } from '../../Animation/resume-animate';
+import { Portfolio } from 'src/app/models/portfolio';
 export function getProgressbarConfig(): ProgressbarConfig {
-  return Object.assign(new ProgressbarConfig(), { animate: true, striped: true,  max: 100 });
+  return Object.assign(new ProgressbarConfig(), { animate: true, striped: true, max: 100 });
 }
 @Component({
   // tslint:disable-next-line:component-selector
@@ -38,6 +39,7 @@ export function getProgressbarConfig(): ProgressbarConfig {
 
 export class ResumeComponent implements OnInit {
   stateHover = 'leave';
+  @Input() info: Portfolio;
   constructor() { }
 
   ngOnInit() {
