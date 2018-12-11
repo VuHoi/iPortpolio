@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { HomeEnter, HomeLeave } from '../../Animation/home-animate';
 import { Home } from 'src/app/models/home';
+import { SharedService } from 'src/app/shares/SharedService';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -21,8 +22,9 @@ import { Home } from 'src/app/models/home';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shareService: SharedService) { }
   @Input() home: Home;
+  @Output() infoChange = new EventEmitter();
   ngOnInit() {
   }
 
