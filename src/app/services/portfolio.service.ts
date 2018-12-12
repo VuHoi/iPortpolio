@@ -24,7 +24,8 @@ export class PortfolioService {
   postHomeData = (home: Home) => {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
       })
     };
     return this.httpClient.post('/api/api/home/', home, httpOptions).pipe(
@@ -34,7 +35,8 @@ export class PortfolioService {
   postPortfolioData = (info: Portfolio) => {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
       })
     };
     return this.httpClient.post('/api/information/', info, httpOptions).pipe(
@@ -44,7 +46,8 @@ export class PortfolioService {
   putPortfolioData = (info: Portfolio) => {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
       })
     };
     return this.httpClient.put('/api/information/', info, httpOptions).pipe(

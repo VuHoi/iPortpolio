@@ -251,7 +251,7 @@
         <div class="d-flex align-items-center justify-content-center flex-column mt-3 fontminmobile">
           <div class="w-100 " *ngFor="let expertise of info?.expertise; let i=index">
             <input class="text-center expertise w-100" [readonly]="!isModify" [class.inputForm]="!isModify" name="expertise+i"
-              (ngModelChange)="changeValueInput()" placeholder="Expertise" [(ngModel)]="info.expertise[i]">
+              (ngModelChange)="changeValueInput()" placeholder="Expertise" [(ngModel)]="expertise.title">
           </div>
         </div>
       </div>
@@ -274,7 +274,7 @@
       <div class=" row" *ngFor="let position of experience.position; let i=index;">
         <div class="col-1 text-right"> <i class="fa fa-asterisk" aria-hidden="true"></i></div>
         <div class="col-11 text-left"> <input class=" w-100 " [readonly]="!isModify" [class.inputForm]="!isModify" name="positionExperient"
-            (ngModelChange)="changeValueInput()" placeholder="You can" [(ngModel)]="experience.position[i]"></div>
+            (ngModelChange)="changeValueInput()" placeholder="You can" [(ngModel)]="position.title"></div>
       </div>
 
     </div>
