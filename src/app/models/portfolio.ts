@@ -15,10 +15,10 @@ export interface Portfolio {
             duration: String
         }
     ];
-    skills: {
+    skills: [{
         title: String,
         process: Number
-    };
+    }];
     expertise: [String];
     experiences: [
         {

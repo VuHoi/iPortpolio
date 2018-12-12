@@ -16,6 +16,21 @@ export class ContainerResumeComponent implements OnInit {
     private portfolio: PortfolioService) {
     this.username = this.route.snapshot.paramMap.get('name');
     localStorage.setItem('baseurl', this.username);
+    this.info = {
+      address: '',
+      department: '',
+      education: [{ name: '', duration: '', position: '' }],
+      email: '',
+      experiences: [{ position: [''], duration: '', name: '', address: '', discription: '' }],
+      expertise: [''],
+      name: '',
+      otherLink: '',
+      phone: '',
+      profile: '',
+      skills: [{ title: '', process: 0 }],
+      slug: '',
+      userId: ''
+    };
     this.portfolio.getResumeDataByName(this.username).subscribe((data: Portfolio) => {
       titleService.setTitle(`${data.name} - Resume`);
       this.info = data;
