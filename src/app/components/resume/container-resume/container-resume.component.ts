@@ -27,16 +27,42 @@ export class ContainerResumeComponent implements OnInit {
     this.info = {
       address: '',
       department: '',
-      education: [{ name: '', duration: '', position: '' }],
+      education: [
+        { name: '', duration: '', position: '' },
+        { name: '', duration: '', position: '' },
+        { name: '', duration: '', position: '' },
+      ],
       email: '',
-      experiences: [{ position: [''], duration: '', name: '', address: '', discription: '' }],
-      expertise: [''],
+      experiences: [{
+        position: [
+          { title: '' },
+          { title: '' },
+          { title: '' }
+        ], duration: '', name: '', address: '', discription: ''
+      }],
+      expertise: [
+        { title: '' },
+        { title: '' },
+        { title: '' },
+        { title: '' },
+        { title: '' },
+        { title: '' },
+        { title: '' },
+        { title: '' }
+      ],
       name: '',
       otherLink: '',
       phone: '',
       profile: '',
-      skills: [{ title: '', process: 0 }],
-      slug: '',
+      skills: [
+        { title: '', process: 0 },
+        { title: '', process: 0 },
+        { title: '', process: 0 },
+        { title: '', process: 0 },
+        { title: '', process: 0 },
+        { title: '', process: 0 }
+      ],
+      slug: this.username,
       userId: '',
       projects: [
         { name: '', param1: '', param2: '', icons: [''] },

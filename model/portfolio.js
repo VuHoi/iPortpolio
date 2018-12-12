@@ -15,37 +15,19 @@ module.exports = mongoose.model('portfolio', {
             position: String,
             name: String,
             duration: String
-        },
-        {
-            position: String,
-            name: String,
-            duration: String
-        },
-        {
-            position: String,
-            name: String,
-            duration: String
-        }
+        } 
     ],
     skills: [{
         title: String,
         process: Number
     }],
     expertise: [
-        { title: String },
-        { title: String },
-        { title: String },
-        { title: String },
-        { title: String },
-        { title: String },
-        { title: String },
-        { title: String }],
+        { title: String }
+     ],
     experiences: [
         {
             discription: String,
             position: [
-                { title: String },
-                { title: String },
                 { title: String }
             ],
             address: String,
