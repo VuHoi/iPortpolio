@@ -39,7 +39,6 @@ module.exports = function (app) {
                 } else {
                     res.json("Ok");
                 }
-
             })
                 .catch((err) => {
                     res.json(err)
@@ -53,13 +52,9 @@ module.exports = function (app) {
     app.put('/api/user/:id', (req, res) => {
         var id = mongoose.Types.ObjectId(req.params.id);
         user.findOneAndUpdate({ _id: id }, req.body, { new: true }, function (err, product) {
-
             if (err)
-
                 res.json(err);
-
             res.json(user);
-
         });
 
     })
@@ -68,9 +63,7 @@ module.exports = function (app) {
         var id = mongoose.Types.ObjectId(req.params.id);
         user.remove({ _id: id }, (err, result) => {
             if (err)
-
                 res.json(err);
-
             res.json({ _id: id });
         })
     })
@@ -83,10 +76,10 @@ module.exports = function (app) {
         user.authenticate(User.username, User.password, function (error, user) {
             if (error || !user) {
                 var err = {
-                    message:'Wrong username or password.',
-                    success:false
+                    message: 'Wrong username or password.',
+                    success: false
                 };
-                
+
                 res.json(err);
             } else {
                 const payload = {
@@ -98,11 +91,11 @@ module.exports = function (app) {
                     expiresIn: "2 days"
                 });
                 res.json({
-                    success:true,
+                    success: true,
                     token: token,
                     username: user.username
                 });
-                //https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens
+                //https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens =====> document to token 
             }
         });
     })
@@ -140,7 +133,7 @@ module.exports = function (app) {
     });
 
 
-
+    // upload image and save image  base 64 on mongose db
     app.put('/upload/image/:id', (req, res, next) => {
         var id = mongoose.Types.ObjectId(req.params.id);
         var body = req.body;
@@ -160,5 +153,6 @@ module.exports = function (app) {
                 }
             )
     })
+
 
 }

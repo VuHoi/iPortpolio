@@ -1,6 +1,6 @@
 <div *ngIf="!isShow">
   <div>
-    <button class="btn btn-outline-success float-right" (click)="modifyPortfolio()">Edit</button>
+    <button class="btn btn-outline-success float-right m-5" *ngIf="logged" (click)="modifyPortfolio()">{{isModify?'Save':'Modify'}}</button>
   </div>
   <div class="backgroundHeader">
     <div class="d-inline-block w-100 ">

@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 //confiure router api
 app.all('/*', configRoute);
-// app.all('/api/*', [require('./middlewares/validateRequest')]);
+app.all('/api/*', [require('./middlewares/validateRequest')]);
 portfolio(app);
 user(app);
 contact(app);

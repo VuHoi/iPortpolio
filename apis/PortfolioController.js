@@ -26,7 +26,7 @@ module.exports = function (app) {
     });
 
     // http  post 
-    app.post('/information', (req, res) => {
+    app.post('/api/information', (req, res) => {
         var Portfolio = req.body;
         portfolio.create(Portfolio).then(() => {
             res.json(Portfolio)
@@ -36,9 +36,8 @@ module.exports = function (app) {
             })
     });
     //  put information  by id  of portfolio
-    app.put('/information/:id', (req, res) => {
+    app.put('/api/information/:id', (req, res) => {
         var id = mongoose.Types.ObjectId(req.params.id);
-        console.log(req.body);
         portfolio.findOneAndUpdate({ _id: id }, req.body, { new: true }, function (err, portfolio) {
             if (err)
                 res.json(err);
@@ -48,7 +47,7 @@ module.exports = function (app) {
     })
 
     // delete  a portfolio
-    app.delete('/information/:id', (req, res) => {
+    app.delete('/api/information/:id', (req, res) => {
         var id = mongoose.Types.ObjectId(req.params.id);
         portfolio.remove({ _id: id }, (err, result) => {
             if (err)
