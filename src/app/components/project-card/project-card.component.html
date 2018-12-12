@@ -4,13 +4,13 @@
   <div class="rotateProjectCard h-100 p-4 d-flex align-items-center flex-column">
     <div class="mb-auto fontSizeText">
       <div class="text-center">
-        <h5 class="fontTitle text-danger">{{title}}</h5>
+        <h5 class="fontTitle text-danger">{{project?.name}}</h5>
       </div>
-      <p>{{first_paragraph}}</p>
-      <p>{{second_paragraph}}</p>
+      <p>{{project?.param1}}</p>
+      <p>{{project?.param2}}</p>
     </div>
     <div class="d-flex w-100 flex-row align-items-center justify-content-between fontSizeIcon">
-      <i  *ngFor="let icon of icons" class={{icon}}></i>
+      <i  *ngFor="let icon of project?.icons" class={{icon}}></i>
     </div>
   </div>
 </div>

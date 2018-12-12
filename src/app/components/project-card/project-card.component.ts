@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
 import {transition, trigger, useAnimation} from '@angular/animations';
 import {CardProjectEnter, CardHoverEnter, CardHoverLeave, CardLeave} from '../Animation/card-animate';
+import { Project } from 'src/app/models/project';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -25,10 +26,8 @@ import {CardProjectEnter, CardHoverEnter, CardHoverLeave, CardLeave} from '../An
   ]
 })
 export class ProjectCardComponent implements OnInit {
-  @Input()title: string ;
-  @Input()first_paragraph: string ;
-  @Input()second_paragraph: string ;
-  @Input()icons: any [] ;
+  @Input() project: Project;
+  @Output() infoChange = new EventEmitter();
   stateHover = 'leave';
   constructor() { }
 

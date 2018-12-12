@@ -31,4 +31,12 @@ module.exports = mongoose.model('portfolio', {
             duration: String,
         }
     ],
+    projects: [
+        {
+            name:String,
+            param1: String,
+            param2: String,
+            icons:[String]
+        }
+    ]
 });

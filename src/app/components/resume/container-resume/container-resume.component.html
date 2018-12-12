@@ -1,29 +1,18 @@
 <div class="position">
   <resume class="positionInfo" [info]="info"></resume>
   <project-card class="positionCard1 hiddencard"
-                title={{projectOne.title}}
-                first_paragraph={{projectOne.first_paragraph}}
-                second_paragraph={{projectOne.second_paragraph}}
-                [icons]=projectOne.icons>
+                [(project)]="info.projects[0]">
   </project-card>
   <project-card class="positionCard2 hiddencard"
-                title={{projectOne.title}}
-                first_paragraph={{projectOne.first_paragraph}}
-                second_paragraph={{projectOne.second_paragraph}}
-                [icons]=projectOne.icons>
+                [(project)]="info.projects[1]">
   </project-card>
   <project-card class="positionCard3 hiddencard"
-                title={{projectOne.title}}
-                first_paragraph={{projectOne.first_paragraph}}
-                second_paragraph={{projectOne.second_paragraph}}
-                [icons]=projectOne.icons>
+                [(project)]="info.projects[2]">
   </project-card>
   <project-card class="positionCard4 hiddencard"
-                title={{projectOne.title}}
-                first_paragraph={{projectOne.first_paragraph}}
-                second_paragraph={{projectOne.second_paragraph}}
-                [icons]=projectOne.icons>
+                [(project)]="info.projects[3]">
   </project-card>
+  
   <img class="positionPin" alt="pin" src="../../../assets/images/pin2.png"/>
   <img class="positionPin2" alt="pin2" src="../../../assets/images/pin2.png"/>
   <!--<img class="positionPin3" alt="pin2" src="../../../assets/images/pin2.png"/>-->

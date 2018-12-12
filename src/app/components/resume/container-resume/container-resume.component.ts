@@ -3,6 +3,9 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { Portfolio } from 'src/app/models/portfolio';
+import { SharedService } from 'src/app/shares/SharedService';
+import { UserService } from 'src/app/services/user.service';
+import { UserResponse } from 'src/app/models/UserResponse';
 @Component({
   selector: 'app-container-resume',
   templateUrl: './container-resume.component.html',
@@ -10,10 +13,15 @@ import { Portfolio } from 'src/app/models/portfolio';
 })
 export class ContainerResumeComponent implements OnInit {
   info: Portfolio;
+  username = '';
+  canModify = true;
+  currentUser: UserResponse;
   constructor(
     public titleService: Title,
     private route: ActivatedRoute,
-    private portfolio: PortfolioService) {
+    private portfolio: PortfolioService,
+    private sharedService: SharedService,
+    private userService: UserService) {
     this.username = this.route.snapshot.paramMap.get('name');
     localStorage.setItem('baseurl', this.username);
     this.info = {
@@ -29,38 +37,33 @@ export class ContainerResumeComponent implements OnInit {
       profile: '',
       skills: [{ title: '', process: 0 }],
       slug: '',
-      userId: ''
+      userId: '',
+      projects: [{ name: '', param1: '', param2: '', icons: [''] }]
     };
+    this.userService.getCurrentUser().subscribe(user => {
+      if (user) {
+        if (this.username !== user.username) {
+          this.sharedService.clearMessage();
+        }
+      }
+    });
     this.portfolio.getResumeDataByName(this.username).subscribe((data: Portfolio) => {
+      this.canModify = data ? true : false;
+      this.info = data ? data : this.info;
       titleService.setTitle(`${data.name} - Resume`);
-      this.info = data;
+    });
+    this.sharedService.getMessage().subscribe(data => {
+      if (!data && data != null) {
+        if (this.canModify) {
+          this.portfolio.putPortfolioData(this.info).subscribe(() => console.log('Modify success'), () => console.log('Modify Fail'));
+        } else {
+          this.portfolio.postPortfolioData(this.info).subscribe(() => console.log('Post success'), () => console.log('Post Fail'));
+        }
+      }
     });
   }
 
-  projectOne = {
-    title: 'Ishop',
-    first_paragraph: 'It is a  E-commerce  website that I make a year ago.' +
-      'It was my first website when I decided to switch from major' +
-      ' to programming software through website programming.' +
-      ' I started with the front end as angular 4. It requires' +
-      ' me to learn a lot of background knowledge of a front end ' +
-      'developer such as html css javascript. I have learned very ' +
-      'seriously to overcome this difficulty. And in this website' +
-      ' I just stop being a front end developer and get involved ' +
-      'in design database work with the back end',
-    second_paragraph: 'On this site I use angular4, ASP.net core 2.0, Entity framework core' +
-      ' , bootstrap 4 ',
-    icons: [
-      'devicon-csharp-plain',
-      'devicon-angularjs-plain',
-      'devicon-bootstrap-plain',
-      'devicon-webpack-plain',
-      'devicon-html5-plain',
-      'devicon-css3-plain',
-      'devicon-git-plain '
-    ]
-  };
-  username = '';
+
   ngOnInit() {
   }
 
