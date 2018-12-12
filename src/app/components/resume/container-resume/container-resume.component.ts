@@ -51,7 +51,7 @@ export class ContainerResumeComponent implements OnInit {
           this.sharedService.clearMessage();
         }
       }
-    });
+    }, () => this.sharedService.clearMessage());
     this.portfolio.getResumeDataByName(this.username).subscribe((data: Portfolio) => {
       this.canModify = data ? true : false;
       this.info = data ? data : this.info;

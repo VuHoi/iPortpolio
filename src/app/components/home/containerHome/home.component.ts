@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
           this.sharedService.clearMessage();
         }
       }
-    });
+    }, () => this.sharedService.clearMessage());
     this.portfolio.getHomeDataByName(this.username).subscribe((data: Home) => {
       this.canModify = data ? true : false;
       this.home = data ? data : this.home;
