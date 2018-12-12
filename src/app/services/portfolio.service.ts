@@ -39,7 +39,7 @@ export class PortfolioService {
         'x-access-token': localStorage.getItem('token')
       })
     };
-    return this.httpClient.post('/api/information/', info, httpOptions).pipe(
+    return this.httpClient.post('/api/api/information/', info, httpOptions).pipe(
       map(res => res));
   }
   // modify resume
@@ -50,7 +50,7 @@ export class PortfolioService {
         'x-access-token': localStorage.getItem('token')
       })
     };
-    return this.httpClient.put('/api/information/', info, httpOptions).pipe(
+    return this.httpClient.put(`/api/api/information/${info._id}`, info, httpOptions).pipe(
       map(res => res));
   }
   // modify home

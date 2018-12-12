@@ -1,4 +1,5 @@
 export interface Portfolio {
+    _id?: String;
     userId: String;
     name: String;
     slug: String;
