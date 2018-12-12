@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProgressbarConfig } from 'ngx-bootstrap';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { ResumeEnter, ResumeLeave, ShakeImageEnter, ShakeImageLeave, RotateIn } from '../../Animation/resume-animate';
 import { Portfolio } from 'src/app/models/portfolio';
+import { SharedService } from 'src/app/shares/SharedService';
 export function getProgressbarConfig(): ProgressbarConfig {
   return Object.assign(new ProgressbarConfig(), { animate: true, striped: true, max: 100 });
 }
@@ -40,11 +41,18 @@ export function getProgressbarConfig(): ProgressbarConfig {
 export class ResumeComponent implements OnInit {
   stateHover = 'leave';
   @Input() info: Portfolio;
-  constructor() { }
+  @Output() infoChange = new EventEmitter();
+  isModify = false;
+  constructor(private sharedService: SharedService) {
+    this.sharedService.getMessage().subscribe(data => this.isModify = data);
+   }
 
   ngOnInit() {
   }
   togleStateAnimation(state) {
     this.stateHover = state;
+  }
+  changeValueInput() {
+    this.infoChange.emit(this.info);
   }
 }

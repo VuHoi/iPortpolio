@@ -39,8 +39,13 @@
     <div class="boxTitle">
       <div class="borderBox">
         <div class="d-flex align-items-center justify-content-center flex-column">
-          <h3 class="font">{{info?.name}}</h3>
-          <h3 class="fontSmall">{{info?.department}}</h3>
+          <h3 class="font"><input class="text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="name"
+              (ngModelChange)="changeValueInput()" placeholder="Name" [(ngModel)]="info.name">
+          </h3>
+          <h3 class="fontSmall">
+            <input class="text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="department"
+              (ngModelChange)="changeValueInput()" placeholder="Department" [(ngModel)]="info.department">
+          </h3>
         </div>
       </div>
     </div>
@@ -53,7 +58,13 @@
       <div class="text-center mr-5 ml-5 border-bottom hiddenProfile">
         <h4 class="colorTitle ">PROFILE</h4>
       </div>
-      <div class="pl-3 pr-3 pt-1 text-center hiddenProfile">{{info?.profile}} </div>
+      <div class="pl-3 pr-3 pt-1 text-center hiddenProfile w-100">
+        <div *ngIf="!isModify">{{info?.profile}}</div>
+        <div *ngIf="isModify" class="w-100">
+          <textarea class="w-100 text-center" rows="7" (ngModelChange)="changeValueInput()" placeholder="param 1" name="profile"
+            [(ngModel)]="info.profile"></textarea>
+        </div>
+      </div>
     </div>
     <div class="w-33 d-flex align-items-center justify-content-center">
       <img class="rounded-circle" src="../../../assets/images/me.png" alt="me" [@Shake]="stateHover" (mouseenter)="togleStateAnimation('enter')"
@@ -62,22 +73,34 @@
 
     <div class="w-33">
       <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
-        <div class="mt-2">{{info?.address}} </div>
+        <div class="mt-2">
+          <input [readonly]="!isModify" [class.inputForm]="!isModify" name="address" (ngModelChange)="changeValueInput()"
+            placeholder="Address" [(ngModel)]="info.address">
+        </div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-home" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-home" aria-hidden="true"></i></div>
       </div>
       <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
-        <div class="mt-2">{{info?.email}}</div>
+        <div class="mt-2">
+          <input [readonly]="!isModify" [class.inputForm]="!isModify" name="email" (ngModelChange)="changeValueInput()"
+            placeholder="Email" [(ngModel)]="info.email">
+        </div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
       </div>
       <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
-        <div class="mt-2">{{info?.otherLink}}</div>
+        <div class="mt-2">
+          <input [readonly]="!isModify" [class.inputForm]="!isModify" name="otherLink" (ngModelChange)="changeValueInput()"
+            placeholder="Other Link" [(ngModel)]="info.otherLink">
+        </div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-television" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto center2 iconhidden2"><i class="fa fa-television" aria-hidden="true"></i></div>
       </div>
       <div class="d-flex p-1 border-bottom mr-3 m-r-mb hiddenProfile">
-        <div class="mt-2">{{info?.phone}}</div>
+        <div class="mt-2">
+          <input [readonly]="!isModify" [class.inputForm]="!isModify" name="phone" (ngModelChange)="changeValueInput()"
+            placeholder="Phone" [(ngModel)]="info.phone">
+        </div>
         <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-mobile" aria-hidden="true"></i></div>
         <div class="posibleFix ml-auto center iconhidden2"><i class="fa fa-mobile" aria-hidden="true"></i></div>
       </div>
@@ -91,7 +114,13 @@
         <div class="text-center mr-5 ml-5 border-bottom">
           <h4 class="colorTitle ">PROFILE</h4>
         </div>
-        <div class="pl-3 pr-3 pt-1 text-center">{{info?.profile}} </div>
+        <div class="pl-3 pr-3 pt-1 text-center">
+          <div *ngIf="!isModify">{{info?.profile}}</div>
+          <div *ngIf="isModify" class="w-100">
+            <textarea class="w-100 text-center" rows="7" (ngModelChange)="changeValueInput()" placeholder="param 1"
+              name="profile" [(ngModel)]="info.profile"></textarea>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -101,7 +130,10 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
-          <div class="mt-2">{{info?.address}}</div>
+          <div class="mt-2">
+            <input [readonly]="!isModify" [class.inputForm]="!isModify" name="addressMobile" (ngModelChange)="changeValueInput()"
+              placeholder="Address" [(ngModel)]="info.address">
+          </div>
           <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-home" aria-hidden="true"></i></div>
           <div class="posibleFix ml-auto iconhidden2" @Rotate><i class="fa fa-home" aria-hidden="true"></i></div>
         </div>
@@ -111,7 +143,10 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
-          <div class="mt-2">{{info?.email}}</div>
+          <div class="mt-2">
+            <input [readonly]="!isModify" [class.inputForm]="!isModify" name="emailMobile" (ngModelChange)="changeValueInput()"
+              placeholder="Email" [(ngModel)]="info.email">
+          </div>
           <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
           <div class="posibleFix ml-auto iconhidden2"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
         </div>
@@ -121,7 +156,10 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
-          <div class="mt-2">{{info?.otherLink}}</div>
+          <div class="mt-2">
+            <input [readonly]="!isModify" [class.inputForm]="!isModify" name="otherLinkMobile" (ngModelChange)="changeValueInput()"
+              placeholder="Other Link" [(ngModel)]="info.otherLink">
+          </div>
           <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-television" aria-hidden="true"></i></div>
           <div class="posibleFix ml-auto center2 iconhidden2"><i class="fa fa-television" aria-hidden="true"></i></div>
         </div>
@@ -131,7 +169,10 @@
       <div class="col-2"></div>
       <div class="col-8">
         <div class="d-flex p-1 border-bottom mr-3 m-r-mb">
-          <div class="mt-2">{{info?.phone}}</div>
+          <div class="mt-2">
+            <input [readonly]="!isModify" [class.inputForm]="!isModify" name="phoneMobile" (ngModelChange)="changeValueInput()"
+              placeholder="Phone" [(ngModel)]="info.phone">
+          </div>
           <div class="ml-auto h3 w-50px text-center iconhidden"><i class="fa fa-mobile" aria-hidden="true"></i></div>
           <div class="posibleFix ml-auto center iconhidden2"><i class="fa fa-mobile" aria-hidden="true"></i></div>
         </div>
@@ -155,9 +196,18 @@
       </div>
       <div *ngFor="let education of info?.education; let i=index">
         <div class="text-center mt-3" [class.mgtmb]="i!==0">
-          <div class="font-weight-bold">{{education.position}}</div>
-          <div>{{education.name}}</div>
-          <div>{{education.duration}}</div>
+          <div>
+            <input class="text-center font-weight-bold w-100" [readonly]="!isModify" [class.inputForm]="!isModify" name="positionEducation"
+              (ngModelChange)="changeValueInput()" placeholder="Position" [(ngModel)]="education.position">
+          </div>
+          <div>
+            <input class="text-center w-100" [readonly]="!isModify" [class.inputForm]="!isModify" name="nameEducation"
+              (ngModelChange)="changeValueInput()" placeholder="Name" [(ngModel)]="education.name">
+          </div>
+          <div>
+            <input class="text-center w-100" [readonly]="!isModify" [class.inputForm]="!isModify" name="durationEducation"
+              (ngModelChange)="changeValueInput()" placeholder="Duration" [(ngModel)]="education.duration">
+          </div>
         </div>
       </div>
 
@@ -169,9 +219,12 @@
       <br />
       <div class="row  pt-3 pb-2 pr-2 pl-2" *ngFor="let skill of info?.skills">
         <div class="col-md-5">
-          <div>{{skill.title}}</div>
+          <div>
+            <input class="text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="skilltitle"
+              (ngModelChange)="changeValueInput()" placeholder="Title" [(ngModel)]="skill.title">
+          </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 d-flex align-items-center justify-content-center">
           <progressbar class="progress-striped active" [value]="skill.process" type="info"><i>{{skill.process}} / 100</i></progressbar>
         </div>
       </div>
@@ -196,28 +249,45 @@
       </div>
       <div>
         <div class="d-flex align-items-center justify-content-center flex-column mt-3 fontminmobile">
-          <div class="expertise" *ngFor="let expertise of info?.expertise">{{expertise}}</div>
+          <div class="w-100 " *ngFor="let expertise of info?.expertise; let i=index">
+            <input class="text-center expertise w-100" [readonly]="!isModify" [class.inputForm]="!isModify" name="expertise+i"
+              (ngModelChange)="changeValueInput()" placeholder="Expertise" [(ngModel)]="info.expertise[i]">
+          </div>
         </div>
       </div>
-
-
     </div>
 
   </div>
   <div class="row ml-4 mr-4 mt-5" *ngFor="let experience of info?.experiences">
     <div class="col-md-9 ">
-      <h4 class="colorTitle">{{experience.name}}</h4>
-      <p>{{experience.discription}} </p>
-      <div class="ml-5" *ngFor="let position of experience.position">
-        <i class="fa fa-asterisk" aria-hidden="true"></i>
-        {{position}}
+      <h4>
+        <input class=" w-100 colorTitle" [readonly]="!isModify" [class.inputForm]="!isModify" name="nameExperient"
+          (ngModelChange)="changeValueInput()" placeholder="Expertise" [(ngModel)]="experience.name">
+      </h4>
+      <div  *ngIf="!isModify">
+        <p>{{experience.discription}} </p>
+      </div>
+      <div  *ngIf="isModify" class="w-100" >
+          <textarea class="w-100 " rows="4" (ngModelChange)="changeValueInput()" placeholder="param 1"
+          name="profile" [(ngModel)]="info.profile"></textarea>
+      </div>
+      <div class=" row" *ngFor="let position of experience.position; let i=index;">
+        <div class="col-1 text-right"> <i class="fa fa-asterisk" aria-hidden="true"></i></div>
+        <div class="col-11 text-left"> <input class=" w-100 " [readonly]="!isModify" [class.inputForm]="!isModify" name="positionExperient"
+            (ngModelChange)="changeValueInput()" placeholder="You can" [(ngModel)]="experience.position[i]"></div>
       </div>
 
     </div>
     <div class="col-md-3 mt-5 pr-3 alert-info d-flex align-items-center justify-content-center flex-column">
       <div>{{experience.name}}</div>
-      <div>{{experience.address}}</div>
-      <div>{{experience.duration}}</div>
+      <div class="w-100">
+        <input class=" w-100 alert-info text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="experienceaddress"
+          (ngModelChange)="changeValueInput()" placeholder="Address" [(ngModel)]="experience.address">
+      </div>
+      <div class="w-100">
+        <input class=" w-100 alert-info text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="experienceduration"
+          (ngModelChange)="changeValueInput()" placeholder="Duration" [(ngModel)]="experience.duration">
+      </div>
     </div>
   </div>
 </div>

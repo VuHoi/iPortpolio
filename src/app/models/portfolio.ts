@@ -35,6 +35,24 @@ export interface Portfolio {
             param1: String,
             param2: String,
             icons: [String]
+        },
+        {
+            name: String,
+            param1: String,
+            param2: String,
+            icons: [String]
+        },
+        {
+            name: String,
+            param1: String,
+            param2: String,
+            icons: [String]
+        },
+        {
+            name: String,
+            param1: String,
+            param2: String,
+            icons: [String]
         }
     ];
 }

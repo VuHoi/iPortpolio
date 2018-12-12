@@ -15,7 +15,9 @@
   min-height: 200px;
   min-width: 70%;
 }
-
+.min-width{
+  width: 80% !important;
+}
 .borderBox {
   border: 2px #babbbd solid;
   margin: 15px;
