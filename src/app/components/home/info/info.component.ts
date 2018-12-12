@@ -21,10 +21,15 @@ import { SharedService } from 'src/app/shares/SharedService';
   ]
 })
 export class InfoComponent implements OnInit {
-
-  constructor(private shareService: SharedService) { }
+  isModify = false;
+  constructor(private shareService: SharedService) {
+    this.shareService.getMessage().subscribe(data => this.isModify = data);
+   }
   @Input() home: Home;
   @Output() infoChange = new EventEmitter();
+  changeValueInput() {
+    this.infoChange.emit(this.home);
+  }
   ngOnInit() {
   }
 

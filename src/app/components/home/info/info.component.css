@@ -21,10 +21,13 @@
 }
 
 
+
 .borderBottom{
   border-bottom: black 3px dashed;
 }
-
+.min-width{
+  width: 80% !important;
+}
 .btn-dark{
   background-color: black;
   color: #fdfdfd;
