@@ -4,7 +4,7 @@ var bcrypt = require('bcrypt');
 const saltRounds = 10;
 var db = require('../middlewares/db');
 var user = require('../model/user');
-
+const express = require('express');
 module.exports = function (app) {
     // http get
     app.get('/api/user', (req, res) => {
@@ -112,7 +112,8 @@ module.exports = function (app) {
             res.json({
                 username: item.username,
                 id: item._id,
-                role: item.role
+                role: item.role,
+                avatar: item.avatar
             });
         })
     })
@@ -154,5 +155,19 @@ module.exports = function (app) {
             )
     })
 
+
+
+    // upload image and save image  base 64 on mongose db
+    app.put('/upload/imageV2/:id', (req, res, next) => {
+        var id = mongoose.Types.ObjectId(req.params.id);
+        var body = req.body;
+        user.findOneAndUpdate({ _id: id }, { avatar: body.avatar }, function (err, user) {
+            if (err) res.json(err)
+            res.json({
+                username:user.username
+            })
+        })
+           
+    })
 
 }

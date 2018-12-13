@@ -4,6 +4,8 @@ import { transition, trigger, useAnimation } from '@angular/animations';
 import { ResumeEnter, ResumeLeave, ShakeImageEnter, ShakeImageLeave, RotateIn } from '../../Animation/resume-animate';
 import { Portfolio } from 'src/app/models/portfolio';
 import { SharedService } from 'src/app/shares/SharedService';
+import { UserResponse } from 'src/app/models/UserResponse';
+import { UserService } from 'src/app/services/user.service';
 export function getProgressbarConfig(): ProgressbarConfig {
   return Object.assign(new ProgressbarConfig(), { animate: true, striped: true, max: 100 });
 }
@@ -42,10 +44,15 @@ export class ResumeComponent implements OnInit {
   stateHover = 'leave';
   @Input() info: Portfolio;
   @Output() infoChange = new EventEmitter();
+  user: UserResponse;
   isModify = false;
-  constructor(private sharedService: SharedService) {
+  constructor(
+    private sharedService: SharedService,
+    private userService: UserService
+  ) {
     this.sharedService.getMessage().subscribe(data => this.isModify = data);
-   }
+    this.userService.getCurrentUser().subscribe(user => this.user = user);
+  }
 
   ngOnInit() {
   }
@@ -54,5 +61,14 @@ export class ResumeComponent implements OnInit {
   }
   changeValueInput() {
     this.infoChange.emit(this.info);
+  }
+  loadImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      // tslint:disable-next-line:prefer-const
+      let reader = new FileReader();
+      reader.onload = (eventLoader: any) => {
+        console.log(eventLoader.target.result);
+      };
+    }
   }
 }

@@ -9,7 +9,9 @@
   background-color: #d5dade;
   min-height: 300px;
 }
-
+img{
+height: 230px;
+}
 .boxTitle {
   background-color: #fdfdfd;
   min-height: 200px;

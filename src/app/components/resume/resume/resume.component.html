@@ -66,9 +66,14 @@
         </div>
       </div>
     </div>
-    <div class="w-33 d-flex align-items-center justify-content-center">
-      <img class="rounded-circle" src="../../../assets/images/me.png" alt="me" [@Shake]="stateHover" (mouseenter)="togleStateAnimation('enter')"
-        (mouseleave)="togleStateAnimation('leave')">
+    <div class="w-33 d-flex align-items-center justify-content-center flex-column ">
+      <img class="rounded-circle" src="{{user?.avatar}}" alt="me" [@Shake]="stateHover"
+        (mouseenter)="togleStateAnimation('enter')" (mouseleave)="togleStateAnimation('leave')">
+      <label for="changeImage" class="btn btn-outline-success mt-4" [class.d-none]="!isModify">
+        Change Image
+        <input type="file" id="changeImage"  (change)="loadImage($event)" style="display: none" accept=".png,.jpg" />
+      </label>
+      
     </div>
 
     <div class="w-33">
@@ -226,6 +231,8 @@
         </div>
         <div class="col-md-7 d-flex align-items-center justify-content-center">
           <progressbar class="progress-striped active" [value]="skill.process" type="info"><i>{{skill.process}} / 100</i></progressbar>
+          <input type="number" class="text-center" [readonly]="!isModify" [class.d-none]="!isModify" min="0" max="100"
+            [(ngModel)]="skill.process" style="width:50px;">
         </div>
       </div>
 
@@ -264,12 +271,12 @@
         <input class=" w-100 colorTitle" [readonly]="!isModify" [class.inputForm]="!isModify" name="nameExperient"
           (ngModelChange)="changeValueInput()" placeholder="Expertise" [(ngModel)]="experience.name">
       </h4>
-      <div  *ngIf="!isModify">
+      <div *ngIf="!isModify">
         <p>{{experience.discription}} </p>
       </div>
-      <div  *ngIf="isModify" class="w-100" >
-          <textarea class="w-100 " rows="4" (ngModelChange)="changeValueInput()" placeholder="param 1"
-          name="profile" [(ngModel)]="info.profile"></textarea>
+      <div *ngIf="isModify" class="w-100">
+        <textarea class="w-100 " rows="4" (ngModelChange)="changeValueInput()" placeholder="param 1" name="profile"
+          [(ngModel)]="info.profile"></textarea>
       </div>
       <div class=" row" *ngFor="let position of experience.position; let i=index;">
         <div class="col-1 text-right"> <i class="fa fa-asterisk" aria-hidden="true"></i></div>
