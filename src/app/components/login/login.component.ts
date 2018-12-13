@@ -42,8 +42,7 @@ export class LoginComponent implements OnInit {
   login = () => {
     const user: User = {
       username: this.username,
-      password: this.password,
-      avatar: ''
+      password: this.password
     };
     this.userService.login(user).subscribe((res: any) => {
       if (res.success) {

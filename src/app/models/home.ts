@@ -24,4 +24,5 @@ export interface Home {
         param2: String,
         param3: String
     };
+    _id?: String;
 }

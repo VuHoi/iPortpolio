@@ -1,4 +1,5 @@
 export interface Portfolio {
+    _id?: String;
     userId: String;
     name: String;
     slug: String;
@@ -13,20 +14,91 @@ export interface Portfolio {
             position: String,
             name: String,
             duration: String
+        },
+        {
+            position: String,
+            name: String,
+            duration: String
+        },
+        {
+            position: String,
+            name: String,
+            duration: String
         }
     ];
-    skills: {
-        title: String,
-        process: Number
-    };
-    expertise: [String];
+    skills: [
+        {
+            title: String,
+            process: Number
+        },
+        {
+            title: String,
+            process: Number
+        },
+        {
+            title: String,
+            process: Number
+        },
+        {
+            title: String,
+            process: Number
+        },
+        {
+            title: String,
+            process: Number
+        },
+        {
+            title: String,
+            process: Number
+        }];
+    expertise: [
+        { title: String },
+        { title: String },
+        { title: String },
+        { title: String },
+        { title: String },
+        { title: String },
+        { title: String },
+        { title: String }
+
+    ];
     experiences: [
         {
             discription: String,
-            position: [String],
+            position: [
+                { title: String },
+                { title: String },
+                { title: String }
+            ],
             address: String,
             name: String,
             duration: String
+        }
+    ];
+    projects: [
+        {
+            name: String,
+            param1: String,
+            param2: String,
+            icons: [String]
+        },
+        {
+            name: String,
+            param1: String,
+            param2: String,
+            icons: [String]
+        },
+        {
+            name: String,
+            param1: String,
+            param2: String,
+            icons: [String]
+        },
+        {
+            name: String,
+            param1: String,
+            param2: String,
+            icons: [String]
         }
     ];
 }

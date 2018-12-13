@@ -1,12 +1,19 @@
-<div class="backgroundInfoCard p-5 " @Card  [@CardHover]="stateHover"
-     (mouseenter)="togleStateAnimation('enter')"
-     (mouseleave)="togleStateAnimation('leave')"
->
-  <div class="rotateCard">
-    <h5  *ngIf= "stateHover==='leave'" class="fontTitle text-warning">{{title}}</h5>
-  <div *ngIf= "stateHover==='enter'" class="text-center"> <h5 class="fontTitle text-warning">{{title}}</h5></div>
-    <p>{{first_paragraph}}</p>
-    <p>{{second_paragraph}}</p>
-
-  </div>
+<div class="backgroundInfoCard p-5 " @Card [@CardHover]="stateHover" (mouseenter)="togleStateAnimation('enter')"
+  (mouseleave)="togleStateAnimation('leave')">
+  <form>
+    <div class="rotateCard">
+      <h5 *ngIf="stateHover==='leave'" class="fontTitle text-warning">{{title}}</h5>
+      <div *ngIf="stateHover==='enter'" class="text-center">
+        <h5 class="fontTitle text-warning">{{title}}</h5>
+      </div>
+      <div *ngIf="!isModify">
+        <p>{{info?.param1}}</p>
+        <p>{{info?.param2}}</p>
+      </div>
+      <div *ngIf="isModify">
+        <textarea class="form-control minHeight200"  name="param1" (ngModelChange)="changeValueInput()" placeholder="Title" [(ngModel)]="info.param1"></textarea>
+        <textarea class="form-control minHeight100" name="param2" (ngModelChange)="changeValueInput()" placeholder="Title" [(ngModel)]="info.param2"></textarea>
+      </div>
+    </div>
+  </form>
 </div>

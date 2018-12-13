@@ -26,7 +26,7 @@ module.exports = function (app) {
     });
 
     // http  post 
-    app.post('/home', (req, res) => {
+    app.post('/api/home', (req, res) => {
         var Home = req.body;
         home.create(Home).then(() => {
             res.json(Home)
@@ -36,7 +36,7 @@ module.exports = function (app) {
             })
     });
     //  put home  by id  of home
-    app.put('/home/:id', (req, res) => {
+    app.put('/api/home/:id', (req, res) => {
         var id = mongoose.Types.ObjectId(req.params.id);
         home.findOneAndUpdate({ _id: id }, req.body, { new: true }, function (err, home) {
             if (err)
@@ -47,7 +47,7 @@ module.exports = function (app) {
     })
 
     // delete  a home
-    app.delete('/home/:id', (req, res) => {
+    app.delete('/api/home/:id', (req, res) => {
         var id = mongoose.Types.ObjectId(req.params.id);
         home.remove({ _id: id }, (err, result) => {
             if (err)

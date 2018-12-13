@@ -40,3 +40,4 @@ userSchema.statics.authenticate = function (username, password, callback) {
 
 var User = mongoose.model('User', userSchema);
 module.exports= User;
+// "start": "concurrently --kill-others-on-fail  \"npm run server\" \"npm run client\" ",

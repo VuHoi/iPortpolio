@@ -1,8 +1,13 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+/* @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
-@import "~devicon/devicon.min.css";
+@import "~devicon/devicon.min.css"; */
 .fontTitle{
   font: normal normal normal 30px/1.2em Impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
   line-height: 1.2rem;
   font-family: Impact, impact-w01-2010, impact-w02-2010, impact-w10-2010, sans-serif;
+}
+
+.inputForm{
+  border: none ;
+  
 }

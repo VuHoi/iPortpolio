@@ -13,8 +13,14 @@
   -webkit-transform: rotate(-3deg); /* Safari */
   transform: rotate(-1deg);
 }
-
-
+.minHeight200{
+  min-height: 200px;
+  border: none;
+}
+.minHeight100{
+  min-height: 100px;
+  border: none;
+}
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 
