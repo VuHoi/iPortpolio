@@ -17,7 +17,7 @@
 .min-height-50{
   min-height: 30px;
 }
-input {
+input:not(:last-child) {
   border: none;
   background-color: #d5dade;
   width: 100%;
@@ -55,6 +55,7 @@ textarea {
 }
 .sizeImage{
   width: 50%;
+  margin-left: -30%;
 }
 
 .containerHome{
