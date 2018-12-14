@@ -1,11 +1,11 @@
 # How to install this project
   **install nodemon global environment**<br/>
-> npm install nodemon -g 
->  **install concurrently global environment**
-> npm install concurrently -g 
-> **run project** 
-> npm install 
-> npm start
+> npm install nodemon -g <br/>
+>  **install concurrently global environment**<br/>
+> npm install concurrently -g <br/>
+> **run project** <br/>
+> npm install <br/>
+> npm start<br/>
 
 # IPortfolio
 
