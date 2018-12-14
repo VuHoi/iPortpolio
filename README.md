@@ -1,5 +1,5 @@
 # How to install this project <br/>
-  **install nodemon global environment**<br/>
+> **install nodemon global environment**<br/>
 > npm install nodemon -g <br/>
 >  **install concurrently global environment**<br/>
 > npm install concurrently -g <br/>
