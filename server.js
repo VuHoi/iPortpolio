@@ -11,8 +11,7 @@ var contact = require('./apis/ContactController');
 var home = require('./apis/HomeController')
 var dbConfig = require('./middlewares/db');
 const app = express();
-var multer = require('multer');
-const path = require('path');
+// var multer = require('multer');
 var configRoute = require('./middlewares/configRoute');
 mongoose.connect(dbConfig.url, { useNewUrlParser: true });
 var db = mongoose.connection;
@@ -35,12 +34,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Set The Storage Engine
-const storage = multer.diskStorage({
-  destination: './public/uploads/',
-  filename: function(req, file, cb){
-    cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
-});
+// const storage = multer.diskStorage({
+//   destination: './public/uploads/',
+//   filename: function(req, file, cb){
+//     cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+//   }
+// });
 
 //confiure router api
 app.all('/*', configRoute);

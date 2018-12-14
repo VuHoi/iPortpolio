@@ -158,7 +158,7 @@ module.exports = function (app) {
 
 
     // upload image and save image  base 64 on mongose db
-    app.put('/upload/imageV2/:id', (req, res, next) => {
+    app.put('/api/upload/imageV2/:id', (req, res, next) => {
         var id = mongoose.Types.ObjectId(req.params.id);
         var body = req.body;
         user.findOneAndUpdate({ _id: id }, { avatar: body.avatar }, function (err, user) {

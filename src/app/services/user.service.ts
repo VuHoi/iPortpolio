@@ -28,4 +28,16 @@ export class UserService {
     return this.httpClient.get<UserResponse>('/api/user/token', httpOptions).pipe(
       map(res => res));
   }
+
+  changeImage = (id: String, avatar: String) => {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
+      })
+    };
+    const payload = { avatar };
+    return this.httpClient.post<UserResponse>(`/api/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
+      map(res => res));
+  }
 }
