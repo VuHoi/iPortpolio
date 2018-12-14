@@ -1,3 +1,12 @@
+#How to install this project
+install nodemon global environment
+npm install nodemon -g 
+install concurrently global environment
+npm install concurrently -g 
+run project 
+npm install 
+npm start
+
 # IPortfolio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
