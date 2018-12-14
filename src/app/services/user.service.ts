@@ -37,7 +37,7 @@ export class UserService {
       })
     };
     const payload = { avatar };
-    return this.httpClient.post<UserResponse>(`/api/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
+    return this.httpClient.put<UserResponse>(`/api/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
       map(res => res));
   }
 }

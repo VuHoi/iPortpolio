@@ -84,7 +84,6 @@ export class ContainerResumeComponent implements OnInit {
       titleService.setTitle(`${data.name} - Resume`);
     });
     this.sharedService.getMessage().subscribe(data => {
-      console.log(this.info);
       if (!data && data != null) {
         if (this.canModify) {
           this.portfolio.putPortfolioData(this.info).subscribe(() => console.log('Modify success'), () => console.log('Modify Fail'));

@@ -9,10 +9,10 @@ module.exports = function (app) {
         })
     });
     // http  post 
-    app.post('/api/contact', (req, res) => {
+    app.post('/contact/:username', (req, res) => {
         var contactForm = req.body;
+        contactForm.toUserName=req.params.username;
         contact.create(contactForm).then(() => {
-            console.log(contactForm)
             res.json(contactForm)
         })
         .catch((err) => {

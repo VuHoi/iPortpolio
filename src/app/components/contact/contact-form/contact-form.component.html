@@ -5,15 +5,12 @@
     <br>
     <div class="pos-f-t">
       <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" 
-                data-toggle="collapse" 
-                data-target="#navbarToggleExternalContent" 
-                aria-controls="navbarToggleExternalContent" 
-                aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" title="Menu"></span>
         </button>
       </nav>
-        
+
       <!-- <div class="collapse show" id="navbarToggleExternalContent"> -->
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-1 pl-5">
@@ -25,7 +22,7 @@
             </li>
             <li class="nav-item" style="font-size: 20px">
               <a class="nav-link link text-white" routerLink="/resume">
-                  <i class="fa fa-play" style="font-size: 18px"></i> Resume
+                <i class="fa fa-play" style="font-size: 18px"></i> Resume
               </a>
             </li>
             <li class="nav-item" style="font-size: 20px">
@@ -47,21 +44,68 @@
 
   <div class="containerForm row">
 
-  
-    <div class="col-md-6 d-flex align-items-center justify-content-center">
+
+    <div class="col-md-7 d-flex align-items-center justify-content-center">
       <img class="sizeImage" src="../../../assets/images/envelop.png" alt="envelop">
     </div>
-    <div class="col-md-6">
-      <form>
+    <div class="col-md-5">
+      <form [formGroup]="contactForm" (ngSubmit)="submitContact()">
         <div class="text-center font-weight-bold h3 textGold">Contact me !</div>
-        <input type="text" placeholder="Name" >
-        <input type="text" placeholder="Email" >
-        <input type="text" placeholder="Subject" >
-        <textarea name="message" id="message" placeholder="Message"></textarea>
-        <div class="text-center"> <button class="btn-sent">Send</button></div>
+        <div class="form-group d-flex align-items-end flex-column">
+          <input formControlName="name" type="text" name="name" id="name" [(ngModel)]="contact.name" placeholder="Name">
+          <small class="text-danger ">
+            <div *ngIf="getName.pending">Checking for unique</div>
+            <div *ngIf="getName.touched && getName.invalid">
+              <div *ngIf="getName.errors.required">Field name is required</div>
+              <div *ngIf="getName.errors.minlength">Field name should minimum
+                {{getName.errors.minlength.requiredLength}} characters</div>
+              <div *ngIf="getName.errors.maxlength">Field name should maximum
+                {{getName.errors.maxlength.requiredLength}} characters</div>
+            </div>
+          </small>
+        </div>
+        <div class="form-group d-flex align-items-end flex-column">
+          <input formControlName="email" type="text" name="email" id="email" [(ngModel)]="contact.email" placeholder="Email">
+          <small class="text-danger">
+              <div *ngIf="getEmail.pending">Checking for unique</div>
+              <div *ngIf="getEmail.touched && getEmail.invalid">
+                <div *ngIf="getEmail.errors.required">Field email is required</div>
+                <div *ngIf="getEmail.errors.minlength">Field email should minimum
+                  {{getEmail.errors.minlength.requiredLength}} characters</div>
+                <div *ngIf="getName.errors.maxlength">Field email should maximum
+                  {{getEmail.getEmail.maxlength.requiredLength}} characters</div>
+              </div>
+            </small>
+        </div>
+        <div class="form-group d-flex align-items-end flex-column">
+            <input formControlName="subject" type="text" name="subject" id="subject" [(ngModel)]="contact.subject" placeholder="subject">
+            <small class="text-danger ">
+                <div *ngIf="getSubject.pending">Checking for unique</div>
+                <div *ngIf="getSubject.touched && getSubject.invalid">
+                  <div *ngIf="getSubject.errors.required">Field subject is required</div>
+                  <div *ngIf="getEmail.errors.minlength">Field subject should minimum
+                    {{getSubject.errors.minlength.requiredLength}} characters</div>
+                  <div *ngIf="getSubject.errors.maxlength">Field subject should maximum
+                    {{getSubject.getEmail.maxlength.requiredLength}} characters</div>
+                </div>
+              </small>
+          </div>
+          <div class="form-group d-flex align-items-end flex-column">
+              <textarea formControlName="message" type="text" name="message" id="message" [(ngModel)]="contact.message" placeholder="message"></textarea>
+              <small class="text-danger">
+                  <div *ngIf="getMessage.pending">Checking for unique</div>
+                  <div *ngIf="getMessage.touched && getMessage.invalid">
+                    <div *ngIf="getMessage.errors.required">Field message is required</div>
+                    <div *ngIf="getMessage.errors.minlength">Field message should minimum
+                      {{getMessage.errors.minlength.requiredLength}} characters</div>
+                    <div *ngIf="getMessage.errors.maxlength">Field message should maximum
+                      {{getMessage.getEmail.maxlength.requiredLength}} characters</div>
+                  </div>
+                </small>
+            </div>
+        <div class="text-center"> <input class="btn-sent" type="submit" value="Send"></div>
       </form>
     </div>
   </div>
 </div>
 <footer class="footer mt-3"></footer>
-

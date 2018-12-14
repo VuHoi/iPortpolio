@@ -14,14 +14,15 @@
 .textGold {
   color: gold;
 }
-
+.min-height-50{
+  min-height: 30px;
+}
 input {
   border: none;
   background-color: #d5dade;
-  width: 80%;
+  width: 100%;
   padding: 10px;
-  margin-left: 10%;
-  margin-right: 10%;
+
   border-radius: 10px;
   min-height: 35px;
   margin-top: 20px;
@@ -31,10 +32,9 @@ textarea {
   min-height: 90px;
   border: none;
   background-color: #d5dade;
-  width: 80%;
+  width: 100%;
   padding: 10px;
-  margin-left: 10%;
-  margin-right: 10%;
+
   border-radius: 10px;
   margin-top: 20px;
 }
