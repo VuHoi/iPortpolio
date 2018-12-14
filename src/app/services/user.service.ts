@@ -11,11 +11,11 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
   register = (user: User) => {
-    return this.httpClient.post('/api/user', user).pipe(
+    return this.httpClient.post('/user', user).pipe(
       map(res => res));
   }
   login = (user: User) => {
-    return this.httpClient.post('/api/login', user).pipe(
+    return this.httpClient.post('/login', user).pipe(
       map(res => res));
   }
   getCurrentUser = () => {
@@ -25,7 +25,7 @@ export class UserService {
         'x-access-token': localStorage.getItem('token')
       })
     };
-    return this.httpClient.get<UserResponse>('/api/user/token', httpOptions).pipe(
+    return this.httpClient.get<UserResponse>('/user/token', httpOptions).pipe(
       map(res => res));
   }
 
@@ -37,7 +37,7 @@ export class UserService {
       })
     };
     const payload = { avatar };
-    return this.httpClient.put<UserResponse>(`/api/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
+    return this.httpClient.put<UserResponse>(`/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
       map(res => res));
   }
 }

@@ -10,7 +10,7 @@ export class ContactService {
 
   constructor(private httpClient: HttpClient) { }
   postContact = (contact: Contact, username: String) => {
-    return this.httpClient.post(`/api/contact/${username}`, contact).pipe(
+    return this.httpClient.post(`/contact/${username}`, contact).pipe(
       map(res => res));
   }
 }
