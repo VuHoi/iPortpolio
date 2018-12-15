@@ -11,6 +11,30 @@ a{
   cursor: pointer;
 }
 
+@keyframes shadow-pulse
+{
+     0% {
+          box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+     }
+     100% {
+          box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+     }
+}
+.btn-login{
+  float: left;
+  margin: 40px;
+  width: 100px;
+  height: 100px;
+  font: 13px/100px 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+    letter-spacing: 1px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  background: gold;
+  border-radius: 50%;
+  animation: shadow-pulse 1s infinite;
+}
 .ml-10{
   margin-left: 10rem;
 }

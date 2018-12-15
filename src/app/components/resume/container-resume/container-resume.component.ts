@@ -39,6 +39,13 @@ export class ContainerResumeComponent implements OnInit {
           { title: '' },
           { title: '' }
         ], duration: '', name: '', address: '', discription: ''
+      },
+      {
+        position: [
+          { title: '' },
+          { title: '' },
+          { title: '' }
+        ], duration: '', name: '', address: '', discription: ''
       }],
       expertise: [
         { title: '' },

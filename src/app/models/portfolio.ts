@@ -73,6 +73,17 @@ export interface Portfolio {
             address: String,
             name: String,
             duration: String
+        },
+        {
+            discription: String,
+            position: [
+                { title: String },
+                { title: String },
+                { title: String }
+            ],
+            address: String,
+            name: String,
+            duration: String
         }
     ];
     projects: [

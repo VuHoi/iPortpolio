@@ -203,7 +203,7 @@
         <div class="text-center mt-3" [class.mgtmb]="i!==0">
           <div>
             <input class="text-center font-weight-bold w-100" [readonly]="!isModify" [class.inputForm]="!isModify" name="positionEducation"
-              (ngModelChange)="changeValueInput()" placeholder="Position" [(ngModel)]="education.position">
+              (ngModelChange)="changeValueInput()" placeholder="Position {{i+1}}" [(ngModel)]="education.position">
           </div>
           <div>
             <input class="text-center w-100" [readonly]="!isModify" [class.inputForm]="!isModify" name="nameEducation"
@@ -222,11 +222,11 @@
         <h4 class="colorTitle ">SKILLS</h4>
       </div>
       <br />
-      <div class="row  pt-3 pb-2 pr-2 pl-2" *ngFor="let skill of info?.skills">
+      <div class="row  pt-3 pb-2 pr-2 pl-2" *ngFor="let skill of info?.skills ; let i=index">
         <div class="col-md-5">
           <div>
             <input class="text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="skilltitle"
-              (ngModelChange)="changeValueInput()" placeholder="Title" [(ngModel)]="skill.title">
+              (ngModelChange)="changeValueInput()" placeholder="Title {{i+1}}" [(ngModel)]="skill.title">
           </div>
         </div>
         <div class="col-md-7 d-flex align-items-center justify-content-center">
@@ -258,25 +258,25 @@
         <div class="d-flex align-items-center justify-content-center flex-column mt-3 fontminmobile">
           <div class="w-100 " *ngFor="let expertise of info?.expertise; let i=index">
             <input class="text-center expertise w-100" [readonly]="!isModify" [class.inputForm]="!isModify" name="expertise+i"
-              (ngModelChange)="changeValueInput()" placeholder="Expertise" [(ngModel)]="expertise.title">
+              (ngModelChange)="changeValueInput()" placeholder="Expertise {{i+1}}" [(ngModel)]="expertise.title">
           </div>
         </div>
       </div>
     </div>
 
   </div>
-  <div class="row ml-4 mr-4 mt-5" *ngFor="let experience of info?.experiences">
+  <div class="row ml-4 mr-4 mt-5" *ngFor="let experience of info?.experiences ; let i =index;">
     <div class="col-md-9 ">
       <h4>
         <input class=" w-100 colorTitle" [readonly]="!isModify" [class.inputForm]="!isModify" name="nameExperient"
-          (ngModelChange)="changeValueInput()" placeholder="Expertise" [(ngModel)]="experience.name">
+          (ngModelChange)="changeValueInput()" placeholder="Expertise {{i}}" [(ngModel)]="experience.name">
       </h4>
       <div *ngIf="!isModify">
         <p>{{experience.discription}} </p>
       </div>
       <div *ngIf="isModify" class="w-100">
-        <textarea class="w-100 " rows="4" (ngModelChange)="changeValueInput()" placeholder="param 1" name="profile"
-          [(ngModel)]="info.profile"></textarea>
+        <textarea class="w-100 " rows="4" (ngModelChange)="changeValueInput()" placeholder="Discription" name="discription"
+          [(ngModel)]="experience.discription"></textarea>
       </div>
       <div class=" row" *ngFor="let position of experience.position; let i=index;">
         <div class="col-1 text-right"> <i class="fa fa-asterisk" aria-hidden="true"></i></div>

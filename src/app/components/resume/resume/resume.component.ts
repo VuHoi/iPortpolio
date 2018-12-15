@@ -69,7 +69,7 @@ export class ResumeComponent implements OnInit {
       // tslint:disable-next-line:prefer-const
       let reader = new FileReader();
       reader.onload = (eventLoader: any) => {
-        this.user.avatar = eventLoader.target.result;
+        this.avatar = eventLoader.target.result;
         this.userService.changeImage(this.user.id, eventLoader.target.result).subscribe((data) => {
           console.log('success');
         });
