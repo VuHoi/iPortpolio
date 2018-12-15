@@ -40,4 +40,14 @@ export class UserService {
     return this.httpClient.put<UserResponse>(`/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
       map(res => res));
   }
+
+  getAvatarByName(username: String) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.httpClient.get<String>(`/api/user/avatar/${username}`, httpOptions).pipe(
+      map(res => res));
+  }
 }
