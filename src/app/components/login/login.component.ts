@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/shares/SharedService';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,10 @@ export class LoginComponent implements OnInit {
   password: String = '';
   message: String = '';
   remember = false;
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private sharedService: SharedService) { }
 
   ngOnInit() {
   }
@@ -48,6 +52,7 @@ export class LoginComponent implements OnInit {
       if (res.success) {
         localStorage.setItem('token', res.token);
         localStorage.setItem('remember', this.remember.toString());
+        this.sharedService.sendMessage(true);
         this.router.navigate([res.username, 'home']);
       } else {
         this.message = res.message;
