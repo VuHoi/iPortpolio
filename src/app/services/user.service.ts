@@ -38,6 +38,19 @@ export class UserService {
     };
     const payload = { avatar };
     return this.httpClient.put<UserResponse>(`/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
+<<<<<<< HEAD
+=======
+      map(res => res));
+  }
+
+  getAvatarByName(username: String) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.httpClient.get<String>(`/user/avatar/${username}`, httpOptions).pipe(
+>>>>>>> 72acd828d67c52aae3cc408c1aab15816c3be236
       map(res => res));
   }
 }

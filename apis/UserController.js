@@ -112,13 +112,18 @@ module.exports = function (app) {
             res.json({
                 username: item.username,
                 id: item._id,
-                role: item.role,
-                avatar: item.avatar
+                role: item.role
             });
         })
     })
 
+    // get avater of user by name 
+    app.get('/user/avatar/:username', (req, res) => {
 
+        user.findOne({ username: req.params.username }).then(item => {
+            res.json(item.avatar);
+        })
+    })
     // GET for logout logout
     app.get('/logout', function (req, res, next) {
         if (req.session) {

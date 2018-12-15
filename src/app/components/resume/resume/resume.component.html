@@ -67,7 +67,7 @@
       </div>
     </div>
     <div class="w-33 d-flex align-items-center justify-content-center flex-column ">
-      <img class="rounded-circle" src="{{user?.avatar}}" alt="me" [@Shake]="stateHover"
+      <img class="rounded-circle" src="{{avatar}}" alt="me" [@Shake]="stateHover"
         (mouseenter)="togleStateAnimation('enter')" (mouseleave)="togleStateAnimation('leave')">
       <label for="changeImage" class="btn btn-outline-success mt-4" [class.d-none]="!isModify">
         Change Image
