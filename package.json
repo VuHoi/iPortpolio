@@ -4,7 +4,8 @@
   "proxy": "http://localhost:3000/",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently --kill-others-on-fail  \"npm run server\" \"npm run client\" ",
+    "start": "node server.js",
+    "start1": "concurrently --kill-others-on-fail  \"npm run server\" \"npm run client\" ",
     "build": "ng build",
     "client": "ng serve",
     "server": "nodemon server.js",
