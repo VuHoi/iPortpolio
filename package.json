@@ -7,7 +7,7 @@
     "start": "node server.js",
     "start1": "concurrently --kill-others-on-fail  \"npm run server\" \"npm run client\" ",
     "build": "ng build",
-    "client": "ng serve",
+    "client": "ng serve --open",
     "server": "nodemon server.js",
     "test": "ng test",
     "lint": "ng lint",
