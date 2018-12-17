@@ -105,7 +105,15 @@ a.text-white:hover, a.text-white:focus{
     padding-left: 0.6rem;
     padding-right: 0.6rem;
   }
+  .mb-size{
+    font-size: 2.0rem !important;
+  }
 }
+
+@media only screen and (max-width : 450px) {
+
+}
+
 @media only screen and (max-width : 412px) {
   .fontsizemb{
     font-size: 1.45rem;
