@@ -28,7 +28,7 @@ export class PortfolioService {
         'x-access-token': localStorage.getItem('token')
       })
     };
-    return this.httpClient.post('/api/home/', home, httpOptions).pipe(
+    return this.httpClient.post('/api/api/home/', home, httpOptions).pipe(
       map(res => res));
   }
   // post portfolio
@@ -39,7 +39,7 @@ export class PortfolioService {
         'x-access-token': localStorage.getItem('token')
       })
     };
-    return this.httpClient.post('/api/information/', info, httpOptions).pipe(
+    return this.httpClient.post('/api/api/information/', info, httpOptions).pipe(
       map(res => res));
   }
   // modify resume

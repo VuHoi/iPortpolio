@@ -25,14 +25,11 @@ export class ContainerResumeComponent implements OnInit {
     this.username = this.route.snapshot.paramMap.get('name');
     localStorage.setItem('baseurl', this.username);
     this.info = {
-      address: '',
-      department: '',
       education: [
         { name: '', duration: '', position: '' },
         { name: '', duration: '', position: '' },
         { name: '', duration: '', position: '' },
       ],
-      email: '',
       experiences: [{
         position: [
           { title: '' },
@@ -57,10 +54,6 @@ export class ContainerResumeComponent implements OnInit {
         { title: '' },
         { title: '' }
       ],
-      name: '',
-      otherLink: '',
-      phone: '',
-      profile: '',
       skills: [
         { title: '', process: 0 },
         { title: '', process: 0 },
@@ -70,7 +63,6 @@ export class ContainerResumeComponent implements OnInit {
         { title: '', process: 0 }
       ],
       slug: this.username,
-      userId: '',
       projects: [
         { name: '', param1: '', param2: '', icons: [''] },
         { name: '', param1: '', param2: '', icons: [''] },
