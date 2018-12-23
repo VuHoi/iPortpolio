@@ -1,3 +1,4 @@
+import { Project } from './project';
 
 export interface Education {
     position: String;
@@ -22,12 +23,7 @@ export interface Experience {
     name: String;
     duration: String;
 }
-export interface Project {
-    name: String;
-    param1: String;
-    param2: String;
-    icons: [String];
-}
+
 export type Portfolio = Partial<{
     _id?: String;
     userId: String;
@@ -44,4 +40,6 @@ export type Portfolio = Partial<{
     expertise: [Expertise, Expertise, Expertise, Expertise, Expertise, Expertise, Expertise, Expertise];
     experiences: [Experience, Experience];
     projects: [Project, Project, Project, Project];
+    status: boolean;
+    avatar: String;
 }>;

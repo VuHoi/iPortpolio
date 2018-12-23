@@ -6,7 +6,12 @@
   <div
     class="backgroundMain">
     <navigation></navigation>
+    
     <router-outlet></router-outlet>
   </div>
 
+</div>
+
+<div class="w-100 h-100 fixed-layout d-flex align-items-center justify-content-center" [class.show]="isloading">
+  <div class="lds-heart"><div></div></div>
 </div>

@@ -2,9 +2,7 @@ export interface Param2 {
     param1: String;
     param2: String;
 }
-export interface Param3 {
-    param1: String;
-    param2: String;
+export interface Param3 extends Param2 {
     param3: String;
 }
 export type Home = Partial<{
@@ -17,4 +15,5 @@ export type Home = Partial<{
     whoIam: Param3;
     skill_summary: Param3;
     _id?: String;
+    status: boolean;
 }>;

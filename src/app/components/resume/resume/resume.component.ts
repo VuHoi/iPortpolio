@@ -43,9 +43,10 @@ export function getProgressbarConfig(): ProgressbarConfig {
 export class ResumeComponent implements OnInit {
   stateHover = 'leave';
   @Input() info: Portfolio;
+  @Input()avatar: String;
   @Output() infoChange = new EventEmitter();
   user: UserResponse;
-  avatar: String;
+
   isModify = false;
   constructor(
     private sharedService: SharedService,
@@ -53,7 +54,6 @@ export class ResumeComponent implements OnInit {
   ) {
     this.sharedService.getMessage().subscribe(data => this.isModify = data);
     this.userService.getCurrentUser().subscribe(user => this.user = user);
-    this.userService.getAvatarByName(localStorage.getItem('baseurl')).subscribe(data => this.avatar = data);
   }
 
   ngOnInit() {

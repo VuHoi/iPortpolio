@@ -13,7 +13,7 @@ export class NavigationComponent implements OnInit {
   constructor(
     private router: Router,
     private shareService: SharedService) {
-    this.name = localStorage.getItem('baseurl') ? localStorage.getItem('baseurl') : this.name;
+    this.shareService.getMessageRoute().subscribe(route => this.name = route);
     this.router.events.subscribe((param: any) =>
       this.isShow = param.url ? param.url === '/login' || param.url === '/register' : this.isShow);
     this.shareService.getMessage().subscribe(data => this.logged = data != null ? true : false);
@@ -27,7 +27,6 @@ export class NavigationComponent implements OnInit {
 
   ActivedRoute = (state) => {
     this.active = state;
-    this.name = localStorage.getItem('baseurl') ? localStorage.getItem('baseurl') : this.name;
     this.router.navigate([this.name, state]);
   }
   modifyPortfolio() {

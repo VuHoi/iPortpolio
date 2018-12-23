@@ -17,15 +17,17 @@ import { ContainerResumeComponent } from './components/resume/container-resume/c
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProgressbarModule } from 'ngx-bootstrap';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
-import { DelayResolve } from './DelayResolve';
+import { DelayResolve } from './resolve-datas/DelayResolve';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CompareValidatorDirective } from './shares/compare-validator.directive';
+import { HomeResolve } from './resolve-datas/HomeResolve';
+import { PortfolioResolve } from './resolve-datas/PortfolioResolve';
 const routes: Routes = [
   { path: '', redirectTo: 'uitgroup/home', pathMatch: 'full' },
-  { path: ':name/home', component: HomeComponent, data: { title: 'home' } , resolve: [DelayResolve]  },
-  { path: ':name/resume', component: ContainerResumeComponent, resolve: [DelayResolve] },
-  { path: ':name/contact', component: ContactComponent , resolve: [DelayResolve]  },
+  { path: ':name/home', component: HomeComponent, data: { title: 'Home' }, resolve: { home: HomeResolve } },
+  { path: ':name/resume', component: ContainerResumeComponent, data: { title: 'Portfolio' }, resolve: { portfolio: PortfolioResolve } },
+  { path: ':name/contact', component: ContactComponent, resolve: [DelayResolve] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: 'uitgroup/home' },
@@ -47,7 +49,7 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     // custom directive
-    CompareValidatorDirective
+    CompareValidatorDirective,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,9 @@ const routes: Routes = [
   ],
   providers: [
     Title,
-    DelayResolve
+    DelayResolve,
+    HomeResolve,
+    PortfolioResolve,
   ],
   bootstrap: [AppComponent]
 })

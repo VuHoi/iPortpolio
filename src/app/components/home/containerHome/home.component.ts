@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { Home } from 'src/app/models/home';
@@ -14,38 +13,14 @@ import { UserResponse } from 'src/app/models/UserResponse';
 })
 export class HomeComponent implements OnInit {
   home: Home;
-  username = '';
   canModify = true;
-  currentUser: UserResponse;
   constructor(
-    public titleService: Title,
     private route: ActivatedRoute,
     private portfolio: PortfolioService,
-    private sharedService: SharedService,
-    private userService: UserService) {
-    this.username = this.route.snapshot.paramMap.get('name');
-    localStorage.setItem('baseurl', this.username);
-    this.home = {
-      university: { param1: '', param2: '' },
-      hobbies: { param1: '', param2: '' },
-      hometown: { param1: '', param2: '' },
-      name: '',
-      skill_summary: { param1: '', param2: '', param3: '' },
-      slug: this.username,
-      userId: '',
-      whoIam: { param1: '', param2: '', param3: '' }
-    };
-    this.userService.getCurrentUser().subscribe(user => {
-      if (user) {
-        if (this.username !== user.username) {
-          this.sharedService.clearMessage();
-        }
-      }
-    }, () => this.sharedService.clearMessage());
-    this.portfolio.getHomeDataByName(this.username).subscribe((data: Home) => {
-      this.canModify = data ? true : false;
-      this.home = data ? data : this.home;
-      titleService.setTitle(`${data ? data.name : this.username} - Home`);
+    private sharedService: SharedService) {
+    this.route.data.subscribe((data: any) => {
+      this.canModify = data.home.status;
+      this.home = data.home;
     });
     this.sharedService.getMessage().subscribe(data => {
       if (!data && data != null) {

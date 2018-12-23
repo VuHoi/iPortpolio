@@ -19,6 +19,7 @@ export class ContactComponent implements OnInit {
     this.username = this.route.snapshot.paramMap.get('name');
     localStorage.setItem('baseurl', this.username);
     titleService.setTitle(`${this.username} - Contact`);
+    this.sharedService.clearMessageLoading();
     this.userService.getCurrentUser().subscribe(user => {
       if (user) {
         if (this.username !== user.username) {
