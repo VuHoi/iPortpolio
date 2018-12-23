@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'uitgroup/home', pathMatch: 'full' },
   { path: ':name/home', component: HomeComponent, data: { title: 'Home' }, resolve: { home: HomeResolve } },
   { path: ':name/resume', component: ContainerResumeComponent, data: { title: 'Portfolio' }, resolve: { portfolio: PortfolioResolve } },
-  { path: ':name/contact', component: ContactComponent, resolve: [DelayResolve] },
+  { path: ':name/contact', component: ContactComponent, data: { title: 'Contact' }, resolve: [DelayResolve] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: 'uitgroup/home' },

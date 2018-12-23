@@ -7,10 +7,8 @@ import { PortfolioService } from '../services/portfolio.service';
 import { Title } from '@angular/platform-browser';
 import { UserService } from '../services/user.service';
 import { Portfolio } from '../models/portfolio';
-import { UserResponse } from '../models/UserResponse';
 @Injectable()
 export class PortfolioResolve implements Resolve<Observable<any>> {
-
     constructor(
         public titleService: Title,
         private sharedService: SharedService,
@@ -20,7 +18,6 @@ export class PortfolioResolve implements Resolve<Observable<any>> {
     }
     username = '';
     avatar: String = '';
-    user: UserResponse;
     resolve(route: ActivatedRouteSnapshot): any {
         this.sharedService.sendMessageLoading(true);
         this.username = route.paramMap.get('name');
@@ -78,7 +75,6 @@ export class PortfolioResolve implements Resolve<Observable<any>> {
                 }
             }
         }, () => this.sharedService.clearMessage());
-        this.userService.getCurrentUser().subscribe(user => this.user = user);
         this.userService.getAvatarByName(this.username).subscribe(data => this.avatar = data);
         return this.portfolio.getResumeDataByName(this.username).pipe(
             delay(1000),
