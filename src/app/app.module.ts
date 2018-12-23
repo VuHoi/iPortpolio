@@ -24,6 +24,7 @@ import { CompareValidatorDirective } from './shares/compare-validator.directive'
 import { HomeResolve } from './resolve-datas/HomeResolve';
 import { PortfolioResolve } from './resolve-datas/PortfolioResolve';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ToastModule } from './components/toast/toast.module';
 const routes: Routes = [
   { path: '', redirectTo: 'uitgroup/home', pathMatch: 'full' },
   { path: ':name/home', component: HomeComponent, data: { title: 'Home' }, resolve: { home: HomeResolve } },
@@ -61,6 +62,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AlertModule.forRoot(),
     ProgressbarModule.forRoot(),
+    ToastModule.forRoot(),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
