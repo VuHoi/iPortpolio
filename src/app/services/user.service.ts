@@ -42,12 +42,11 @@ export class UserService {
   }
 
   getAvatarByName(username: String) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-    return this.httpClient.get<String>(`/api/user/avatar/${username}`, httpOptions).pipe(
+    return this.httpClient.get<String>(`/api/user/avatar/${username}`).pipe(
+      map(res => res));
+  }
+  checkUserExiting(username: String) {
+    return this.httpClient.get<String>(`/api/user/${username}`).pipe(
       map(res => res));
   }
 }

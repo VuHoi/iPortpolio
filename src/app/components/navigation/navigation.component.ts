@@ -15,7 +15,7 @@ export class NavigationComponent implements OnInit {
     private shareService: SharedService) {
     this.shareService.getMessageRoute().subscribe(route => this.name = route);
     this.router.events.subscribe((param: any) =>
-      this.isShow = param.url ? param.url === '/login' || param.url === '/register' : this.isShow);
+      this.isShow = param.url ? param.url === '/login' || param.url === '/register' || param.url === '/notfound' : this.isShow);
     this.shareService.getMessage().subscribe(data => this.logged = data != null ? true : false);
   }
 

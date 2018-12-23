@@ -25,6 +25,13 @@ module.exports = function (app) {
         })
     });
 
+    app.get('/user/:username', (req, res) => {
+        user.findOne({ username: req.params.username }).then(item => {
+          if(item) res.json({status:true});
+         else res.json({status:false})
+        });
+    });
+
     //http post
     app.post('/user', (req, res) => {
         var User = req.body;

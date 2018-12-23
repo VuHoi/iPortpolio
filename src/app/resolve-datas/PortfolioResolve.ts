@@ -1,6 +1,6 @@
 import { of, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { delay, finalize, map, catchError } from 'rxjs/operators';
 import { SharedService } from '../shares/SharedService';
 import { PortfolioService } from '../services/portfolio.service';
@@ -13,7 +13,8 @@ export class PortfolioResolve implements Resolve<Observable<any>> {
         public titleService: Title,
         private sharedService: SharedService,
         private portfolio: PortfolioService,
-        private userService: UserService
+        private userService: UserService,
+        private router: Router
     ) {
     }
     username = '';
@@ -21,6 +22,9 @@ export class PortfolioResolve implements Resolve<Observable<any>> {
     resolve(route: ActivatedRouteSnapshot): any {
         this.sharedService.sendMessageLoading(true);
         this.username = route.paramMap.get('name');
+        this.userService.checkUserExiting(this.username).subscribe((data: any) => {
+            if (!data.status) { this.router.navigate(['/notfound']); }
+        });
         this.sharedService.sendMessageRoute(this.username);
         const portfolio: Portfolio = {
             education: [

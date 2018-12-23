@@ -23,14 +23,17 @@ import { RegisterComponent } from './components/register/register.component';
 import { CompareValidatorDirective } from './shares/compare-validator.directive';
 import { HomeResolve } from './resolve-datas/HomeResolve';
 import { PortfolioResolve } from './resolve-datas/PortfolioResolve';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 const routes: Routes = [
   { path: '', redirectTo: 'uitgroup/home', pathMatch: 'full' },
   { path: ':name/home', component: HomeComponent, data: { title: 'Home' }, resolve: { home: HomeResolve } },
   { path: ':name/resume', component: ContainerResumeComponent, data: { title: 'Portfolio' }, resolve: { portfolio: PortfolioResolve } },
   { path: ':name/contact', component: ContactComponent, data: { title: 'Contact' }, resolve: [DelayResolve] },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: '**', redirectTo: 'uitgroup/home' },
+  { path: 'login', component: LoginComponent, data: { title: 'Login' }, resolve: [DelayResolve] },
+  { path: 'register', component: RegisterComponent, data: { title: 'Register' }, resolve: [DelayResolve] },
+  { path: 'notfound', component: NotfoundComponent, data: { title: 'Not Found', resolve: [DelayResolve] } },
+  { path: ':name', redirectTo: ':name/home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'notfound' }
 ];
 
 @NgModule({
@@ -50,6 +53,7 @@ const routes: Routes = [
     RegisterComponent,
     // custom directive
     CompareValidatorDirective,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
