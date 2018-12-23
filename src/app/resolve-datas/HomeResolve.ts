@@ -22,9 +22,11 @@ export class HomeResolve implements Resolve<Observable<any>> {
     resolve(route: ActivatedRouteSnapshot): any {
         this.sharedService.sendMessageLoading(true);
         this.username = route.paramMap.get('name');
-        this.userService.checkUserExiting(this.username).subscribe((data: any) => {
-            if (!data.status) { this.router.navigate(['/notfound']); }
-        });
+        if (this.username) {
+            this.userService.checkUserExiting(this.username).subscribe((data: any) => {
+                if (!data.status) { this.router.navigate(['/notfound']); }
+            });
+        }
         this.sharedService.sendMessageRoute(this.username);
         const home: Home = {
             university: { param1: '', param2: '' },

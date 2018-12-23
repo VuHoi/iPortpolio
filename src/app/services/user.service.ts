@@ -46,7 +46,7 @@ export class UserService {
       map(res => res));
   }
   checkUserExiting(username: String) {
-    return this.httpClient.get<String>(`/api/user/${username}`).pipe(
+    return this.httpClient.get<String>(`/api/user/exiting/${username}`).pipe(
       map(res => res));
   }
 }

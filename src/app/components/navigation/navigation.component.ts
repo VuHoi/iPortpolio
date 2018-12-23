@@ -28,6 +28,8 @@ export class NavigationComponent implements OnInit {
   ActivedRoute = (state) => {
     this.active = state;
     this.router.navigate([this.name, state]);
+    this.isModify = false;
+    this.shareService.sendMessage(this.isModify);
   }
   modifyPortfolio() {
     this.isModify = !this.isModify;

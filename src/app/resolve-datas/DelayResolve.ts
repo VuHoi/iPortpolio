@@ -16,6 +16,7 @@ export class DelayResolve implements Resolve<Observable<any>> {
   resolve(route: ActivatedRouteSnapshot): any {
     this.sharedService.sendMessageLoading(true);
     this.username = route.paramMap.get('name');
+    this.titleService.setTitle(`${this.username ? this.userService + ' - ' : ''}  ${route.data.title}`);
     if (this.username) {
       this.userService.checkUserExiting(this.username).subscribe((data: any) => {
         if (!data.status) { this.router.navigate(['/notfound']); }
@@ -29,7 +30,6 @@ export class DelayResolve implements Resolve<Observable<any>> {
         }
       }
     }, () => this.sharedService.clearMessage());
-    this.titleService.setTitle(`${this.username ? this.userService + ' - ' : ''}  ${route.data.title}`);
     return of(null).pipe(
       delay(1000),
       finalize(() => {
