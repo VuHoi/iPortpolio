@@ -14,15 +14,16 @@ import { toastAnimations, ToastAnimationState } from './toast-animation';
 export class ToastComponent implements OnInit, OnDestroy {
   animationState: ToastAnimationState = 'default';
   iconType: string;
-
+  url: String = '../../../assets/images/dog-notify.png';
   private intervalId: any;
 
   constructor(
     readonly data: ToastData,
     readonly ref: ToastRef,
     @Inject(TOAST_CONFIG_TOKEN) public toastConfig: ToastConfig
-    ) {
-      this.iconType = data.type === 'success' ? 'done' : data.type;
+  ) {
+    this.iconType = data.type === 'success' ? 'done' : data.type;
+    this.url = data.type === 'success' ? '../../../assets/images/dog-notify.png' : '../../../assets/images/dog-warning.png';
   }
 
   ngOnInit() {

@@ -25,7 +25,7 @@ export class DelayResolve implements Resolve<Observable<any>> {
           this.router.navigate(['/notfound']);
           this.toastService.show({
             text: `Unfortunately! \n ${this.username} \n not exiting`,
-            type: 'success',
+            type: 'warning',
           });
         }
       });
