@@ -4,11 +4,11 @@ import { AnimationEvent } from '@angular/animations';
 import { ToastData, TOAST_CONFIG_TOKEN, ToastConfig } from './toast-config';
 import { ToastRef } from './toast-ref';
 import { toastAnimations, ToastAnimationState } from './toast-animation';
+
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'toast',
+  selector: 'app-toast',
   templateUrl: './toast.component.html',
-  styleUrls: ['./toast.component.css'],
+  styleUrls: ['toast.component.css'],
   animations: [toastAnimations.fadeToast],
 })
 export class ToastComponent implements OnInit, OnDestroy {
@@ -20,10 +20,9 @@ export class ToastComponent implements OnInit, OnDestroy {
   constructor(
     readonly data: ToastData,
     readonly ref: ToastRef,
-    @Inject(TOAST_CONFIG_TOKEN) private toastConfig: ToastConfig
-  ) {
-
-    this.iconType = data.type === 'success' ? 'done' : data.type;
+    @Inject(TOAST_CONFIG_TOKEN) public toastConfig: ToastConfig
+    ) {
+      this.iconType = data.type === 'success' ? 'done' : data.type;
   }
 
   ngOnInit() {
