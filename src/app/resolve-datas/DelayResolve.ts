@@ -5,12 +5,14 @@ import { delay, finalize } from 'rxjs/operators';
 import { SharedService } from '../shares/SharedService';
 import { UserService } from '../services/user.service';
 import { Title } from '@angular/platform-browser';
+import { ToastService } from '../components/toast/toast.service';
 @Injectable()
 export class DelayResolve implements Resolve<Observable<any>> {
   constructor(private sharedService: SharedService,
     public titleService: Title,
     private userService: UserService,
-    private router: Router) {
+    private router: Router,
+    private toastService: ToastService) {
   }
   username = '';
   resolve(route: ActivatedRouteSnapshot): any {
@@ -19,7 +21,13 @@ export class DelayResolve implements Resolve<Observable<any>> {
     this.titleService.setTitle(`${this.username ? this.userService + ' - ' : ''}  ${route.data.title}`);
     if (this.username) {
       this.userService.checkUserExiting(this.username).subscribe((data: any) => {
-        if (!data.status) { this.router.navigate(['/notfound']); }
+        if (!data.status) {
+          this.router.navigate(['/notfound']);
+          this.toastService.show({
+            text: `Unfortunately! \n ${this.username} \n not exiting`,
+            type: 'success',
+          });
+        }
       });
     }
     this.sharedService.sendMessageRoute(this.username);
@@ -34,6 +42,10 @@ export class DelayResolve implements Resolve<Observable<any>> {
       delay(1000),
       finalize(() => {
         this.sharedService.clearMessageLoading();
+        this.toastService.show({
+          text: `Welcome to \n ${route.data.title}`,
+          type: 'success',
+        });
       }));
   }
 }

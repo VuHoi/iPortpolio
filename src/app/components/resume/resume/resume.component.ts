@@ -6,6 +6,7 @@ import { Portfolio } from 'src/app/models/portfolio';
 import { SharedService } from 'src/app/shares/SharedService';
 import { UserResponse } from 'src/app/models/UserResponse';
 import { UserService } from 'src/app/services/user.service';
+import { ToastService } from '../../toast/toast.service';
 export function getProgressbarConfig(): ProgressbarConfig {
   return Object.assign(new ProgressbarConfig(), { animate: true, striped: true, max: 100 });
 }
@@ -50,7 +51,8 @@ export class ResumeComponent implements OnInit {
   isModify = false;
   constructor(
     private sharedService: SharedService,
-    private userService: UserService
+    private userService: UserService,
+    private toastService: ToastService
   ) {
     this.sharedService.getMessage().subscribe(data => this.isModify = data);
     this.userService.getCurrentUser().subscribe(user => this.user = user);
@@ -70,9 +72,12 @@ export class ResumeComponent implements OnInit {
       let reader = new FileReader();
       reader.onload = (eventLoader: any) => {
         this.avatar = eventLoader.target.result;
-        this.userService.changeImage(this.user.id, eventLoader.target.result).subscribe((data) => {
-          console.log('success');
-        });
+        this.userService.changeImage(this.user.id, eventLoader.target.result).subscribe((data) =>
+          this.toastService.show({
+            text: `Congratulations \n Upload image success`,
+            type: 'success',
+          })
+        );
       };
       reader.readAsDataURL(event.target.files[0]);
     }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { ContactEnter, ContactLeave } from '../../Animation/contact-animate';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactService } from 'src/app/services/contact.service';
 import { Contact } from 'src/app/models/contact';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastService } from '../../toast/toast.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -53,14 +53,12 @@ export class ContactFormComponent implements OnInit {
     ])
   });
   constructor(
-    public titleService: Title,
     private route: ActivatedRoute,
     private contactService: ContactService,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ) {
     this.username = this.route.snapshot.paramMap.get('name');
-    localStorage.setItem('baseurl', this.username);
-    titleService.setTitle(`${this.username} - Resume`);
   }
   get getName() {
     return this.contactForm.get('name');
@@ -75,7 +73,13 @@ export class ContactFormComponent implements OnInit {
     return this.contactForm.get('message');
   }
   submitContact() {
-    this.contactService.postContact(this.contact, this.username).subscribe(data => this.router.navigate([this.username, 'home']));
+    this.contactService.postContact(this.contact, this.username).subscribe(data => {
+      this.router.navigate([this.username, 'home']);
+      this.toastService.show({
+        text: `Thank's you \n for your contact`,
+        type: 'success',
+      });
+    });
   }
   ngOnInit() {
   }

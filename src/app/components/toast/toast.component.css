@@ -16,5 +16,23 @@
 }
 
 .specialToast{
-  width: 290px;
+  width: 350px;
+}
+img{
+  width: 150px;
+  margin-top:100px;
+  height:200px;
+}
+.backgroundCloudCall{
+  background-size: cover;
+  background: url("../../../assets/images/cloudCall.png") no-repeat left center;
+  width: 200px;
+  color: black;
+  white-space: pre-line;
+  /* word-break:break-all; */
+  min-height: 180px !important;
+}
+
+.heightContent{
+  height: 150px;
 }

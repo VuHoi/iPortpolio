@@ -7,6 +7,7 @@ import { Home } from '../models/home';
 import { PortfolioService } from '../services/portfolio.service';
 import { Title } from '@angular/platform-browser';
 import { UserService } from '../services/user.service';
+import { ToastService } from '../components/toast/toast.service';
 @Injectable()
 export class HomeResolve implements Resolve<Observable<any>> {
 
@@ -15,16 +16,25 @@ export class HomeResolve implements Resolve<Observable<any>> {
         private sharedService: SharedService,
         private portfolio: PortfolioService,
         private userService: UserService,
-        private router: Router
+        private router: Router,
+        private toastService: ToastService
     ) {
     }
     username = '';
+    checkUserExiting = false;
     resolve(route: ActivatedRouteSnapshot): any {
         this.sharedService.sendMessageLoading(true);
         this.username = route.paramMap.get('name');
         if (this.username) {
             this.userService.checkUserExiting(this.username).subscribe((data: any) => {
-                if (!data.status) { this.router.navigate(['/notfound']); }
+                this.checkUserExiting = data.status;
+                if (!data.status) {
+                    this.router.navigate(['/notfound']);
+                    this.toastService.show({
+                        text: `Unfortunately! \n ${this.username} \n not exiting`,
+                        type: 'success',
+                    });
+                }
             });
         }
         this.sharedService.sendMessageRoute(this.username);
@@ -50,11 +60,21 @@ export class HomeResolve implements Resolve<Observable<any>> {
             map((data: Home) => {
                 this.titleService.setTitle(`${data.name} - ${route.data.title}`);
                 data.status = true;
+                this.toastService.show({
+                    text: `Hello! I'm \n ${data.name}`,
+                    type: 'success',
+                });
                 return data;
             }),
             catchError(err => {
                 home.status = false;
                 this.titleService.setTitle(`${this.username} - ${route.data.title}`);
+                if (this.checkUserExiting) {
+                    this.toastService.show({
+                        text: `Sorry! Data of \n ${this.username} \n not exiting `,
+                        type: 'warning',
+                    });
+                }
                 return of(home);
             }),
             finalize(() => {

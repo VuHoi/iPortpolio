@@ -1,6 +1,5 @@
 import { Component, HostListener, OnInit, OnChanges } from '@angular/core';
 import { SharedService } from 'src/app/shares/SharedService';
-import { ToastService } from '../toast/toast.service';
 // import { Numbertest2 } from 'src/app/models/test';
 
 @Component({
@@ -16,9 +15,8 @@ export class AppComponent {
   //   public beforeunloadHandler($event) {
   //   $event.returnValue = 'Are you sure?';
   //  }
-  private count = 1;
   isloading = false;
-  constructor(private shareService: SharedService, private toastService: ToastService) {
+  constructor(private shareService: SharedService) {
     // function* infiniteSequence() {
     //   var i = 0;
     //   while (a < 10) {
@@ -34,15 +32,6 @@ export class AppComponent {
     // }
     this.shareService.getMessageLoading().subscribe(loading => this.isloading = loading);
 
-  }
-
-  showToast() {
-    this.toastService.show({
-      text: `Toast message ${this.count}`,
-      type: 'success',
-    });
-
-    this.count += 1;
   }
 }
 
