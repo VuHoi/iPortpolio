@@ -99,6 +99,13 @@ a.text-white:hover, a.text-white:focus{
   }
 }
 
+@media only screen and (max-width : 640px) {
+  .mb-size{
+    font-size: 3.0rem !important;
+    padding-top: 0.8 rem !important;
+  }
+}
+
 @media only screen and (max-width : 480px) {
   .fontsizemb{
     font-size: 1.5rem;
