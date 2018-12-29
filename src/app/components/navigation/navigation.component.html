@@ -1,7 +1,9 @@
 <div *ngIf="!isShow">
-  <div>
-    <button class="btn btn-outline-success float-right m-5" *ngIf="logged" (click)="modifyPortfolio()">{{isModify?'Save':'Modify'}}</button>
-      <div class="btn-login float-right" *ngIf="!logged" ><a routerLink="/login">Login</a></div>
+  <div class="hidden-mobi-login">
+    <button class="btn btn-outline-success float-right m-5 m-mb" *ngIf="logged" (click)="modifyPortfolio()">
+      {{isModify?'Save':'Modify'}}
+    </button>
+    <div class="btn-login float-right" *ngIf="!logged" ><a routerLink="/login">Login</a></div>
   </div>
   <div class="backgroundHeader">
     <div class="d-inline-block w-100 ">

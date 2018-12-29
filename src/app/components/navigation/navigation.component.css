@@ -49,6 +49,10 @@ a{
   text-decoration: none!important;
 }
 
+.hidden-mobi-login{
+  display: inline;
+}
+
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 @media only screen and (max-width : 1200px) {
@@ -65,6 +69,13 @@ a{
   }
 }
 
+
+@media only screen and (max-width : 1145px) {
+  .m-mb{
+    margin: 2.28rem !important;;
+  }
+}
+
 @media only screen and (max-width : 992px) {
   .backgroundHeader{
     background-size: cover;
@@ -77,6 +88,10 @@ a{
   }
   .ml-10{
     margin-left: 7rem;
+  }
+
+  .hidden-mobi-login{
+    display: none;
   }
 }
 
