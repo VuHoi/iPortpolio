@@ -59,12 +59,12 @@
     <div class="row">
       <div class="col-md-7 ">
         <h5 class="fontTitle">Who I Am ?</h5>
-        <div *ngIf="!isModify">
+        <div class="fontparam" *ngIf="!isModify">
           <p>{{home?.whoIam?.param1}}</p>
           <p>{{home?.whoIam?.param2}}</p>
           <p>{{home?.whoIam?.param3}}</p>
         </div>
-        <div *ngIf="isModify">
+        <div class="fontparam" *ngIf="isModify">
           <p><textarea class="w-100" rows="4" name="WhoIAmParam1" (ngModelChange)="changeValueInput()" placeholder="param 1"
               [(ngModel)]="home.whoIam.param1"></textarea></p>
           <p><textarea class="w-100" rows="4" name="WhoIAmParam2" (ngModelChange)="changeValueInput()" placeholder="param 2"
@@ -77,12 +77,12 @@
       <div class="col-md-1"></div>
       <div class="col-md-4">
         <h5 class="fontTitle">Skill ?</h5>
-        <div *ngIf="!isModify">
+        <div class="fontparam" *ngIf="!isModify">
           <p>{{home?.skill_summary?.param1}}</p>
           <p>{{home?.skill_summary?.param2}}</p>
           <p>{{home?.skill_summary?.param3}}</p>
         </div>
-        <div *ngIf="isModify">
+        <div class="fontparam" *ngIf="isModify">
           <p><textarea class="w-100" rows="4" name="skill_summaryParam1" (ngModelChange)="changeValueInput()"
               placeholder="param 1" [(ngModel)]="home.skill_summary.param1"></textarea></p>
           <p><textarea class="w-100" rows="4" name="skill_summaryParam2" (ngModelChange)="changeValueInput()"
@@ -97,11 +97,11 @@
     <div class="row">
       <div class="col-md-7 hide-display">
         <h5 class="fontTitle">University</h5>
-        <div *ngIf="!isModify">
+        <div class="fontparam" *ngIf="!isModify">
           <p>{{home?.university?.param1}}</p>
           <p>{{home?.university?.param2}}</p>
         </div>
-        <div *ngIf="isModify">
+        <div class="fontparam" *ngIf="isModify">
           <p><textarea class="w-100" rows="4" name="universityParam1" (ngModelChange)="changeValueInput()" placeholder="param 1"
               [(ngModel)]="home.university.param1"></textarea></p>
           <p><textarea class="w-100" rows="4" name="universityParam2" (ngModelChange)="changeValueInput()" placeholder="param 2"
@@ -109,11 +109,11 @@
         </div>
         <br>
         <h5 class="fontTitle">Hometown</h5>
-        <div *ngIf="!isModify">
+        <div class="fontparam" *ngIf="!isModify">
           <p>{{home?.hometown?.param1}}</p>
           <p>{{home?.hometown?.param2}}</p>
         </div>
-        <div *ngIf="isModify">
+        <div class="fontparam" *ngIf="isModify">
           <p><textarea class="w-100" rows="4" name="hometownParam1" (ngModelChange)="changeValueInput()" placeholder="param 1"
               [(ngModel)]="home.hometown.param1"></textarea></p>
           <p><textarea class="w-100" rows="4" name="hometownParam2" (ngModelChange)="changeValueInput()" placeholder="param 2"
@@ -124,11 +124,11 @@
       <div class="col-md-4 hide-display">
         <p class="downlinehobby"></p>
         <h5 class="fontTitle">Hobbies</h5>
-        <div *ngIf="!isModify">
+        <div class="fontparam" *ngIf="!isModify">
           <p>{{home?.hobbies?.param1}}</p>
           <p>{{home?.hobbies?.param2}}</p>
         </div>
-        <div *ngIf="isModify">
+        <div class="fontparam" *ngIf="isModify">
           <p><textarea class="w-100" rows="4" name="hobbiesParam1" (ngModelChange)="changeValueInput()" placeholder="param 1"
               [(ngModel)]="home.hobbies.param1"></textarea></p>
           <p><textarea class="w-100" rows="4" name="hobbiesParam2" (ngModelChange)="changeValueInput()" placeholder="param 2"

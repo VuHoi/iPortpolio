@@ -20,8 +20,6 @@
   color: gold;
 }
 
-
-
 .borderBottom{
   border-bottom: black 3px dashed;
 }
@@ -69,6 +67,10 @@ a.text-white:hover, a.text-white:focus{
 
 .downlinehobby{
   display: none; 
+}
+
+.fontparam{
+  font-size: 21px;
 }
 
 /* ---------------------------------------------- */
