@@ -166,6 +166,10 @@ height: 230px;
   display: none;
 }
 
+.text-input-upper{
+  text-transform: uppercase;
+}
+
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 
