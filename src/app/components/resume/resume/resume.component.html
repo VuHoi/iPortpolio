@@ -202,16 +202,19 @@
       <div *ngFor="let education of info?.education; let i=index">
         <div class="text-center mt-3" onkeyup="this.value = this.value.toUpperCase();" [class.mgtmb]="i!==0">
           <div>
-            <input class="text-center font-weight-bold w-100 text-input-upper " [readonly]="!isModify" [class.inputForm]="!isModify" name="positionEducation"
+            <input class="text-center font-weight-bold w-100 text-input-upper hidden-edu-mbi" [readonly]="!isModify" [class.inputForm]="!isModify" name="positionEducation"
               (ngModelChange)="changeValueInput()" placeholder="Position {{i+1}}" [(ngModel)]="education.position">
+            <p class="text-center font-weight-bold w-100 text-input-upper display-edu-mbi justify-content-center" name="positionEducation">{{education.position}}</p>
           </div>
           <div>
-            <input class="text-center w-100 text-input-upper " [readonly]="!isModify" [class.inputForm]="!isModify" name="nameEducation"
+            <input class="text-center w-100 text-input-upper hidden-edu-mbi" [readonly]="!isModify" [class.inputForm]="!isModify" name="nameEducation"
               (ngModelChange)="changeValueInput()" placeholder="Name" [(ngModel)]="education.name">
+            <p class="text-center w-100 text-input-upper display-edu-mbi justify-content-center" name="nameEducation">{{education.name}}</p>
           </div>
           <div>
-            <input class="text-center w-100 text-input-upper " [readonly]="!isModify" [class.inputForm]="!isModify" name="durationEducation"
+            <input class="text-center w-100 text-input-upper hidden-edu-mbi" [readonly]="!isModify" [class.inputForm]="!isModify" name="durationEducation"
               (ngModelChange)="changeValueInput()" placeholder="Duration" [(ngModel)]="education.duration">
+            <p class="text-center w-100 text-input-upper display-edu-mbi justify-content-center" name="durationEducation">{{education.duration}}</p>
           </div>
         </div>
       </div>
