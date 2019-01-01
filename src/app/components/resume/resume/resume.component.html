@@ -258,6 +258,7 @@
         <div class="lineVehical mr-auto "></div>
       </div>
       <div>
+        <!-- tiếp tục chổ này, chỉnh EXPERTISE vào tới 768 -> 501 thì ko thể căng lề center nữa.-->
         <div class="d-flex align-items-center justify-content-center flex-column mt-3 fontminmobile">
           <div class="w-100" *ngFor="let expertise of info?.expertise; let i=index">
             <input class="text-center expertise w-100 hidden-edu-mbi" [readonly]="!isModify" [class.inputForm]="!isModify" onkeyup="this.value = this.value.toUpperCase();" name="expertise+i"

@@ -389,7 +389,7 @@ height: 230px;
   .display-edu-mbi{
     display: inline;
     text-align: center !important;
-    text-transform: capitalize !important;
+    /* text-transform: capitalize !important; */
   }
 }
 
