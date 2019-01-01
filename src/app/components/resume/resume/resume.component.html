@@ -338,7 +338,7 @@
   </div>
   <!-- end mobi group -->
 
-  <div class="row ml-4 mr-4 mt-2" *ngFor="let experience of info?.experiences ; let i =index;">
+  <div class="row ml-4 mr-4 mt-1 mb-4" *ngFor="let experience of info?.experiences ; let i =index;">
     <div class="col-md-9 ">
       <h4>
         <input class="w-100 colorTitle font-mb hidden-edu-mbi" [readonly]="!isModify" [class.inputForm]="!isModify" name="nameExperient"
@@ -377,5 +377,27 @@
       </div>
     </div>
   </div>
-  
+
+  <!-- 4 card -->
+  <!-- <div class="displaygroup">
+    <div class="row mt-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="text-center mr-5 ml-5 border-bottom">
+          <h4 class="colorTitle ">MORE INFOMATION</h4>
+        </div>
+        <div *ngFor="let project of info?.projects; let i=index">
+          <div class="text-center mt-3">
+            <div>
+              <p class="text-center font-weight-bold w-100 text-input-upper display-edu-mbi justify-content-center">{{info.projects[0].info}}</p>
+            </div>
+            <div>
+              <p class="text-center w-100 text-input-upper display-edu-mbi justify-content-center">{{education.name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- end 4 card -->
 <footer class="footer mt-3"></footer>
