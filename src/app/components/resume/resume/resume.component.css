@@ -174,6 +174,13 @@ height: 230px;
   display: none;
 }
 
+.displaygroup{
+  display: none !important;
+}
+.display-mb768{
+  display: none;
+}
+
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 
@@ -289,7 +296,7 @@ height: 230px;
     display: block;
   }
   .font-mb{
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .hidden-edu-mbi{
@@ -299,6 +306,14 @@ height: 230px;
   .display-edu-mbi{
     display: inline;
     text-align: center !important;
+  }
+  /* .w-100 {
+    width: 100% !important;
+    text-align: center;
+  } */
+
+  .display-mb768{
+    display: inline;
   }
 }
 
@@ -320,15 +335,12 @@ height: 230px;
   .h4, h4 {
     font-size: 1.2rem;
   }
-  .fontminmobile{
-    font-size: 0.96rem !important;
-  }
   
 }
 
-@media only screen and (max-width : 589px) {
-  .fontminmobile{
-    font-size: 0.90rem !important;
+@media only screen and (max-width : 581px) {
+  .mgtmb{
+    margin-top: 2.8rem !important;
   }
 }
 
@@ -352,14 +364,32 @@ height: 230px;
   .mgt{
     margin-top: 0.6rem;
   }
-  .mgtmb{
-    margin-top: 2.0rem !important;
-  }
+
   .hiddenAndroid{
     display: none;
   }
   .hiddenAndroid2{
     display: block;
+  }
+  .fontminmobile{
+    font-size: 0.90rem !important;
+  }
+}
+
+@media only screen and (max-width : 500px) {
+  .fontminmobile{
+    font-size: 0.70rem !important;
+  }
+  .hiddengroup{
+    display: none !important;
+  }
+  .displaygroup{
+    display: block !important;
+  }
+  .display-edu-mbi{
+    display: inline;
+    text-align: center !important;
+    text-transform: capitalize !important;
   }
 }
 
@@ -387,7 +417,11 @@ height: 230px;
     color: #4d4d4d;
     letter-spacing: 0.0em !important;
   }
+  .iconmagin-l{
+    width: 200px;
+  }
 }
+
 @media only screen and (max-width : 371px) {
   .colorTitle {
     color: #4d4d4d;
@@ -409,6 +443,6 @@ height: 230px;
     margin-top: 0.55rem;
   }
   .mgtmb{
-    margin-top: 2.72rem !important;
+    margin-top: 3.0rem !important;
   }
 }
