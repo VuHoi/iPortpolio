@@ -364,16 +364,16 @@
         {{position.title}}
         <br>
       </div>
-      <div class="col-md-3 mt-5 pr-3 alert-info d-flex align-items-center justify-content-center flex-column">
-        <div>{{experience.name}}</div>
-        <div class="w-100">
-          <input class=" w-100 alert-info text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="experienceaddress"
-            (ngModelChange)="changeValueInput()" placeholder="Address" [(ngModel)]="experience.address">
-        </div>
-        <div class="w-100">
-          <input class=" w-100 alert-info text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="experienceduration"
-            (ngModelChange)="changeValueInput()" placeholder="Duration" [(ngModel)]="experience.duration">
-        </div>
+    </div>
+    <div class="col-md-3 mt-5 pr-3 alert-info d-flex align-items-center justify-content-center flex-column">
+      <div>{{experience.name}}</div>
+      <div class="w-100">
+        <input class=" w-100 alert-info text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="experienceaddress"
+          (ngModelChange)="changeValueInput()" placeholder="Address" [(ngModel)]="experience.address">
+      </div>
+      <div class="w-100">
+        <input class=" w-100 alert-info text-center" [readonly]="!isModify" [class.inputForm]="!isModify" name="experienceduration"
+          (ngModelChange)="changeValueInput()" placeholder="Duration" [(ngModel)]="experience.duration">
       </div>
     </div>
   </div>
