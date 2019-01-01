@@ -1,4 +1,4 @@
-<div *ngIf="!isShow">
+<div class="hidden-btn-mb" *ngIf="!isShow">
   <div class="hidden-mobi-login">
     <button class="btn btn-outline-success float-right m-5 m-mb" *ngIf="logged" (click)="modifyPortfolio()">
       {{isModify?'Save':'Modify'}}
@@ -16,6 +16,33 @@
       <a [ngClass]="{'activeRoute' :active==='home'}" (click)="ActivedRoute('home')" class="float-right mt-5  ml-10  h3 font-weight-bold">
         Home
       </a>
+    </div>
+  </div>
+</div>
+
+<!-- mobi 992 -->
+<div class="display-btn-mb">
+  <div class="row" *ngIf="!isShow">
+    <div class="col-1 hidden-mobi-login">
+      <button class="btn btn-outline-success float-left btn992" *ngIf="logged" (click)="modifyPortfolio()">
+        {{isModify?'Save':'Modify'}}
+      </button>
+      <div class="btn-login float-right" *ngIf="!logged" ><a routerLink="/login">Login</a></div>
+    </div>
+    <div class="col-11">
+      <div class="backgroundHeader">
+        <div class="d-inline-block w-100 ">
+          <a [ngClass]="{'activeRoute' :active==='contact'}" (click)="ActivedRoute('contact')" class="float-right mt-5 ml-10 mr-5 h3 font-weight-bold">
+            Contact
+          </a>
+          <a [ngClass]="{'activeRoute' :active==='resume'}" (click)="ActivedRoute('resume')" class="float-right mt-5  ml-10  h3 font-weight-bold">
+            Resume
+          </a>
+          <a [ngClass]="{'activeRoute' :active==='home'}" (click)="ActivedRoute('home')" class="float-right mt-5  ml-10  h3 font-weight-bold">
+            Home
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
