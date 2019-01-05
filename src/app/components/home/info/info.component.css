@@ -20,8 +20,6 @@
   color: gold;
 }
 
-
-
 .borderBottom{
   border-bottom: black 3px dashed;
 }
@@ -71,6 +69,10 @@ a.text-white:hover, a.text-white:focus{
   display: none; 
 }
 
+/* .fontparam{
+  font-size: 21px;
+} */
+
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 
@@ -81,6 +83,9 @@ a.text-white:hover, a.text-white:focus{
   .hide-display{
     display: inline-block;
   }
+  .mb-size{
+    padding-top: 1.2rem !important;
+  }
 }
 
 @media only screen and (max-width : 768px) {
@@ -89,6 +94,13 @@ a.text-white:hover, a.text-white:focus{
   }
   .navbar-mobile{
     display: block;
+  }
+  .mb-size{
+    font-size: 2.7rem !important;
+    padding-top: 0.8rem !important;
+  }
+  .pd-bt-mb{
+    padding-bottom: 1.7rem !important;
   }
 }
 
@@ -106,12 +118,12 @@ a.text-white:hover, a.text-white:focus{
     padding-right: 0.6rem;
   }
   .mb-size{
-    font-size: 2.0rem !important;
+    font-size: 2.5rem !important;
+    padding-top: 0.6rem !important;
   }
-}
-
-@media only screen and (max-width : 450px) {
-
+  .pd-bt-mb{
+    padding-bottom: 1.4rem !important;
+  }
 }
 
 @media only screen and (max-width : 412px) {
@@ -120,11 +132,22 @@ a.text-white:hover, a.text-white:focus{
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
+  .mb-size{
+    font-size: 2.3rem !important;
+    padding-top: 0.5rem !important;
+  }
+  .pd-bt-mb{
+    padding-bottom: 1.2rem !important;
+  }
 }
 @media only screen and (max-width : 363px) {
   .fontsizemb{
     font-size: 1.25rem;
     padding-left: 0.3rem;
     padding-right: 0.3rem;
+  }
+  .mb-size{
+    font-size: 2.0rem !important;
+    padding-top: 0.4rem !important;
   }
 }

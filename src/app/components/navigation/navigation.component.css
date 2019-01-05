@@ -49,6 +49,14 @@ a{
   text-decoration: none!important;
 }
 
+.hidden-mobi-login{
+  display: inline;
+}
+
+.display-btn-mb{
+  display: none;
+}
+
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 @media only screen and (max-width : 1200px) {
@@ -60,8 +68,16 @@ a{
     z-index: 10;
     background: url("../../../assets/images/home1-mobile-1200.png") no-repeat right center;
   }
+  
   .ml-10{
     margin-left: 7rem;
+  }
+}
+
+
+@media only screen and (max-width : 1145px) {
+  .m-mb{
+    margin: 2.28rem !important;
   }
 }
 
@@ -78,10 +94,25 @@ a{
   .ml-10{
     margin-left: 7rem;
   }
+
+  .hidden-btn-mb{
+    display: none;
+  }
+
+  .display-btn-mb{
+    display: inline;
+  }
+  .btn992{
+    margin-left: 1.0rem !important;
+    margin-top: 2rem !important;
+  }
 }
 
 @media only screen and (max-width : 768px) {
   .backgroundHeader{
+    display: none;
+  }
+  .hidden-mobi-login{
     display: none;
   }
 }

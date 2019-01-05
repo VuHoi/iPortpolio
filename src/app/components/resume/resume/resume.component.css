@@ -166,10 +166,28 @@ height: 230px;
   display: none;
 }
 
+.text-input-upper{
+  text-transform: uppercase;
+}
+
+.display-edu-mbi{
+  display: none;
+}
+
+.displaygroup{
+  display: none !important;
+}
+.display-mb768{
+  display: none;
+}
+
 /* ---------------------------------------------- */
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT (Non-Mobile First Method)*/
 
 @media only screen and (max-width : 1200px) {
+  .text-left-mobi{
+    text-align: left !important;
+  }
   .w-50px {
     width: 50px;
     margin-right: 0px !important;
@@ -277,7 +295,33 @@ height: 230px;
   .navbar-mobile{
     display: block;
   }
+  .font-mb{
+    font-size: 24px;
+  }
+
+  .hidden-edu-mbi{
+    display: none;
+  }
+
+  .display-edu-mbi{
+    display: inline;
+    text-align: center !important;
+  }
+  /* .w-100 {
+    width: 100% !important;
+    text-align: center;
+  } */
+
+  .display-mb768{
+    display: inline;
+  }
 }
+
+/* @media only screen and (max-width : 767px) {
+  .text-left-mobi{
+    text-align: center !important;
+  }
+} */
 
 @media only screen and (max-width : 616px) {
   .hiddenProfile{
@@ -291,15 +335,12 @@ height: 230px;
   .h4, h4 {
     font-size: 1.2rem;
   }
-  .fontminmobile{
-    font-size: 0.96rem !important;
-  }
   
 }
 
-@media only screen and (max-width : 589px) {
-  .fontminmobile{
-    font-size: 0.90rem !important;
+@media only screen and (max-width : 581px) {
+  .mgtmb{
+    margin-top: 2.8rem !important;
   }
 }
 
@@ -323,14 +364,32 @@ height: 230px;
   .mgt{
     margin-top: 0.6rem;
   }
-  .mgtmb{
-    margin-top: 3.5rem !important;
-  }
+
   .hiddenAndroid{
     display: none;
   }
   .hiddenAndroid2{
     display: block;
+  }
+  .fontminmobile{
+    font-size: 0.90rem !important;
+  }
+}
+
+@media only screen and (max-width : 500px) {
+  .fontminmobile{
+    font-size: 0.70rem !important;
+  }
+  .hiddengroup{
+    display: none !important;
+  }
+  .displaygroup{
+    display: block !important;
+  }
+  .display-edu-mbi{
+    display: inline;
+    text-align: center !important;
+    /* text-transform: capitalize !important; */
   }
 }
 
@@ -338,6 +397,12 @@ height: 230px;
   .colorTitle {
     color: #4d4d4d;
     letter-spacing: 0.1em !important;
+  }
+}
+
+@media only screen and (max-width : 469px) {
+  .inputForm {
+    width: 250px;
   }
 }
 
@@ -352,12 +417,19 @@ height: 230px;
     color: #4d4d4d;
     letter-spacing: 0.0em !important;
   }
+  .iconmagin-l{
+    width: 200px;
+  }
 }
+
 @media only screen and (max-width : 371px) {
   .colorTitle {
     color: #4d4d4d;
     font-size: 0.9rem;
     letter-spacing: 0.0em !important;
+  }
+  .font-mb{
+    font-size: 22px;
   }
 }
 @media only screen and (max-width : 340px) {
@@ -371,6 +443,6 @@ height: 230px;
     margin-top: 0.55rem;
   }
   .mgtmb{
-    margin-top: 4.12rem !important;
+    margin-top: 3.0rem !important;
   }
 }
