@@ -22,46 +22,22 @@ export class PortfolioService {
   }
   // post home
   postHomeData = (home: Home) => {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token')
-      })
-    };
-    return this.httpClient.post('/api/api/home/', home, httpOptions).pipe(
+    return this.httpClient.post('/api/api/home/', home).pipe(
       map(res => res));
   }
   // post portfolio
   postPortfolioData = (info: Portfolio) => {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token')
-      })
-    };
-    return this.httpClient.post('/api/api/information/', info, httpOptions).pipe(
+    return this.httpClient.post('/api/api/information/', info).pipe(
       map(res => res));
   }
   // modify resume
   putPortfolioData = (info: Portfolio) => {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token')
-      })
-    };
-    return this.httpClient.put(`/api/api/information/${info._id}`, info, httpOptions).pipe(
+    return this.httpClient.put(`/api/api/information/${info._id}`, info).pipe(
       map(res => res));
   }
   // modify home
   putHomeData = (home: Home) => {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token')
-      })
-    };
-    return this.httpClient.put(`/api/api/home/${home._id}`, home, httpOptions).pipe(
+    return this.httpClient.put(`/api/api/home/${home._id}`, home).pipe(
       map(res => res));
   }
 }

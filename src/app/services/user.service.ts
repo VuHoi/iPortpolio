@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user';
 import { map } from 'rxjs/operators';
 import { UserResponse } from '../models/UserResponse';
+import { interval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,25 +20,13 @@ export class UserService {
       map(res => res));
   }
   getCurrentUser = () => {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token')
-      })
-    };
-    return this.httpClient.get<UserResponse>('/api/user/token', httpOptions).pipe(
+    return this.httpClient.get<UserResponse>('/api/user/token').pipe(
       map(res => res));
   }
 
   changeImage = (id: String, avatar: String) => {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token')
-      })
-    };
     const payload = { avatar };
-    return this.httpClient.put<UserResponse>(`/api/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
+    return this.httpClient.put<UserResponse>(`/api/api/upload/imageV2/${id}`, payload).pipe(
       map(res => res));
   }
 
@@ -49,4 +38,7 @@ export class UserService {
     return this.httpClient.get<String>(`/api/user/exiting/${username}`).pipe(
       map(res => res));
   }
+getAllUser() {
+  return this.httpClient.get('/api/api/user');
+}
 }

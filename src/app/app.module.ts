@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { AppComponent } from './components/root/app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -25,6 +25,7 @@ import { HomeResolve } from './resolve-datas/HomeResolve';
 import { PortfolioResolve } from './resolve-datas/PortfolioResolve';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ToastModule } from './components/toast/toast.module';
+import { AuthInterceptor } from './shares/AuthInterceptor';
 const routes: Routes = [
   { path: '', redirectTo: 'uitgroup/home', pathMatch: 'full' },
   { path: ':name/home', component: HomeComponent, data: { title: 'Home' }, resolve: { home: HomeResolve } },
@@ -72,6 +73,7 @@ const routes: Routes = [
     DelayResolve,
     HomeResolve,
     PortfolioResolve,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
