@@ -26,6 +26,7 @@ import { PortfolioResolve } from './resolve-datas/PortfolioResolve';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ToastModule } from './components/toast/toast.module';
 import { AuthInterceptor } from './shares/AuthInterceptor';
+import { MobileNavigationModule } from './shares/mobile-navigation/mobile-navigation.module';
 const routes: Routes = [
   { path: '', redirectTo: 'uitgroup/home', pathMatch: 'full' },
   { path: ':name/home', component: HomeComponent, data: { title: 'Home' }, resolve: { home: HomeResolve } },
@@ -66,7 +67,8 @@ const routes: Routes = [
     ToastModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MobileNavigationModule
   ],
   providers: [
     Title,

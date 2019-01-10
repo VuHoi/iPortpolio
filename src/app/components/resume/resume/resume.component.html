@@ -1,38 +1,10 @@
 <div class="backgroundInfo" @Resume>
   <!-- Start navigation mobile -->
   <div class="containerHome navbar-mobile">
-    <br>
-    <div class="pos-f-t">
-      <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" title="Menu"></span>
-        </button>
-      </nav>
-      <!-- <div class="collapse show" id="navbarToggleExternalContent"> -->
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-1 pl-5">
-          <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-            <li class="nav-item active" style="font-size: 23px">
-              <a class="nav-link link text-white" routerLink="/home">
-                <i class="fa fa-home" style="font-size: 21px"></i> Home
-              </a>
-            </li>
-            <li class="nav-item" style="font-size: 23px">
-              <a class="nav-link link text-white" routerLink="/resume">
-                <i class="fa fa-play" style="font-size: 20px"></i> Resume
-              </a>
-            </li>
-            <li class="nav-item" style="font-size: 23px">
-              <a class="nav-link link text-white" routerLink="/contact">
-                <i class="fa fa-address-card" style="font-size: 16px"></i> Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <app-mobile-navigation></app-mobile-navigation>
   </div>
+
+
   <!-- End navigation mobile -->
 
   <div class="d-flex align-items-center justify-content-center headerResume">
