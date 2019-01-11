@@ -3,6 +3,18 @@
     height: 100vh;
 }
 
+.max-w-25 {
+  max-width: 25px;
+}
+
+.min-w-150 {
+  min-width: 150px;
+}
+
+.w-full {
+  width: 100%;
+}
+
 .containerLogin{
     min-width:500px; min-height:500px;
     
@@ -125,4 +137,5 @@
   .btnLogin-mobi{
     margin-right: 1.9rem;
   }
+  
 }
