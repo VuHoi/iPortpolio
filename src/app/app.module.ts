@@ -74,8 +74,8 @@ const routes: Routes = [
     Title,
     DelayResolve,
     HomeResolve,
-    PortfolioResolve,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    PortfolioResolve
+    // { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

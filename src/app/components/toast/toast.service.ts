@@ -3,9 +3,8 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
 
 import { ToastComponent } from './toast.component';
-import { ToastData, TOAST_CONFIG_TOKEN, ToastConfig } from './toast-config';
+import { ToastData, TOAST_CONFIG_TOKEN, ToastConfig, defaultToastConfig } from './toast-config';
 import { ToastRef } from './toast-ref';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +14,7 @@ export class ToastService {
   constructor(
     private overlay: Overlay,
     private parentInjector: Injector,
-    @Inject(TOAST_CONFIG_TOKEN) private toastConfig: ToastConfig
+    // @Inject(TOAST_CONFIG_TOKEN) private toastConfig: ToastConfig
   ) { }
 
   show(data: ToastData) {
@@ -37,14 +36,14 @@ export class ToastService {
     return this.overlay.position()
       .global()
       .top(this.getPosition())
-      .right(this.toastConfig.position.right + 'px');
+      .right(defaultToastConfig.position.right + 'px');
   }
 
   getPosition() {
     const lastToastIsVisible = this.lastToast && this.lastToast.isVisible();
-    const position = lastToastIsVisible 
+    const position = lastToastIsVisible
       ? this.lastToast.getPosition().bottom
-      : this.toastConfig.position.top;
+      : defaultToastConfig.position.top;
 
     return position + 'px';
   }
