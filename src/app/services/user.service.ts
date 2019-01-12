@@ -26,7 +26,7 @@ export class UserService {
         'x-access-token': localStorage.getItem('token')
       })
     };
-    return this.httpClient.get<UserResponse>('/api/user/token', httpOptions).pipe(
+    return this.httpClient.get<UserResponse>('/user/token', httpOptions).pipe(
       map(res => res));
   }
 
@@ -38,7 +38,7 @@ export class UserService {
       })
     };
     const payload = { avatar };
-    return this.httpClient.put<UserResponse>(`/api/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
+    return this.httpClient.put<UserResponse>(`/api/upload/imageV2/${id}`, payload, httpOptions).pipe(
       map(res => res));
   }
 
@@ -47,7 +47,7 @@ export class UserService {
       map(res => res));
   }
   checkUserExiting(username: String) {
-    return this.httpClient.get<String>(`/api/user/exiting/${username}`).pipe(
+    return this.httpClient.get<String>(`/user/exiting/${username}`).pipe(
       map(res => res));
   }
 getAllUser() {
@@ -57,6 +57,6 @@ getAllUser() {
       'x-access-token': localStorage.getItem('token')
     })
   };
-  return this.httpClient.get('/api/api/user', httpOptions);
+  return this.httpClient.get('/api/user', httpOptions);
 }
 }
